@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coding on Whois Justin Ngo?</title>
+    <link>https://whoisjustinngo.github.io/tags/coding/</link>
+    <description>Recent content in coding on Whois Justin Ngo?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OverTheWire: Bandit</title>
+      <link>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</guid>
+      <description>Introduction This is my writeup for OverTheWire&amp;rsquo;s &amp;lsquo;Bandit&amp;rsquo; wargame, which is essentially a capture the flag (CTF) challenge with the flag in each level being a password you&amp;rsquo;ll need to ssh into the next level. Each level has a problem statement indicating the location of the password on the server, in addition to some useful commands one might need to retrieve it.
+Please look at the OverTheWire Bandit website for the problem statements.</description>
+    </item>
+    
+  </channel>
+</rss>

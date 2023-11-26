@@ -1,0 +1,568 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.9542c8324568143f2c31c277ec97d8f0052b1287e436f79fe7103708defe02dd.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    OverTheWire: Bandit ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             OverTheWire: Bandit 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    26 November 2023.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h2 id="introduction">Introduction</h2>
+<p>This is my writeup for OverTheWire&rsquo;s <a href="https://overthewire.org/wargames/bandit/">&lsquo;Bandit&rsquo; wargame</a>, which is essentially a capture the flag (CTF) challenge with the flag in each level being a password you&rsquo;ll need to ssh into the next level. Each level has a problem statement indicating the location of the password on the server, in addition to some useful commands one might need to retrieve it.</p>
+<p>Please look at the OverTheWire Bandit website for the problem statements. This document is not so much a tutorial or walkthrough, but a journal to document my thought processes and the things I learnt in my journey to solve all the levels.</p>
+<p>For context, I do have some experience using Linux commands and git so not everything is completely foreign to me. A goal I set for myself is to use the <code>man</code> page as much as possible and Google and the internet as little as possible.</p>
+<p>Here goes&hellip;</p>
+<h2 id="levels">Levels</h2>
+<ul>
+<li><a href="#start-level-0">Start $\rightarrow$ Level 0</a></li>
+<li><a href="#level-0-level-1">Level 0 $\rightarrow$ Level 1</a></li>
+<li><a href="#level-1-level-2">Level 1 $\rightarrow$ Level 2</a></li>
+<li><a href="#level-2-level-3">Level 2 $\rightarrow$ Level 3</a></li>
+<li><a href="#level-3-level-4">Level 3 $\rightarrow$ Level 4</a></li>
+<li><a href="#level-4-level-5">Level 4 $\rightarrow$ Level 5</a></li>
+<li><a href="#level-5-level-6">Level 5 $\rightarrow$ Level 6</a></li>
+<li><a href="#level-6-level-7">Level 6 $\rightarrow$ Level 7</a></li>
+<li><a href="#level-7-level-8">Level 7 $\rightarrow$ Level 8</a></li>
+<li><a href="#level-8-level-9">Level 8 $\rightarrow$ Level 9</a></li>
+<li><a href="#level-9-level-10">Level 9 $\rightarrow$ Level 10</a></li>
+<li><a href="#level-10-level-11">Level 10 $\rightarrow$ Level 11</a></li>
+<li><a href="#level-11-level-12">Level 11 $\rightarrow$ Level 12</a></li>
+<li><a href="#level-12-level-13">Level 12 $\rightarrow$ Level 13</a></li>
+<li><a href="#level-13-level-14">Level 13 $\rightarrow$ Level 14</a></li>
+<li><a href="#level-14-level-15">Level 14 $\rightarrow$ Level 15</a></li>
+<li><a href="#level-15-level-16">Level 15 $\rightarrow$ Level 16</a></li>
+<li><a href="#level-16-level-17">Level 16 $\rightarrow$ Level 17</a></li>
+<li><a href="#level-17-level-18">Level 17 $\rightarrow$ Level 18</a></li>
+<li><a href="#level-18-level-19">Level 18 $\rightarrow$ Level 19</a></li>
+<li><a href="#level-19-level-20">Level 19 $\rightarrow$ Level 20</a></li>
+<li><a href="#level-20-level-21">Level 20 $\rightarrow$ Level 21</a></li>
+<li><a href="#level-21-level-22">Level 21 $\rightarrow$ Level 22</a></li>
+<li><a href="#level-22-level-23">Level 22 $\rightarrow$ Level 23</a></li>
+<li><a href="#level-23-level-24">Level 23 $\rightarrow$ Level 24</a></li>
+<li><a href="#level-24-level-25">Level 24 $\rightarrow$ Level 25</a></li>
+<li><a href="#level-25-level-26">Level 25 $\rightarrow$ Level 26</a></li>
+<li><a href="#level-26-level-27">Level 26 $\rightarrow$ Level 27</a></li>
+<li><a href="#level-27-level-28">Level 27 $\rightarrow$ Level 28</a></li>
+<li><a href="#level-28-level-29">Level 28 $\rightarrow$ Level 29</a></li>
+<li><a href="#level-29-level-30">Level 29 $\rightarrow$ Level 30</a></li>
+<li><a href="#level-30-level-31">Level 30 $\rightarrow$ Level 31</a></li>
+<li><a href="#level-31-level-32">Level 31 $\rightarrow$ Level 32</a></li>
+<li><a href="#level-32-level-33">Level 32 $\rightarrow$ Level 33</a></li>
+</ul>
+<h3 id="a-namestart-level-0a-start-rightarrow-level-0"><a name="start-level-0"></a> Start $\rightarrow$ Level 0</h3>
+<p>I made the SSH connection using</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh bandit0@bandit.labs.overthewire.org -p <span style="color:#ff9f43">2220</span>
+</span></span></code></pre></div><p>and entered the given password when requested.</p>
+<h3 id="a-namelevel-0-level-1a-level-0-rightarrow-level-1"><a name="level-0-level-1"></a> Level 0 $\rightarrow$ Level 1</h3>
+<p>I used <code>cat</code> to display the contents of the <code>readme</code> file and hence retrieved the password. No problem.</p>
+<h3 id="a-namelevel-1-level-2a-level-1-rightarrow-level-2-a-namel1a"><a name="level-1-level-2"></a> Level 1 $\rightarrow$ Level 2 <a name="l1"></a></h3>
+<p>Using <code>cat -</code> as before no longer works. Everything that I type just ended up getting echoed.</p>
+<p>A quick Google search for &lsquo;dashed filename&rsquo; shows that we have to specify the full path when the file we want has a dashed filename, like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ./-
+</span></span></code></pre></div><p>It turns out that the &lsquo;-&rsquo; character is commonly used to specify <code>stdin</code> and <code>stdout</code> in the context of a bash shell. In fact, its an alias for either <code>/dev/stdin</code> or <code>/dev/stdout</code> (depending on context). Therefore, <code>cat -</code> was equivalent to telling the shell to <code>cat</code> everything I input in <code>stdin</code>, i.e. whatever I typed into the command line, and hence everything I typed was echoed back to me.</p>
+<h3 id="a-namelevel-2-level-3a-level-2-rightarrow-level-3"><a name="level-2-level-3"></a> Level 2 $\rightarrow$ Level 3</h3>
+<p>We can escape the spaces in the filename either with a backslash character, or enclosing the filename in quotes, like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat <span style="color:#5af78e">&#39;spaces in this filename&#39;</span>
+</span></span></code></pre></div><h3 id="a-namelevel-3-level-4a-level-3-rightarrow-level-4"><a name="level-3-level-4"></a> Level 3 $\rightarrow$ Level 4</h3>
+<p>I <code>cd</code>ed into the directory, used <code>ls -a</code> to display the hidden file, and then used <code>cat &lt;name of hidden file&gt;</code> to display its contents.</p>
+<!-- 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe -->
+<h3 id="a-namelevel-4-level-5a-level-4-rightarrow-level-5"><a name="level-4-level-5"></a> Level 4 $\rightarrow$ Level 5</h3>
+<p>From the <code>man</code> page for <code>file</code>, I learnt that executing it runs some tests on the specified argument(s) in order to classify it as &rsquo;text&rsquo; (meaning ASCII characters/human readable), &rsquo;executable&rsquo;, or &lsquo;data&rsquo;. Hence I ran <code>file</code> with all files in the directory as the argument, taking care to handle the &lsquo;-&rsquo; character in the filenames, like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>file ./*
+</span></span></code></pre></div><p>I was thus able to quickly identify the correct file to look at.</p>
+<h3 id="a-namelevel-5-level-6a-level-5-rightarrow-level-6"><a name="level-5-level-6"></a> Level 5 $\rightarrow$ Level 6</h3>
+<p>The files to search through are all contained in subdirectories of the <code>inhere</code> directory and it would take too much effort to look through them all to find the one that matches the properties specified.</p>
+<p>I read up on the <code>find</code> and realised that its possible to use it to search for files in a directory hierarchy (i.e. look in subdirectories and subdirectories of those, and so on) which match a specified criteria, which fits our purposes nicely.</p>
+<p>I found that there was only one file under the <code>inhere</code> directory which was 1033 bytes; the final command I used was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find -size 1033c ! -executable
+</span></span></code></pre></div><p>which gave the name of the file containing the password. Notice that this command only implements 2 of the 3 specified properties - its missing the &lsquo;human-readable&rsquo; property. I couldn&rsquo;t find any relevant option for it for the <code>find</code> command, but perhaps we could workaround this by piping the output of this <code>find</code> command to <code>file</code> if necessary.</p>
+<h3 id="a-namelevel-6-level-7a-level-6-rightarrow-level-7"><a name="level-6-level-7"></a> Level 6 $\rightarrow$ Level 7</h3>
+<p>Since the hint is that the file is located somewhere on the server, I <code>cd</code>-ed to the root directory and ran a <code>find</code> command with tests matching the file properties described.</p>
+<p>The name of the file containing the password was hidden in the output by many entries indicating unsuccessful tests because of denied permissions. Of course in this small sample I could look through line-by-line, but this wouldn&rsquo;t be possible with bigger sample sizes.Therefore, I decided to try to find an efficient way to extract the desired result.</p>
+<p>I initially tried to find an option in <code>find</code> to ignore the entries with &lsquo;permission denied&rsquo;, but I then thought that it might be easier to execute <code>find</code> first then use <code>grep -v</code> to look for entries in the output <em>not</em> containing the string &lsquo;Permission denied&rsquo;.</p>
+<p>After consulting the <code>man</code> page for <code>grep</code> and trying many different configurations, I still couldn&rsquo;t get it to work properly. <code>find ... | grep -v 'Permission denied'</code> still resulted in all the &lsquo;permission denied&rsquo; lines being printed.</p>
+<p>I then consulted Google, and learnt that this was likely happening because <code>grep</code> ran on <code>stdout</code>, whereas the &lsquo;permission denied&rsquo; entries were directed to the <code>stderr</code> stream, which resulted in the error messages still being printed in the console.</p>
+<p>One way to deal with this is to redirect the <code>stderr</code> to <code>stdout</code> before executing <code>grep</code>, but I decided to essentially discard all the stderr messages (i.e. the permission denied entries) by redirecting the <code>stderr</code> <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)">(file descriptor 2)</a> to <code>/dev/null</code>. The redirection causes all the error messages from the <code>find</code> command, including the &lsquo;permission denied&rsquo; ones, to be redirected to a new file called <code>/dev/null</code> which is immediately discarded.</p>
+<p>As such, I used the following command to cleanly output the name of the file containing the password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>find -type f -group bandit6 -user bandit7 -size 33c 2&gt;/dev/null
+</span></span></code></pre></div><h3 id="a-namelevel-7-level-8a-level-7-rightarrow-level-8"><a name="level-7-level-8"></a> Level 7 $\rightarrow$ Level 8</h3>
+<p>We simply redirect the output of the <code>cat</code> command to the <code>grep</code> command using <code>|</code> to search for the &lsquo;millionth&rsquo; keyword:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat data.txt | grep <span style="color:#5af78e">&#39;millionth&#39;</span>
+</span></span></code></pre></div><h3 id="a-namelevel-8-level-9a-level-8-rightarrow-level-9"><a name="level-8-level-9"></a> Level 8 $\rightarrow$ Level 9</h3>
+<p>I took the hint in the problem statement and went to look at the <code>uniq</code> command. From reading the description section in its <code>man</code> page, I found out that the command filters <em>adjacent</em> matching lines in the input, i.e. for each line, it looks at adjacent lines and discards duplicates. This means that the lines in the <code>data.txt</code> file had to be sorted, which could be done using the <code>sort</code> command.</p>
+<p>Since I was interested in the string which appeared only once, simply filtering out duplicated strings wouldn&rsquo;t be enough as we won&rsquo;t know how many times each string appeared in the original file. Therefore, we need to use the <code>--count</code> option to additionally display the number of occurrences of each unique string.</p>
+<p>We can then simply redirect the output to a <code>grep</code> command to find the string with a count of 1.</p>
+<p>Putting it all together with pipes, I solved this using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat data.txt | sort | uniq --count | grep <span style="color:#5af78e">&#39;1 &#39;</span>
+</span></span></code></pre></div><h3 id="a-namelevel-9-level-10a-level-9-rightarrow-level-10"><a name="level-9-level-10"></a> Level 9 $\rightarrow$ Level 10</h3>
+<p>The <code>strings</code> command prints the sequences of human readable lines in the file. I simply used</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings data.txt | grep <span style="color:#5af78e">&#39;=&#39;</span>
+</span></span></code></pre></div><p>to get the password.</p>
+<h3 id="a-namelevel-10-level-11a-level-10-rightarrow-level-11"><a name="level-10-level-11"></a> Level 10 $\rightarrow$ Level 11</h3>
+<p>Running</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>base64 -d data.txt
+</span></span></code></pre></div><p>decoded the <code>data.txt</code> file and retrieve the password.</p>
+<h3 id="a-namelevel-11-level-12a-level-11-rightarrow-level-12"><a name="level-11-level-12"></a> Level 11 $\rightarrow$ Level 12</h3>
+<p>I knew that I had to rotate the characters 13 positions in order to decrypt the file. One option was to put it into a rot cipher decoder on the internet, but I wanted to try to do it in the command line.</p>
+<p>The <code>tr</code> command looked promising, and with some help from Google I managed to figure out how to specify the character set to use for the translation. The final command I used was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat data.txt | tr <span style="color:#ff6ac1">[</span>a-z<span style="color:#ff6ac1">]</span> <span style="color:#ff6ac1">[</span>n-za-m<span style="color:#ff6ac1">]</span> | tr <span style="color:#ff6ac1">[</span>A-Z<span style="color:#ff6ac1">]</span> <span style="color:#ff6ac1">[</span>N-ZA-M<span style="color:#ff6ac1">]</span>
+</span></span></code></pre></div><p><code>[a-z]</code> means all lowercase letters from a to z, and this is translated to <code>[n-za-m]</code> which represents n, m, o, p, &hellip;, k, l, m, i.e. the lowercase characters rotated 13 positions.</p>
+<h3 id="a-namelevel-12-level-13a-level-12-rightarrow-level-13"><a name="level-12-level-13"></a> Level 12 $\rightarrow$ Level 13</h3>
+<p>I performed the <code>mkdir</code> and <code>cp</code> process detailed in the problem statement, and I used <code>xxd -r data.txt</code> to reconstruct the file from the hexdump, but I still got gibberish.</p>
+<p>I ran <code>file</code> on the reconstructed <code>data2</code> file and found that its file type was &lsquo;gzip compressed data&rsquo;. I then used <code>mv</code> to rename <code>data2</code> to <code>data2.gz</code> and ran <code>gunzip data2.gz</code> to unzip it.</p>
+<p>This replaced <code>data2.gz</code> with a new file, <code>data2</code>. I ran <code>file</code> again and found that it was a &lsquo;bzip2 compressed data&rsquo; file. I repeated the same steps above, first using <code>mv</code> to rename <code>data2</code> to <code>data2.bz2</code>, and then used <code>bunzip2 data2.bz2</code> to unzip the file.</p>
+<p>This replaced <code>data2.bz2</code> with a file called <code>data2</code> of file type &lsquo;gzip compressed data&rsquo;. I repeated the same process to unzip this file as I did before, and I ended up with the file <code>data2</code> of type &lsquo;POSIX tar archive&rsquo;, which I renamed to <code>data2.tar</code> using <code>mv</code>.</p>
+<p>Running <code>tar -xvf data2.tar</code> gave me <code>data5.bin</code>, another POSIX tar archive. Running <code>tar -xvf data5.bin</code> gave me <code>data6.bin</code>, a bzip2 compressed file.</p>
+<p>At this point I was wondering how many more files I still had to decompress. I did the same renaming and decompressing/extraction process a few more times and I finally got a file which contained ASCII text and the password.</p>
+<!-- wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw -->
+<h3 id="a-namelevel-13-level-14a-level-13-rightarrow-level-14"><a name="level-13-level-14"></a> Level 13 $\rightarrow$ Level 14</h3>
+<p>While in the bandit server, I tried <code>ssh bandit14@bandit.labs.overthewire.org -p 2220 -i sshkey.private</code> but it said that the connection was reset.</p>
+<p>A quick search yielded that I should use</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh bandit14@localhost -p <span style="color:#ff9f43">2220</span> -i sshkey.private
+</span></span></code></pre></div><p>instead. I had to use <code>localhost</code> instead of the host address because I was trying to log in to another account on the server I was already on.</p>
+<!-- fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq -->
+<h3 id="a-namelevel-14-level-15a-level-14-rightarrow-level-15"><a name="level-14-level-15"></a> Level 14 $\rightarrow$ Level 15</h3>
+<p>I saw that one of the commands I might have needed to solve the level was <code>telnet</code>, and upon reading its <code>man</code> page I realised that it is used for interactive communication with another host. I decided to try</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>telnet localhost <span style="color:#ff9f43">30000</span>
+</span></span></code></pre></div><p>which opened a telnet prompt in the console. I entered the password for this level and got the password for the next level in response. Nice.</p>
+<!-- jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt -->
+<p>I did some reading and learnt that telnet was used to provide access to terminals on a remote host, but due to security concerns (because telnet transmits all data in plaintext), ssh is more popular for that now.</p>
+<h3 id="a-namelevel-15-level-16a-level-15-rightarrow-level-16"><a name="level-15-level-16"></a> Level 15 $\rightarrow$ Level 16</h3>
+<p>I read the <code>man</code> page for <code>openssl s_client</code> and established a connection with the target using</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl s_client -connect localhost:30001
+</span></span></code></pre></div><p>Entering the password for the current level yielded the password for the next level.</p>
+<!-- JQttfApK4SeyHwDlI9SXGR50qclOAil1 -->
+<h3 id="a-namelevel-16-level-17a-level-16-rightarrow-level-17"><a name="level-16-level-17"></a> Level 16 $\rightarrow$ Level 17</h3>
+<p>To figure out which ports between 31000 and 32000 had a server listening on them, I used <code>nmap localhost -p 31000-32000</code>. Next I had to identify which of these spoke ssl. I managed to do this simply trying to use <code>openssl s_client</code> to connect to each of the open ports identified with the <code>nmap</code> command earlier, and I managed to find one which gave the private key for the next level.</p>
+<p>This brute force method was feasible because there weren&rsquo;t many ports to try, but from what I gathered from a quick search online, there isn&rsquo;t a dedicated command for checking if a server has SSL enabled, and the best way to distinguish is simply verifying if a connection using s_client is successful.</p>
+<p>Perhaps if there were more ports I could&rsquo;ve stored the open port numbers in an input file and wrote a script to automate the process of trying to connect to them using s_client. The return values of the connection attempt would indicate whether or not the server on the port spoke SSL.</p>
+<p>I simply saved the private key obtained in a file on my computer and connected to the bandit17 (I had to use <code>chmod</code> to change permissions of the key file before <code>ssh</code> would work).</p>
+<h3 id="a-namelevel-17-level-18a-level-17-rightarrow-level-18"><a name="level-17-level-18"></a> Level 17 $\rightarrow$ Level 18</h3>
+<p>To compare both files I simply executed</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>diff passwords.old passwords.new
+</span></span></code></pre></div><p>The output showed that line 42 of the old and new password files differed (<code>42c42</code>). The output also showed the value of line 42 in the new password file, the password for the next level.</p>
+<!-- hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg -->
+<h3 id="a-namelevel-18-level-19a-level-18-rightarrow-level-19"><a name="level-18-level-19"></a> Level 18 $\rightarrow$ Level 19</h3>
+<p>I observed that even though I was able to connect to the game server, I would be immediately logged out once it was established. I consulted the <code>man</code> page of the <code>ssh</code> command and realised that it was possible to specify, as part of the original <code>ssh</code> command, shell commands which would be executed once the connection was established. Therefore, I used</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh bandit18@bandit.labs.overthewire.org -p <span style="color:#ff9f43">2220</span> cat readme
+</span></span></code></pre></div><p>to print the password for the next level to the console once the <code>ssh</code> connection was established and before I got logged out. This was a fun challenge.</p>
+<!-- awhqfNnAbc1naukrpqDYcF95h7HoMTrC -->
+<h3 id="a-namelevel-19-level-20a-level-19-rightarrow-level-20"><a name="level-19-level-20"></a> Level 19 $\rightarrow$ Level 20</h3>
+<p>I used <code>./bandit20-do</code> to execute the binary and found that it allowed me to execute commands as bandit20. As such, to get the password for the next level I simply ran</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bandit20-do cat /etc/bandit_pass/bandit20
+</span></span></code></pre></div><!-- VxCazJaVykI6W36BkBU0mJTCM8rR95XT -->
+<h3 id="a-namelevel-20-level-21a-level-20-rightarrow-level-21"><a name="level-20-level-21"></a> Level 20 $\rightarrow$ Level 21</h3>
+<p>To be honest I had no idea how to solve this level and had to consult some writeups online. I found that I had to basically:</p>
+<ol>
+<li>
+<p>Identify an unused port on localhost (which could be easily done with <code>nmap</code>)</p>
+</li>
+<li>
+<p>(a) Use <code>nc</code> with the <code>-l</code> flag to listen for incoming connections on the identified port on localhost, and&hellip;</p>
+<p>(b) pipe <code>echo &lt;level 20 password&gt;</code> <strong>to</strong> the above <code>nc -l</code> command so the password is read when a connection is made to the port.</p>
+</li>
+<li>
+<p>While the <code>nc</code> is running, run the <code>suconnect</code> binary to connect to the port identified in 1 to get the password for level 19.</p>
+</li>
+</ol>
+<p>To accomplish 2 and 3 at the same time, I used <code>tmux</code> with the help of an online tutorial to start a new session with 2 terminals side by side.</p>
+<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit20.png" alt="Double terminals using tmux"></p>
+<p>After choosing a suitable port with <code>nmap</code>, on the first terminal I ran <code>echo &lt;level 20 password&gt; | nc -l localhost &lt;port&gt;</code>. I then switched to the second terminal and ran <code>./suconnect &lt;port&gt;</code>. This caused a connection to be made to <code>&lt;port&gt;</code> and the <code>echo</code> command &lsquo;sending&rsquo; the <code>&lt;level 20 password&gt;</code> to the <code>suconnect</code> binary. The binary transmitted the password for the next level to the connected port on localhost where <code>nc</code> was still listening on, and the password for the next level was printed to the console.</p>
+<p>I learnt that there was a way to accomplish this without using <code>tmux</code>, which is to run <code>nc</code> in the background by using the <code>&amp;</code> option. This allowed one to continue using the terminal for running <code>suconnect</code> while having <code>nc</code> listening at the same time.</p>
+<!-- NvEJF7oVjkddltPSrdKEFOllh9V1IBcq -->
+<h3 id="a-namelevel-21-level-22alevel-21-rightarrow-level-22"><a name="level-21-level-22"></a>Level 21 $\rightarrow$ Level 22</h3>
+<p>I navigated to <code>/etc/cron.d</code> as directed and found a file called <code>cronjob_bandit22</code>, which referenced an executable called <code>cronjob_bandit22.sh</code> in <code>usr/bin</code>. I read the contents of the executable and found that the password to access bandit22 was written to a specified file in the <code>/tmp</code> directory. I simply used <code>cat</code> to display the contents of that file and retrieved the password to access the next level.</p>
+<!-- WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff -->
+<h3 id="a-namelevel-22-level-23a-level-22-rightarrow-level-23"><a name="level-22-level-23"></a> Level 22 $\rightarrow$ Level 23</h3>
+<p>I looked at the directory as directed and noticed a file <code>cronjob_bandit23</code> which made references to <code>cronjob_bandit23.sh</code> in <code>/usr/bin</code>. Reading <code>cronjob_bandit23.sh</code>, I found that at the end of the script a password is written to a specific file in the <code>/tmp</code> directory.</p>
+<p>The name of the specific file the password will be stored in is determined by the output of the command <code>echo I am user $myname | md5sum | cut -d ' ' -f 1</code> where <code>$myname</code> is the output of running the <code>whoami</code> command.</p>
+<p>I figured the expected value of <code>$myname</code> was bandit23, and hence ran</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#ff5c57">echo</span> I am user bandit23 | md5sum | cut -d <span style="color:#5af78e">&#39; &#39;</span> -f <span style="color:#ff9f43">1</span>
+</span></span></code></pre></div><p>which gave me the name of the file in the <code>/tmp</code> directory containing the password for bandit23.</p>
+<!-- QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G -->
+<h3 id="a-namelevel-23-level-24a-level-23-rightarrow-level-24"><a name="level-23-level-24"></a> Level 23 $\rightarrow$ Level 24</h3>
+<p>By looking in <code>cron.d</code> as directed, I identified the relevant shell script. Its contents were:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">myname</span><span style="color:#ff6ac1">=</span><span style="color:#ff6ac1">$(</span>whoami<span style="color:#ff6ac1">)</span> <span style="color:#78787e"># line 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">cd</span> /var/spool/<span style="color:#ff5c57">$myname</span>/foo <span style="color:#78787e"># line 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">echo</span> <span style="color:#5af78e">&#34;Executing and deleting all scripts in /var/spool/</span><span style="color:#ff5c57">$myname</span><span style="color:#5af78e">/foo:&#34;</span> <span style="color:#78787e"># line 3</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> i in * .*; <span style="color:#78787e"># line 4</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> <span style="color:#ff6ac1">[</span> <span style="color:#5af78e">&#34;</span><span style="color:#ff5c57">$i</span><span style="color:#5af78e">&#34;</span> !<span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;.&#34;</span> -a <span style="color:#5af78e">&#34;</span><span style="color:#ff5c57">$i</span><span style="color:#5af78e">&#34;</span> !<span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;..&#34;</span> <span style="color:#ff6ac1">]</span>; <span style="color:#78787e"># line 5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">echo</span> <span style="color:#5af78e">&#34;Handling </span><span style="color:#ff5c57">$i</span><span style="color:#5af78e">&#34;</span> <span style="color:#78787e"># line 6</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">owner</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;</span><span style="color:#ff6ac1">$(</span>stat --format <span style="color:#5af78e">&#34;%U&#34;</span> ./<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">)</span><span style="color:#5af78e">&#34;</span> <span style="color:#78787e"># line 7</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> <span style="color:#ff6ac1">[</span> <span style="color:#5af78e">&#34;</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">owner</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;bandit23&#34;</span> <span style="color:#ff6ac1">]</span>; <span style="color:#ff6ac1">then</span> <span style="color:#78787e"># line 8</span>
+</span></span><span style="display:flex;"><span>            timeout -s <span style="color:#ff9f43">9</span> <span style="color:#ff9f43">60</span> ./<span style="color:#ff5c57">$i</span> <span style="color:#78787e"># line 9</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">fi</span>
+</span></span><span style="display:flex;"><span>        rm -f ./<span style="color:#ff5c57">$i</span> <span style="color:#78787e"># line 10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">done</span>
+</span></span></code></pre></div><p>Let&rsquo;s analyse this script line by line.</p>
+<p><strong>Lines 1-2:</strong> the <code>whoami</code> command is executed and stored in the variable <code>myname</code>. The working directory is then changed to the <code>foo</code> subfolder of <code>/var/spool/$myname/foo</code>. My guess is that the expected value of <code>$myname</code> is bandit24, and I verified this by navigating to the <code>/var/spool</code> folder and finding that <code>bandit24</code> is the only file with a &lsquo;bandit&rsquo; name in it.</p>
+<p><strong>Line 3:</strong> a message is printed out to the console telling the user that all scripts in a particular folder, in this case <code>/var/spool/bandit24/foo</code> will be executed and deleted. The problem statement says that I will have to write a shell script which will be deleted once executed. <code>/var/spool/bandit24/foo</code> is probably where the script should be.</p>
+<p><strong>Line 4:</strong> this is initialising a for loop iterating through all the contents of the <code>/var/spool/bandit24/foo</code> folder, with the names of the files being stored in the variable <code>i</code>.</p>
+<p><strong>Line 5:</strong> indicates each iteration of the for loop evaluates whether <code>i</code> is <em>not</em> the string representing the current directory (<code>.</code>) <em>and</em> (<a href="https://stackoverflow.com/questions/321348/bash-if-a-vs-e-option">represented by <code>-a</code></a>) <em>not</em> the string representing the parent directory (<code>..</code>). The rest of the code in the loop executes only if this evaluation returns <code>true</code>, and will continue with the next iteration of the for loop, i.e. the next file in the folder otherwise.</p>
+<p><strong>Line 6:</strong> a message is presented to the console indicating that file <code>i</code> is being handled.</p>
+<p><strong>Line 7:</strong> the <code>stat --format &quot;%U&quot; ./$i</code> extracts the username of the owner of the file <code>i</code>, which is stored in the variable <code>owner</code>.</p>
+<p><strong>Lines 8-9:</strong> if the owner of the current file is bandit23, then line 9 is executed. Line 9 tries executing the current file (the <code>./$i</code> at the end) and if the execution takes more than 60 seconds a <code>SIGKILL</code> signal (&rsquo;<code>-s 9</code>&rsquo; from <code>man timeout</code> and <code>kill -l</code>) will be sent to kill the program.</p>
+<p><strong>Line 10:</strong> removes (deletes) the current file.</p>
+<p>From analysing the script above, my idea was to write a script to be placed in <code>/var/spool/bandit24/foo</code> so that it is executed by <code>/usr/bin/cronjob_bandit24.sh</code>. The script will be something similar to <code>cronjob_bandit23.sh</code> and <code>cronjob_bandit22.sh</code> where the password for bandit24 is written from <code>/etc/bandit_pass</code> to a file in <code>/tmp</code> for me to retrieve.</p>
+<p>The script I wrote was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">echo</span> <span style="color:#5af78e">&#34;Copying passwordfile /etc/bandit_pass/bandit24 to /tmp/bandit24_pass&#34;</span>
+</span></span><span style="display:flex;"><span>cat /etc/bandit_pass/bandit24 &gt; /tmp/bandit24_pass
+</span></span></code></pre></div><p>I intiially encountered some problems with &lsquo;bandit24_pass&rsquo; not being created at all. Revisiting <code>cron.d/cronjob_bandit24</code>, I found that <code>cronjob_bandit24.sh</code> will be ran either every minute or upon reboot. I went back to the <code>foo</code> folder, recreated my script, and waited for a minute. I then observed that the script I created disappeared as expected but there was still no &lsquo;bandit24_pass&rsquo; in <code>/tmp</code>.</p>
+<p>After some digging online, I suspected that this might be a permissions issue, i.e. bandit24 not having enough permissions to execute my password retrieval script. Sure enough, after creating the script and running <code>ls -la</code> on it I found that there were no <code>x</code> (execute) permissions assigned to any users.</p>
+<p>Therefore, after creating the script, I quickly executed <code>chmod 777 &lt;script name&gt;</code> within a minute to change the permissions of the script before it is ran. After this the script ran as expected and I was able to retrieve the password for the next level.</p>
+<!-- VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar -->
+<h3 id="a-namelevel-24-level-25a-level-24-rightarrow-level-25"><a name="level-24-level-25"></a> Level 24 $\rightarrow$ Level 25</h3>
+<p>I figured the only way to brute force the 10000 possibilities was to use a script to generate all 10000 possibilities then pipe them into a <code>nc</code> session as input.</p>
+<p>My script <code>get_bandit25_pass.sh</code> is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">password</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;&lt;bandit24 password here&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> <span style="color:#ff6ac1">((</span><span style="color:#ff5c57">i</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span> ; i &lt; <span style="color:#ff9f43">10000</span> ; i++<span style="color:#ff6ac1">))</span>; <span style="color:#ff6ac1">do</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff5c57">printf</span> <span style="color:#5af78e">&#34;%s %04d\n&#34;</span> <span style="color:#5af78e">${</span><span style="color:#ff5c57">password</span><span style="color:#5af78e">}</span> <span style="color:#ff5c57">$i</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">done</span>
+</span></span></code></pre></div><p>and by executing <code>./get_bandit25_pass.sh | nc localhost 30002</code> I managed to retrieve the password for the next level.</p>
+<!-- p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d -->
+<h3 id="a-namelevel-25-level-26a-level-25-rightarrow-level-26"><a name="level-25-level-26"></a> Level 25 $\rightarrow$ Level 26</h3>
+<p>I found a sshkey for bandit26 in the bandit25 home directory. I copied the sshkey to a file on my local device, then tried logging in to the bandit26 server using it, but was immediately logged out.</p>
+<p>I tried to add bash commands at the end of the <code>ssh</code> command just like in <a href="#level-18-level-19">level 18</a> in an attempt to carry out some discovery, but every command I tried seemed to cause the connection to hang, requiring me to have to manually terminate it.</p>
+<p>After some <a href="https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/">research</a> I found that information about user accounts on the system such as home directory, user and group ID and more importantly, the shell, is stored in <code>/etc/passwd</code>. I found that the shell for bandit26 was <code>/usr/bin/showtext</code>. Analysing the <code>showtext</code> file I found that it first sets the terminal emulator to linux, executes <code>more</code> on a file called <code>text.txt</code> located in the home directory of bandit26, then closes the connection.</p>
+<p>To be honest I was a little stuck and had to look at <a href="https://medium.com/@coturnix97/overthewires-bandit-25-26-shell-355d78fd2f4d">a walkthrough</a> for some clues. The first thing to note is that even though connection to bandit26 automatically terminates, it terminates after printing some ASCII art for bandit26 not present in previous bandit levels:</p>
+<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit25_1.png" alt="ASCII art for bandit26 not present in other stages"></p>
+<p>This corroborates the <code>showtext</code> script, and the <code>text.txt</code> which <code>more</code> is used to display probably contains the bandit26 ASCII art. Since the ssh connection is closed only after the <code>more</code> command terminates, to delay the disconnection we can delay the <code>more</code> command from terminating.</p>
+<p>Since the <code>more</code> command displays file contents one screenful at a time, we can delay the <code>more</code> command from terminating by resizing the screen to as small as possible before initiating the <code>ssh</code> connection.</p>
+<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit25_2.png" alt="Resized window preventing more command from terminating"></p>
+<p>By reading the <code>man</code> page we can use <code>v</code> while <code>more</code> is executing to launch an editor for the <code>text.txt</code> file. While in the editor, we can use <code>:e /etc/bandit_pass/bandit26</code> to open the bandit26 password file for editing.</p>
+<!-- c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1 -->
+<h3 id="a-namelevel-26-level-27a-level-26-rightarrow-level-27"><a name="level-26-level-27"></a> Level 26 $\rightarrow$ Level 27</h3>
+<p>Continuing on from where we left off the previous stage, to get the password for bandit27 we still need to obtain a shell so we can actually run some commands. It turns out that a shell can be launched from within vim using <code>:shell</code>, but the default shell first has to be changed from <code>showtext</code> to <code>bash</code>, which can also be done from within vim using <code>:set shell=/bin/bash</code> while in the command mode of the editor.</p>
+<p>Once we have a bash shell we can simply make use of the <code>bandit27-do</code> executable to retrieve the desired password from <code>/etc/bandit_pass/bandit27</code>.</p>
+<!-- YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS -->
+<h3 id="a-namelevel-27-level-28alevel-27-rightarrow-level-28"><a name="level-27-level-28"></a>Level 27 $\rightarrow$ Level 28</h3>
+<p>First I changed the working directory to <code>/tmp/bandit27</code> where bandit27 had permissions to create files and folders. Then I executed <code>git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo</code> to clone <code>repo</code> to the current working directory. The password for the next level was quite straightforward to find after this.</p>
+<!-- AVanL161y9rsbcJIsFHuw35rjaOM19nR -->
+<h3 id="a-namelevel-28-level-29a-level-28-rightarrow-level-29"><a name="level-28-level-29"></a> Level 28 $\rightarrow$ Level 29</h3>
+<p>I cloned the repo as directed and analysed the <code>README.md</code> file. It displayed the credentials of bandit29 with the password redacted. I executed <code>git log</code> to check the commit history, and found that there was a commit with the comment &ldquo;fix data leak&rdquo; after one with the comment &ldquo;add missing data&rdquo;. My guess is that someone accidentally committed the password for bandit29 and then redacted later to fix the leak. So if I am able to revert the file back to the pre-redaction commit I should be able to retrieve the password.</p>
+<p>Thus, I ran <code>git revert &lt;commit ID of the fix info leak commit&gt;</code> and saw that the password for bandit29 in <code>README.md</code> was no longer redacted.</p>
+<!-- tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S -->
+<h3 id="a-namelevel-29-level-30a-level-29-rightarrow-level-30"><a name="level-29-level-30"></a> Level 29 $\rightarrow$ Level 30</h3>
+<p>After cloning, I started out by digging through the <code>.git</code> directory and the commit history, but I didn&rsquo;t find anything helpful. However, since the password value in the <code>README.md</code> file says &ldquo;no passwords in production!&rdquo;, I guessed that there were other pre-production branches which might be interesting to look at.</p>
+<p>To find all the branches available, both local and remote, I executed <code>git branch -a</code>. I found that there were a few branches including one called <code>dev</code>. To switch to that branch, I executed <code>git checkout -b dev</code>. <code>README.md</code> showed the password for bandit30.</p>
+<!-- xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS -->
+<h3 id="a-namelevel-30-level-31a-level-30-rightarrow-level-31"><a name="level-30-level-31"></a> Level 30 $\rightarrow$ Level 31</h3>
+<p>I cloned the repository and did some digging but to found nothing useful. It was only when I looked online at lists of commonly used <code>git</code> commands did I find a lead. I ran <code>git tag</code> to show all the created tags and found that there was a tag called <code>secret</code> (which isn&rsquo;t applied to any commit). I then used <code>git show secret</code> to reveal the annotation message associated with the secret tag, which is the password for the next level.</p>
+<!-- OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt -->
+<h3 id="a-namelevel-31-level-32alevel-31-rightarrow-level-32"><a name="level-31-level-32"></a>Level 31 $\rightarrow$ Level 32</h3>
+<p>This level required me to push a file to the remote repository. I fortunately already had some experience doing this.</p>
+<p>First, I used <code>vim</code> to create the text file specified. I then tried adding the file to be tracked by git but found that the <code>.gitignore</code> file specified that <code>.txt</code> files were to be ignored. So I removed &rsquo;txt&rsquo; from the <code>.gitignore</code> file, then added <code>key.txt</code> to be tracked by git by running <code>git add key.txt</code>. Next, I committed my changes by running <code>git commit -m &lt;commit message&gt;</code>. Finally, I executed <code>git push origin master</code> to push the changes (including the <code>key.txt</code> file) to the remote repository (<code>origin</code>) on the <code>master</code> branch. The password for the next level was then revealed in the status message of the push.</p>
+<!-- rmCBvG56y58BXzv98yZGdO7ATVL5dW8y -->
+<h3 id="a-namelevel-32-level-33a-level-32-rightarrow-level-33"><a name="level-32-level-33"></a> Level 32 $\rightarrow$ Level 33</h3>
+<p>I spent a good half an hour trying random stuff to try to understand how the uppercase shell processed input. I knew I couldn&rsquo;t rely on most of the usual bash commands because they were automatically capitalised and wouldn&rsquo;t work, so I tried using bash variables like <code>$HOME</code> and <code>$PWD</code> but didn&rsquo;t get very far.</p>
+<p>I then stumbled upon a <a href="https://askubuntu.com/questions/590899/how-do-i-check-which-shell-i-am-using">forum post</a> with someone asking how to check which shell they were using. The top answer was to use <code>echo $0</code>, but knowing that <code>echo</code> wouldn&rsquo;t work for me I just entered <code>$0</code>&hellip; and I magically obtained a shell!</p>
+<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit32.png" alt="Escaping uppershell and obtaining a shell"></p>
+<p>I then executed <code>/bin/bash</code> to switch to the familiar <code>bash</code> shell and now everything was &lsquo;back to normal&rsquo;. I then tried to understand why entering <code>$0</code> worked. By looking at the <code>/etc/passwd</code> file I verified that bandit32 starts up with <code>uppershell</code> as the default shell. From my research, <code>$0</code> stores the value of the current shell the user was in.</p>
+<p>So it turns out that when I was in uppershell I was actually in <code>sh</code>. I actually missed out a little detail corroborating this and might&rsquo;ve helped me solve this earlier: while in uppershell, the output of most executed commands began with <code>sh : 1 : ...</code>, just like in <code>sh</code>. Therefore when I executed <code>$0</code> in uppershell <code>sh</code> resolved <code>$0</code> to &lsquo;current shell&rsquo;, i.e. <code>sh</code> and executed <code>sh</code> which gave me the shell.</p>
+<p>It turns out that <code>uppershell</code> was executed as bandit33 which can be confirmed by running <code>whoami</code>. This means that retrieving the password is simply going to the <code>/etc/bandit_pass</code> folder and looking at the relevant file. This was a fun level.</p>
+<p>(If you are stuck in uppershell, you can <a href="https://superuser.com/questions/467398/how-do-i-exit-an-ssh-connection">terminate the <code>ssh</code> session</a> by hitting enter then <code>~.</code>)</p>
+<!-- odHo63fHiFqcWWJG9rLiLDtPm45KzUKy -->
+<h2 id="conclusion">Conclusion</h2>
+<p>Connecting to bandit33 gave the following:</p>
+<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit33.png" alt="The end!"></p>
+<p>The end! This has been a long but extremely fun and fruitful journey. Some levels were pretty simple because I had some experience with the necessary commands, and some levels forced me to familiarise myself with new commands I&rsquo;ve never used before. Some things I&rsquo;ve learnt along the way include:</p>
+<ul>
+<li>using network utilities like <code>nc</code>, <code>nmap</code>, <code>openssl s_client</code>, and <code>telnet</code></li>
+<li>analysing and writing bash scripts</li>
+<li>making <code>ssh</code> connection with private key</li>
+<li>understanding environment variables such as $0, $SHELL, $HOME etc.</li>
+<li>understanding cronjobs</li>
+<li>essentials like <code>grep</code>, <code>|</code>, <code>uniq</code>, <code>tr</code>, <code>file</code>, <code>find</code>, <code>diff</code>, <code>/dev/null</code>, <code>stdout</code>/<code>stderr</code> redirection, etc.</li>
+</ul>
+<p>and much much more&hellip;</p>
+<p>The levels I found the most challenging were level 25 (the <code>more</code> level) and level 20 (make connection while listening on port), and the levels I enjoyed the most were level 13 (automatic <code>ssh</code> disconnect) and level 32 (uppershell).</p>
+<p>This challenge took me around 2 weeks working on average 2h a day to complete (including writeup). I won&rsquo;t say that I&rsquo;m now an expert in any of the topics covered in this wargame, but I can say that it has helped me know what commands were out there and what their functions are. On to the next one!</p>
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-14 right-14 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2023 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>

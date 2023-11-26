@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Musings</title>
+    <title>Whois Justin Ngo?</title>
     <link>https://whoisjustinngo.github.io/</link>
-    <description>Recent content on Musings</description>
+    <description>Recent content on Whois Justin Ngo?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Oct 2023 22:42:45 +0800</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello_world</title>
-      <link>https://whoisjustinngo.github.io/posts/hello_world/</link>
-      <pubDate>Mon, 30 Oct 2023 22:42:45 +0800</pubDate>
+      <title>OverTheWire: Bandit</title>
+      <link>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://whoisjustinngo.github.io/posts/hello_world/</guid>
-      <description>Hello world!</description>
+      <guid>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</guid>
+      <description>Introduction This is my writeup for OverTheWire&amp;rsquo;s &amp;lsquo;Bandit&amp;rsquo; wargame, which is essentially a capture the flag (CTF) challenge with the flag in each level being a password you&amp;rsquo;ll need to ssh into the next level. Each level has a problem statement indicating the location of the password on the server, in addition to some useful commands one might need to retrieve it.
+Please look at the OverTheWire Bandit website for the problem statements.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://whoisjustinngo.github.io/about/</link>
+      <pubDate>Thu, 02 Nov 2023 21:07:33 +0800</pubDate>
+      
+      <guid>https://whoisjustinngo.github.io/about/</guid>
+      <description>Hi there!
+My name is Justin, and I&amp;rsquo;m an aspiring cybersecurity professional. I graduated with a bachelor&amp;rsquo;s degree in Philosophy in June 2023. I also did a second major in Computer Science during my time in University. Before University, I was neither interested in tech nor considered a career in it. It was only after doing a mandatory computational reasoning module did I find out that I enjoyed the process of solving problems computationally, and by extension, coding.</description>
     </item>
     
   </channel>
