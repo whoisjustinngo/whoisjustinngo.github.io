@@ -357,7 +357,7 @@
 </li>
 </ol>
 <p>To accomplish 2 and 3 at the same time, I used <code>tmux</code> with the help of an online tutorial to start a new session with 2 terminals side by side.</p>
-<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit20.png" alt="Double terminals using tmux"></p>
+<p><img src="/images/otw_bandit/bandit20.png" alt="Double terminals using tmux"></p>
 <p>After choosing a suitable port with <code>nmap</code>, on the first terminal I ran <code>echo &lt;level 20 password&gt; | nc -l localhost &lt;port&gt;</code>. I then switched to the second terminal and ran <code>./suconnect &lt;port&gt;</code>. This caused a connection to be made to <code>&lt;port&gt;</code> and the <code>echo</code> command &lsquo;sending&rsquo; the <code>&lt;level 20 password&gt;</code> to the <code>suconnect</code> binary. The binary transmitted the password for the next level to the connected port on localhost where <code>nc</code> was still listening on, and the password for the next level was printed to the console.</p>
 <p>I learnt that there was a way to accomplish this without using <code>tmux</code>, which is to run <code>nc</code> in the background by using the <code>&amp;</code> option. This allowed one to continue using the terminal for running <code>suconnect</code> while having <code>nc</code> listening at the same time.</p>
 <!-- NvEJF7oVjkddltPSrdKEFOllh9V1IBcq -->
@@ -426,10 +426,10 @@
 <p>I tried to add bash commands at the end of the <code>ssh</code> command just like in <a href="#level-18-level-19">level 18</a> in an attempt to carry out some discovery, but every command I tried seemed to cause the connection to hang, requiring me to have to manually terminate it.</p>
 <p>After some <a href="https://www.cyberciti.biz/faq/understanding-etcpasswd-file-format/">research</a> I found that information about user accounts on the system such as home directory, user and group ID and more importantly, the shell, is stored in <code>/etc/passwd</code>. I found that the shell for bandit26 was <code>/usr/bin/showtext</code>. Analysing the <code>showtext</code> file I found that it first sets the terminal emulator to linux, executes <code>more</code> on a file called <code>text.txt</code> located in the home directory of bandit26, then closes the connection.</p>
 <p>To be honest I was a little stuck and had to look at <a href="https://medium.com/@coturnix97/overthewires-bandit-25-26-shell-355d78fd2f4d">a walkthrough</a> for some clues. The first thing to note is that even though connection to bandit26 automatically terminates, it terminates after printing some ASCII art for bandit26 not present in previous bandit levels:</p>
-<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit25_1.png" alt="ASCII art for bandit26 not present in other stages"></p>
+<p><img src="/images/otw_bandit/bandit25_1.png" alt="ASCII art for bandit26 not present in other stages"></p>
 <p>This corroborates the <code>showtext</code> script, and the <code>text.txt</code> which <code>more</code> is used to display probably contains the bandit26 ASCII art. Since the ssh connection is closed only after the <code>more</code> command terminates, to delay the disconnection we can delay the <code>more</code> command from terminating.</p>
 <p>Since the <code>more</code> command displays file contents one screenful at a time, we can delay the <code>more</code> command from terminating by resizing the screen to as small as possible before initiating the <code>ssh</code> connection.</p>
-<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit25_2.png" alt="Resized window preventing more command from terminating"></p>
+<p><img src="/images/otw_bandit/bandit25_2.png" alt="Resized window preventing more command from terminating"></p>
 <p>By reading the <code>man</code> page we can use <code>v</code> while <code>more</code> is executing to launch an editor for the <code>text.txt</code> file. While in the editor, we can use <code>:e /etc/bandit_pass/bandit26</code> to open the bandit26 password file for editing.</p>
 <!-- c7GvcKlw9mC7aUQaPx7nwFstuAIBw1o1 -->
 <h3 id="a-namelevel-26-level-27a-level-26-rightarrow-level-27"><a name="level-26-level-27"></a> Level 26 $\rightarrow$ Level 27</h3>
@@ -457,7 +457,7 @@
 <h3 id="a-namelevel-32-level-33a-level-32-rightarrow-level-33"><a name="level-32-level-33"></a> Level 32 $\rightarrow$ Level 33</h3>
 <p>I spent a good half an hour trying random stuff to try to understand how the uppercase shell processed input. I knew I couldn&rsquo;t rely on most of the usual bash commands because they were automatically capitalised and wouldn&rsquo;t work, so I tried using bash variables like <code>$HOME</code> and <code>$PWD</code> but didn&rsquo;t get very far.</p>
 <p>I then stumbled upon a <a href="https://askubuntu.com/questions/590899/how-do-i-check-which-shell-i-am-using">forum post</a> with someone asking how to check which shell they were using. The top answer was to use <code>echo $0</code>, but knowing that <code>echo</code> wouldn&rsquo;t work for me I just entered <code>$0</code>&hellip; and I magically obtained a shell!</p>
-<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit32.png" alt="Escaping uppershell and obtaining a shell"></p>
+<p><img src="/images/otw_bandit/bandit32.png" alt="Escaping uppershell and obtaining a shell"></p>
 <p>I then executed <code>/bin/bash</code> to switch to the familiar <code>bash</code> shell and now everything was &lsquo;back to normal&rsquo;. I then tried to understand why entering <code>$0</code> worked. By looking at the <code>/etc/passwd</code> file I verified that bandit32 starts up with <code>uppershell</code> as the default shell. From my research, <code>$0</code> stores the value of the current shell the user was in.</p>
 <p>So it turns out that when I was in uppershell I was actually in <code>sh</code>. I actually missed out a little detail corroborating this and might&rsquo;ve helped me solve this earlier: while in uppershell, the output of most executed commands began with <code>sh : 1 : ...</code>, just like in <code>sh</code>. Therefore when I executed <code>$0</code> in uppershell <code>sh</code> resolved <code>$0</code> to &lsquo;current shell&rsquo;, i.e. <code>sh</code> and executed <code>sh</code> which gave me the shell.</p>
 <p>It turns out that <code>uppershell</code> was executed as bandit33 which can be confirmed by running <code>whoami</code>. This means that retrieving the password is simply going to the <code>/etc/bandit_pass</code> folder and looking at the relevant file. This was a fun level.</p>
@@ -465,7 +465,7 @@
 <!-- odHo63fHiFqcWWJG9rLiLDtPm45KzUKy -->
 <h2 id="conclusion">Conclusion</h2>
 <p>Connecting to bandit33 gave the following:</p>
-<p><img src="/staging/personal_blog/static/images/otw_bandit/bandit33.png" alt="The end!"></p>
+<p><img src="/images/otw_bandit/bandit33.png" alt="The end!"></p>
 <p>The end! This has been a long but extremely fun and fruitful journey. Some levels were pretty simple because I had some experience with the necessary commands, and some levels forced me to familiarise myself with new commands I&rsquo;ve never used before. Some things I&rsquo;ve learnt along the way include:</p>
 <ul>
 <li>using network utilities like <code>nc</code>, <code>nmap</code>, <code>openssl s_client</code>, and <code>telnet</code></li>
