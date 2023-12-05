@@ -1,0 +1,350 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.820c653f2c45eab8c671734f389cade5e4342a3fc5700c5af3b3149012d3e153.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    OverTheWire: Leviathan ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             OverTheWire: Leviathan 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    5 December 2023.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h2 id="introduction">Introduction</h2>
+<p>This is my writeup for OverTheWire&rsquo;s <a href="https://overthewire.org/wargames/leviathan/">&lsquo;Leviathan&rsquo; wargame</a>. This is the second OverTheWire wargame I&rsquo;m trying (after &lsquo;Bandit&rsquo;). This game is much shorter than Bandit, having only 7 levels, but, unlike Bandit, Leviathan doesn&rsquo;t have any problem statements or recommended commands – you just log in to the server and find the flag somewhere on it. Leviathan is the second wargame OverTheWire recommends you to play (after Bandit), and the difficulty level is supposedly 1/10. We shall see about that&hellip;</p>
+<h2 id="levels">Levels</h2>
+<ul>
+<li><a href="#start-level-0">Start $\rightarrow$ Level 0</a></li>
+<li><a href="#level-0-level-1">Level 0 $\rightarrow$ Level 1</a></li>
+<li><a href="#level-1-level-2">Level 1 $\rightarrow$ Level 2</a></li>
+<li><a href="#level-2-level-3">Level 2 $\rightarrow$ Level 3</a></li>
+<li><a href="#level-3-level-4">Level 3 $\rightarrow$ Level 4</a></li>
+<li><a href="#level-4-level-5">Level 4 $\rightarrow$ Level 5</a></li>
+<li><a href="#level-5-level-6">Level 5 $\rightarrow$ Level 6</a></li>
+<li><a href="#level-6-level-7">Level 6 $\rightarrow$ Level 7</a></li>
+</ul>
+<h3 id="a-namestart-level-0a-start-rightarrow-level-0"><a name="start-level-0"></a> Start $\rightarrow$ Level 0</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh leviathan0@leviathan.labs.overthewire.org -p <span style="color:#ff9f43">2223</span>
+</span></span></code></pre></div><h3 id="a-namelevel-0-level-1a-level-0-rightarrow-level-1"><a name="level-0-level-1"></a> Level 0 $\rightarrow$ Level 1</h3>
+<p>I used <code>ls -la</code> in the home directory and found a hidden directory called <code>.backup</code>, and a file called <code>bookmarks.html</code> inside it. <code>bookmarks.html</code> contains many words, so I just tried using</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat bookmarks.html | grep password
+</span></span></code></pre></div><p>and found the password for leviathan1.</p>
+<!-- PPIfmI1qsA -->
+<h3 id="a-namelevel-1-level-2a-level-1-rightarrow-level-2"><a name="level-1-level-2"></a> Level 1 $\rightarrow$ Level 2</h3>
+<p>The home directory only contained an executable, <code>check</code>, which prompts the user to enter a password when it is executed. I tried many different ways to crack the <code>check</code> executable, including entering the password for the current level, piping in input, using <code>strings</code>, <code>objdump</code>, <code>nm</code> etc but I couldn&rsquo;t find anything useful.</p>
+<p>I decided to look for a clue in an online walkthrough, and I saw that someone used the <code>ltrace</code> command. <code>ltrace</code> was completely new to me, and it is a command used to trace library calls made during the runtime of an executable. Using <code>ltrace ./check</code> and entering a random string when asked for the password displayed the function which is called to compare the input with the expected password <strong>and</strong> the expected password itself.</p>
+<p>Rerunning <code>check</code> with the correct password gave me a shell as leviathan2. All that was left was to retrieve the password for the next level from <code>/etc/leviathan_pass</code>.</p>
+<!-- mEh5PNl10e -->
+<h3 id="a-namelevel-2-level-3a-level-2-rightarrow-level-3"><a name="level-2-level-3"></a> Level 2 $\rightarrow$ Level 3</h3>
+<p>There was an executable in the home directory called <code>printfile</code>, which prints the contents of a specified file (specified as a command line argument). Of course, the first thing I tried was to use <code>./printfile /etc/leviathan_pass/leviathan3</code>, but I got the message &ldquo;You cant have that file&hellip;&rdquo;. I tried printing out some other files like <code>printfile</code> itself and <code>.profile</code>, and their contents were succesfully printed.</p>
+<p>Using <code>ltrace</code> I found out that an <code>access()</code> function first checks for read permissions on the file specified as argument. <code>cat</code> is then executed using the <code>system()</code> function.</p>
+<p>I tried many different formats for the name of the file passed in as argument to <code>printfile</code>, and I discovered something which was useful. I created a file in <code>/tmp/leviathan2</code> called <code>foo bar</code> (2 words separated by a space), and got the following output from running <code>ltrace ./printfile &quot;/tmp/leviathan2/foo bar&quot;</code>:</p>
+<p><img src="/images/otw_leviathan/2_to_3.png" alt="printfile with &ldquo;foo bar&rdquo; file"></p>
+<p>What we can see is that the although <code>access()</code> checks the entire input string as-is, the <code>cat</code> command which runs at the end splits up the input filename string using the space character as the delimiter. Therefore, even though <code>/tmp/leviathan2/foo bar</code> passed the <code>access()</code> check (because it exists and I had read access), <code>cat</code> is first executed on <code>/tmp/leviathan2/foo</code> then on <code>bar</code>.</p>
+<p>I came across the concept of <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic links</a> (symlinks). As I understand it, a symbolic (soft) link is a file type which points to another file or folder in the system. The file contains a text string (the &lsquo;address&rsquo; of the target resource) which will automatically be interpreted by the OS as a path to another resource. Soft/symbolic links differ from hard links in that while the former is just a file containing the address of the target resource, the latter is a link to the actual resource stored in the system.</p>
+<p>Therefore, in the <code>/tmp/leviathan2</code> folder I created a symlink called <code>foo</code> which links to <code>/etc/leviathan_pass/leviathan3</code> using</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln etc/leviathan_pass/leviathan3 foo -s
+</span></span></code></pre></div><p>Running <code>./printfile &quot;/tmp/leviathan2/foo bar&quot;</code> resulted in <code>cat /tmp/leviathan2/foo</code> being executed, which, because of the symlink created, is essentially the same as <code>cat etc/leviathan_pass/leviathan3</code>.</p>
+<!-- Q0G8j4sakn -->
+<h3 id="a-namelevel-3-level-4a-level-3-rightarrow-level-4"><a name="level-3-level-4"></a> Level 3 $\rightarrow$ Level 4</h3>
+<p>In the home directory I found an executable called <code>level3</code> which asks for a password when executed. Using what I learned from the previous levels, I used <code>ltrace</code> to peek into the library calls made while <code>level3</code> executed, and I identified the line of code which checks my input against some string which I figured was the expected password. Rerunning and typing the expected password when asked gave me a shell as leviathan4 which allowed me to easily retrieve the password for the next level.</p>
+<!-- AgvropI4OA -->
+<h3 id="a-namelevel-4-level-5a-level-4-rightarrow-level-5"><a name="level-4-level-5"></a> Level 4 $\rightarrow$ Level 5</h3>
+<p>In the home directory a found a hidden <code>.trash</code> folder containing an executable called <code>bin</code>. Running it printed a binary string onto the console. Throwing the binary string into an online binary to ASCII convertor (like cyberchef) gave a string resembling a password for a leviathan level (presumably the next one). Attempting to ssh into the next level using this password shows that the string was indeed the password for the next level.</p>
+<!-- EKKlTF1Xqs -->
+<h3 id="a-namelevel-5-level-6a-level-5-rightarrow-level-6"><a name="level-5-level-6"></a> Level 5 $\rightarrow$ Level 6</h3>
+<p>In the home directory is an executable called <code>leviathan5</code>. Running it gave a message that the file <code>/tmp/file.log</code> doesn&rsquo;t exist.</p>
+<p>I used <code>vim</code> to create the file and add some placeholder text. Rerunning <code>leviathan5</code> just printed the placeholder text to the console. I realised that the <code>file.log</code> file I just created disappeared, and my guess is that every time <code>file.log</code> is accessed by <code>leviathan5</code>, it is deleted after.</p>
+<p>I used a technique learnt earlier and created a symlink in <code>/tmp</code> called <code>file.log</code> which linked to <code>/etc/leviathan_pass/leviathan6</code>. Running <code>./leviathan5</code> yielded the password for the next level.</p>
+<!-- YZ55XPVk2l -->
+<h3 id="a-namelevel-6-level-7a-level-6-rightarrow-level-7"><a name="level-6-level-7"></a> Level 6 $\rightarrow$ Level 7</h3>
+<p>The home directory contained <code>./leviathan6</code>, which asked for a 4 digit code as a command line argument. My first thought was to write a script to iterate over all the possibilities in a simple brute force solution. The script I wrote was:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">cd</span> <span style="color:#78787e"># changes to the directory containing the leviathan6 executable</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> <span style="color:#ff6ac1">((</span><span style="color:#ff5c57">i</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span> ; i &lt; <span style="color:#ff9f43">10000</span> ; i++<span style="color:#ff6ac1">))</span>; <span style="color:#ff6ac1">do</span>
+</span></span><span style="display:flex;"><span>	./leviathan6 <span style="color:#ff5c57">$i</span> <span style="color:#78787e">#tries executing the binary with all possible 4 digit combinations</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">done</span>
+</span></span></code></pre></div><p>Running it gave me a shell as leviathan7, and I simply looked in the usual place for the password for the next level.</p>
+<!-- 8GpZ5f8Hze -->
+<h2 id="conclusion">Conclusion</h2>
+<p>Leviathan7 contains a congratulatory message.</p>
+<p>I enjoyed Leviathan much more than Bandit, because it felt like I was really trying to crack binaries instead of just executing certain commands in a particular order.</p>
+<p>However, one thing I found odd was that some levels were much, much &lsquo;harder&rsquo; than the rest. I probably spent more time on levels 1 and 2 than on the other levels combined (because I wasn&rsquo;t aware of <code>ltrace</code> and symlinks), but I guess if I had already known about the concepts I would&rsquo;ve solved it much quicker. Additionally, the techniques used to solve the later (easier) levels were pretty much the same as the earlier (harder) levels, but it served as good practice.</p>
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-7 right-7 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2023 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>
