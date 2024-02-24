@@ -6,7 +6,16 @@
     <description>Recent content on Whois Justin Ngo?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Feb 2024 08:40:35 +0800</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSIT Mobile Reverse Engineering Mini-Challenge (CNY 2024)</title>
+      <link>https://whoisjustinngo.github.io/posts/csit-cny-2024-mini-challenge/</link>
+      <pubDate>Sat, 24 Feb 2024 08:40:35 +0800</pubDate>
+      
+      <guid>https://whoisjustinngo.github.io/posts/csit-cny-2024-mini-challenge/</guid>
+      <description>Introduction CSIT periodically releases challenges to &amp;ldquo;create awareness on the various tech focus areas of CSIT&amp;rdquo;. The topic of their CNY 2024 mini-challenge was mobile reverse engineering. I had minimal experience in this topic but I decided to give it a shot nonetheless. The following is an account of my thought process, how I understood the concepts I encountered, and how I solved the problems I encountered along the way (spoiler: G _ _ _ _ e).</description>
+    </item>
+    
     <item>
       <title>OverTheWire: Leviathan</title>
       <link>https://whoisjustinngo.github.io/posts/over-the-wire-leviathan/</link>

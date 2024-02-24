@@ -1,0 +1,374 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.820c653f2c45eab8c671734f389cade5e4342a3fc5700c5af3b3149012d3e153.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    CSIT Mobile Reverse Engineering Mini-Challenge (CNY 2024) ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             CSIT Mobile Reverse Engineering Mini-Challenge (CNY 2024) 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    24 February 2024.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h2 id="introduction">Introduction</h2>
+<p>CSIT periodically releases challenges to &ldquo;create awareness on the various tech focus areas of CSIT&rdquo;. The topic of their <a href="https://cny-2024-mini-challenge.csit-events.sg/">CNY 2024 mini-challenge</a> was mobile reverse engineering. I had minimal experience in this topic but I decided to give it a shot nonetheless. The following is an account of my thought process, how I understood the concepts I encountered, and how I solved the problems I encountered along the way (spoiler: G _ _ _ _ e).</p>
+<h2 id="the-challenge">The challenge</h2>
+<p>The task was to crack a provided apk to retrieve a message (the flag). In the problem writeup, CSIT provided a suggested approach and some useful resources. Specifically, there were some writeups about SSL pinning/unpinning and links to writeups about using Burpsuite and Frida - tools commonly used to perform SSL unpinning.</p>
+<h3 id="loading-the-apk">Loading the apk</h3>
+<p>To start, I set up an Android Virtual Device (AVD) in Android Studio to serve as my emulator. I chose a Pixel 6 Pro running Android 13.0 x86_64 (with &lsquo;Default Android System Image&rsquo; type NOT &lsquo;Google APIs&rsquo; - the latter is unrooted).</p>
+<p>I then ran into my first problem: upon startup, the Pixel only displayed a black screen with nothing on it. I rebooted the emulator a few times to no avail. After consulting Google, I changed &lsquo;Graphics&rsquo; to &lsquo;Hardware - GLES 2.0&rsquo; and RAM to 2048MB in the advanced settings for the device and this solved the issue.</p>
+<p>I downloaded the target apk and installed it on the Pixel by simply dragging and dropping it into the emulator window. This is what the app looks like:</p>
+<p><img src="/images/CSIT-cny-2024/app.png" alt="App"></p>
+<p>Clicking on any of the purple &lsquo;send ___&rsquo; buttons seemed to do nothing except change the button&rsquo;s colour from purple to green.</p>
+<h3 id="a-futile-attempt-at-static-analysis">A (futile) attempt at static analysis</h3>
+<p>My initial approach was to perform some static analysis on the apk. Decompiling the apk (using apktool with the <code>d</code> option and <code>-s</code> and <code>-r</code> flags) gave me a file called <code>classes.dex</code>, which I learnt essentially contained all the application&rsquo;s logic.</p>
+<p>I then used dex2jar to convert <code>classes.dex</code> into a jar file, which I then opened in JD-GUI for analysis. The jar file contained a file called <code>MainActivity.class</code>, which I figured contained the bulk of the application logic. The structure of <code>MainActivity.class</code> is as follows:</p>
+<p>(Functions end with <code>()</code>; the rest are classes. <code>...</code> denotes a set of 3 functions <code>create()</code>, <code>invoke()</code>, and <code>invokeSuspend()</code> (but not defined identically for each class))</p>
+<pre tabindex="0"><code>MainActivity
+├─ onError()
+├─ onStart()
+├─ onSuccess()
+├─ decrypt()
+├─ getMediaTypeJson()
+├─ onCreate()
+├─ sendOkHttpPinned()
+├─ sendOkHttpPinnedd()
+├─ sendOkHttpPinneddd()
+├─ sendUnpinned()
+├─ OnCreate
+│  ├─ OnCreate()
+│  ├─ invoke()
+├─ OnError
+│  ├─ OnError()
+│  ├─ create()
+│  ├─ invoke()
+│  ├─ invokeSuspend()
+├─ OnStart
+│  ├─ OnStart()
+│  ├─ create()
+│  ├─ invoke()
+│  ├─ invokeSuspend()
+├─ OnSuccess
+│  ├─ OnSuccess()
+│  ├─ ...
+├─ sendOkHttpPinned
+│  ├─ sendOkHttpPinned()
+│  ├─ ...
+├─ sendOkHttpPinnedd
+│  ├─ sendOkHttpPinnedd()
+│  ├─ ...
+├─ sendOkHttpPinneddd
+│  ├─ sendOkHttpPinneddd()
+│  ├─ ...
+├─ sendUnpinned
+│  ├─ sendUnpinned()
+│  ├─ ...
+</code></pre><p>What stood out to me was the multiple definitions of the <code>sendOkHttpPinned(d(d))</code> class / function. I thought of digging deeper into the code but it was quite complex and I wanted to explore the other resources provided by CSIT before potentially wasting time here.</p>
+<h3 id="ssl-unpinning">SSL (un)pinning</h3>
+<p>As mentioned, the information provided suggested that extracting the flag involved bypassing SSL pinning.</p>
+<p>SSL pinning is a security measure which checks the SSL certificate of the server contacted by the app against a trusted cert hard-coded in the app (either the cert data itself or its hash). This feature verifies that the target server is legitimate and can be trusted, and thwarts man in the middle attacks, amongst others.</p>
+<p><img src="/images/CSIT-cny-2024/SSL-pinnning.png" alt="SSL pinning as security measure"></p>
+<p>In the writeup for this challenge, CSIT had thankfully provided a link to a <a href="https://medium.com/@pranav.s.paranjpe/introduction-to-frida-tool-b0b926ad3f59">step-by-step guide</a> for bypassing SSL pinning on Android applications using Frida and Burpsuite.</p>
+<p>To perform dynamic analysis, we want to analyse the outbound requests made when the app is interacted with, which we can do with Burpsuite. Burpsuite has a proxy feature which will allow us to intercept, analyse, and modify network traffic to and from the Pixel, but we will first need to retrieve Burpsuite&rsquo;s SSL certificate and get the Pixel to trust it before the Pixel will &lsquo;communicate&rsquo; with Burpsuite.</p>
+<p><a href="https://frida.re/">Frida</a> is a &ldquo;dynamic instrumentation toolkit&rdquo; which will allow us to deploy a server on the Pixel and deploy a script on that server which will help us bypass the SSL pinning. In other words, we can deploy a Frida script onto the device to get the target apk to the the Burp certificate we had deployed previously, hence bypassing SSL pinning (refer to the &lsquo;What is not SSL pinning&rsquo; section in <a href="https://redhuntlabs.com/wp-content/uploads/2023/07/Ultimate-Guide-to-SSL-Pinning-Bypass-RedHunt-Labs.pdf">this document</a> for more information about the role of Frida and Burpsuite).</p>
+<p>Therefore, the approach is as follows:</p>
+<p>(note that the step numbers here don&rsquo;t correspond to the step-by-step guide)</p>
+<p><img src="/images/CSIT-cny-2024/unpinning-strategy.png" alt="SSL unpinning strategy"></p>
+<h3 id="setting-up-the-proxy-in-burpsuite">Setting up the proxy in Burpsuite</h3>
+<p>The first step was to get the Pixel device to trust the Burp cert. CSIT provided some instructions on how to do it but I found an easier way courtesy of <a href="https://www.youtube.com/watch?v=xjdwUGCezWE&amp;t=422s&amp;ab_channel=RedShiftCyberSecurity">this tutorial</a> on YouTube. To get the Burp cert, I launched a browser from the Burpsuite app (Proxy &gt; Intercept &gt; Open Browser) and navigated to <code>http://burp</code>. Clicking on &lsquo;CA Certificate&rsquo; in the top right hand corner downloaded the cert (I made sure to save it with the &lsquo;.cer&rsquo; extension). All that remained is to follow the steps in the aforementioned video from 5:58 onward.</p>
+<p>The second step was to direct the Pixel&rsquo;s outbound traffic to the Burp proxy. The video also covered how to do this (from 4:06 onward), although I realised that for it to work I had to enter the actual IP address of my PC as the proxy host instead of the localhost address like in the video.</p>
+<p>I verified that steps 1 and 2 were done correctly by checking if Burpsuite intercepted traffic when I navigated to different webpages using the browser on the Pixel. Upon running the target application again I realised that instead of turning green like before, the purple buttons turned red when tapped. No traffic was intercepted by Burp and the emulator shows that some kind of SSL Pinning exception was raised. This was, however, expected because the SSL certificate of Burp didn&rsquo;t match the info of any trusted SSL certs stored <em>in the application</em> and hence the application &lsquo;refused to communicate&rsquo; with Burp.</p>
+<h3 id="performing-the-bypass-with-frida">Performing the bypass with Frida</h3>
+<p>Steps 3 and 4 were also quite straightforward and were easily accomplished by following the aforementioned step-by-step guide provided (the only difficulty I encountered was self-inflicted, when I downloaded the devkit instead of the server from the Frida github page).</p>
+<p>When executing the unpinning script on the server, I encountered a <code>FileNotFoundException</code> which reported that a file called <code>cert-der.crt</code> was missing from a specified folder. I solved this by using <code>adb</code> to launch a shell in the web server and copying the Burp cert from the &lsquo;Downloads&rsquo; folder to the specified folder, renaming the cert to the appropriate name.</p>
+<h3 id="retrieving-the-flag">Retrieving the flag</h3>
+<p>After running the Frida bypass script (and with intercept in Burpsuite turned on), I tapped on the &ldquo;send message part 1&rdquo; button and observed that a <code>HTTP POST</code> request was intercepted. The body of the request contained a string of interest:</p>
+<p><img src="/images/CSIT-cny-2024/sendpart1.png" alt="string in request body"></p>
+<p>I tried to tap on the other &ldquo;send message&rdquo; buttons but no traffic was intercepted. In fact, the emulator showed that some SSL-pinning related exception occurred whenever those buttons were tapped. The SSL pinning bypass worked for only 1 out of 4 buttons.</p>
+<p>I eventually did manage to resolve this, but I did so completely accidentally. I essentially thought that the string in the request body was a clue for bypassing pinning for the other 3 buttons, so I was just searching random combinations of the words &lsquo;SSL pinning&rsquo;, &lsquo;certificate&rsquo;, &lsquo;bypass&rsquo;, and &lsquo;rotation&rsquo; (because of rot). I eventually came across another tutorial for SSL pinning bypass using Frida. This tutorial used <a href="https://codeshare.frida.re/@akabe1/frida-multiple-unpinning/">a different bypass script</a> (frida-multiple-unpinning) from <a href="https://codeshare.frida.re/@pcipolloni/universal-android-ssl-pinning-bypass-with-frida/">the one used in the walkthrough provided by CSIT</a> (Universal Android SSL Pinning Bypass with Frida).</p>
+<p>I replaced the old script with this new script and found that everything worked properly, i.e., that the new script successfully bypassed SSL pinning for all buttons. When each button is pressed, a <code>HTTP POST</code> request is made (which is intercepted by Burp), and the body of each request contained a string. Only upon putting all 4 strings together did I realise that &lsquo;rot&rsquo; referred to the Caesar cipher, which one of the strings, the flag, was encrypted with!</p>
+<p>Retrieving the flag was as simple as putting the encrypted string into a Caesar cipher brute force decryptor tool (which tried all possible rotation amounts) like <a href="https://manansingh.github.io/Cryptolab-Offline/c2-brute-caesar.html">this one</a>.</p>
+<h3 id="why-did-replacing-the-bypass-script-work">Why did replacing the bypass script work?</h3>
+<p>In other words, what was the difference between the first script (the one used in the CSIT provided walkthrough) and the second script (the one I found)?</p>
+<p>My best guess is this: since these scripts bypassed SSL pinning by overriding the functions performing the checks during runtime, perhaps the second script catered towards implementations of SSL pinning which were used in the application logic which just weren&rsquo;t handled by the first script.</p>
+<p>The second script attempts to bypass different implementations of SSL pinning, such as <code>OkHTTPv3</code>, <code>Trustkit</code>, <code>Appcelerator</code> etc. On the other hand, the first script looks like it only tries overloading pinning implemented with the <code>javax.net.ssl</code> library. If we look at the import statements in <code>MainActivity.class</code> in the source code, we can see that <code>okhttp3.CertificatePinner</code> is used. This corroborates the idea that the second script had code to bypass implementations of SSL pinning which the first script lacked.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was an adequately challenging but still fun challenge. Even though resources and a step-by-step guide was provided, effort still had to be put in to <em>try</em> to understand the technology involved and the approach employed in the walkthrough.</p>
+<p>The previous CSIT challenge I attempted was the TISC CTF. Given that I didn&rsquo;t even get past the first (and supposedly easiest) level back then, I&rsquo;m happy that I managed to complete this challenge in good time :smiley:.</p>
+<p>On to the next one!</p>
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-7 right-7 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2024 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>
