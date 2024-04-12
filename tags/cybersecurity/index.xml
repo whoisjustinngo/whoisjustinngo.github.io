@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cybersecurity on Whois Justin Ngo?</title>
+    <title>Cybersecurity on Whois Justin Ngo?</title>
     <link>https://whoisjustinngo.github.io/tags/cybersecurity/</link>
-    <description>Recent content in cybersecurity on Whois Justin Ngo?</description>
+    <description>Recent content in Cybersecurity on Whois Justin Ngo?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Feb 2024 08:40:35 +0800</lastBuildDate><atom:link href="https://whoisjustinngo.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://whoisjustinngo.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OverTheWire: Natas</title>
+      <link>https://whoisjustinngo.github.io/posts/over-the-wire-natas/</link>
+      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://whoisjustinngo.github.io/posts/over-the-wire-natas/</guid>
+      <description>Introduction Natas lets us practice web application penetration testing. Most of the levels were adequately challenging; the last few levels referenced unfamiliar techniques and vulnerabilities I wasn&amp;rsquo;t aware of, and I had to refer to guides and walkthroughs to complete them.&#xA;Nevertheless, I enjoyed completing the challenges. I learnt a lot of new concepts and had the chance to apply my knowledge by practicing many cool techniques, including:&#xA;deploying webshells for remote code execution using path traversal and insecure direct object reference spotting command injection opportunities conducting time based SQL injections performing PHP object injection using PHAR deserialisation for object injection spotting exploitable vulnerabilities in perl scripting for brute force exploits Overall, I am quite happy with what I&amp;rsquo;ve gotten out of completing these challenges.</description>
+    </item>
     <item>
       <title>CSIT Mobile Reverse Engineering Mini-Challenge (CNY 2024)</title>
       <link>https://whoisjustinngo.github.io/posts/csit-cny-2024-mini-challenge/</link>
       <pubDate>Sat, 24 Feb 2024 08:40:35 +0800</pubDate>
-      
       <guid>https://whoisjustinngo.github.io/posts/csit-cny-2024-mini-challenge/</guid>
       <description>Introduction CSIT periodically releases challenges to &amp;lsquo;create awareness on the various tech focus areas of CSIT&amp;rsquo;. The topic of their CNY 2024 mini-challenge was mobile reverse engineering. I had minimal experience in this topic but I decided to give it a shot nonetheless. The following is an account of my thought process, how I understood the concepts I encountered, and how I solved the problems I encountered along the way (spoiler: G _ _ _ _ e).</description>
     </item>
-    
     <item>
       <title>OverTheWire: Leviathan</title>
       <link>https://whoisjustinngo.github.io/posts/over-the-wire-leviathan/</link>
       <pubDate>Tue, 05 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://whoisjustinngo.github.io/posts/over-the-wire-leviathan/</guid>
       <description>Introduction This is my writeup for OverTheWire&amp;rsquo;s &amp;lsquo;Leviathan&amp;rsquo; wargame. This is the second OverTheWire wargame I&amp;rsquo;m trying (after &amp;lsquo;Bandit&amp;rsquo;). This game is much shorter than Bandit, having only 7 levels, but, unlike Bandit, Leviathan doesn&amp;rsquo;t have any problem statements or recommended commands – you just log in to the server and find the flag somewhere on it. Leviathan is the second wargame OverTheWire recommends you to play (after Bandit), and the difficulty level is supposedly 1/10.</description>
     </item>
-    
     <item>
       <title>OverTheWire: Bandit</title>
       <link>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</link>
       <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://whoisjustinngo.github.io/posts/over-the-wire-bandit/</guid>
-      <description>Introduction This is my writeup for OverTheWire&amp;rsquo;s &amp;lsquo;Bandit&amp;rsquo; wargame, which is essentially a capture the flag (CTF) challenge with the flag in each level being a password you&amp;rsquo;ll need to ssh into the next level. Each level has a problem statement indicating the location of the password on the server, in addition to some useful commands one might need to retrieve it.
-Please look at the OverTheWire Bandit website for the problem statements.</description>
+      <description>Introduction This is my writeup for OverTheWire&amp;rsquo;s &amp;lsquo;Bandit&amp;rsquo; wargame, which is essentially a capture the flag (CTF) challenge with the flag in each level being a password you&amp;rsquo;ll need to ssh into the next level. Each level has a problem statement indicating the location of the password on the server, in addition to some useful commands one might need to retrieve it.&#xA;Please look at the OverTheWire Bandit website for the problem statements.</description>
     </item>
-    
   </channel>
 </rss>

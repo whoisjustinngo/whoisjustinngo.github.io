@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Whois Justin Ngo?</title>
+    <link>https://whoisjustinngo.github.io/tags/web/</link>
+    <description>Recent content in Web on Whois Justin Ngo?</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 12 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://whoisjustinngo.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OverTheWire: Natas</title>
+      <link>https://whoisjustinngo.github.io/posts/over-the-wire-natas/</link>
+      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://whoisjustinngo.github.io/posts/over-the-wire-natas/</guid>
+      <description>Introduction Natas lets us practice web application penetration testing. Most of the levels were adequately challenging; the last few levels referenced unfamiliar techniques and vulnerabilities I wasn&amp;rsquo;t aware of, and I had to refer to guides and walkthroughs to complete them.&#xA;Nevertheless, I enjoyed completing the challenges. I learnt a lot of new concepts and had the chance to apply my knowledge by practicing many cool techniques, including:&#xA;deploying webshells for remote code execution using path traversal and insecure direct object reference spotting command injection opportunities conducting time based SQL injections performing PHP object injection using PHAR deserialisation for object injection spotting exploitable vulnerabilities in perl scripting for brute force exploits Overall, I am quite happy with what I&amp;rsquo;ve gotten out of completing these challenges.</description>
+    </item>
+  </channel>
+</rss>

