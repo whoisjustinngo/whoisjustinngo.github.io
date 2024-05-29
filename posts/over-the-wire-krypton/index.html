@@ -1,0 +1,524 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity44OverTheWire44cryptography"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.709d3c6660552a09b2ac111885a56d7032e0ff83fa5e05a0247666f181b49d74.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    OverTheWire: Krypton ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             OverTheWire: Krypton 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    28 May 2024.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h2 id="introduction">Introduction</h2>
+<p><a href="https://overthewire.org/wargames/krypton/">Krypton</a> is centred around cryptography. To me, the most challenging aspect of this wargame was the need to create custom tools and/or perform manual decryption. For example, in one of the levels I spent three hours trying to code a frequency analysis tool, before giving up and using an existing online tool - this helped me solve the problem in less than a minute. The concepts covered are relatively straightforward to understand, but putting them into practice was rather tedious and/or complicated (without the online tools).</p>
+<h2 id="challenges">Challenges</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#level-0">Level 0</a></td>
+</tr>
+<tr>
+<td><a href="#level-1">Level 1</a></td>
+</tr>
+<tr>
+<td><a href="#level-2">Level 2</a></td>
+</tr>
+<tr>
+<td><a href="#level-3">Level 3</a></td>
+</tr>
+<tr>
+<td><a href="#level-4">Level 4</a></td>
+</tr>
+<tr>
+<td><a href="#level-5">Level 5</a></td>
+</tr>
+<tr>
+<td><a href="#level-6">Level 6</a></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-namelevel-0a-level-0"><a name="level-0"></a> Level 0</h3>
+<p>The password can be decoded in the terminal using the command</p>
+<p><code>echo &quot;S1JZUFRPTklTR1JFQVQ=&quot; | base64 --decode</code></p>
+<p>and we can connect to the server by running</p>
+<p><code>ssh krypton1@krypton.labs.overthewire.org -p 2231</code></p>
+<p>and entering the decoded password when prompted.</p>
+<!-- KRYPTONISGREAT -->
+<h3 id="a-namelevel-1a-level-1"><a name="level-1"></a> Level 1</h3>
+<p>We see two files in <code>/krypton/krypton1</code>, <code>README</code> and <code>krypton2</code>. The former explains that to get the ssh password for krypton2, we need to decipher the string in the file <code>krypton2</code>, which is encrypted using the ROT13 cipher, where every character in the plaintext becomes the alphabetical chracater 13 positions ahead of it (with wrap-around).</p>
+<p>This can be easily done by hand, but to save time I just used <a href="https://rot13.com/">this online tool</a> to decode the ciphertext.</p>
+<!-- ROTTEN -->
+<h3 id="a-namelevel-2a-level-2"><a name="level-2"></a> Level 2</h3>
+<p>We aren&rsquo;t able to directly access the key used to encrypt the password for krypton3, but we do have access to the program which uses that key to encrypt the plaintext. This means that to figure out the key we can just ask the program to encrypt &lsquo;abcde&rsquo; and analyse the produced ciphertext to retrieve the &lsquo;rotation factor&rsquo;, i.e. how much each character is rotated, and from there deduce the key used:</p>
+<p><img src="/images/otw_krypton/krypton2-1_deducing-key.png" alt="encrypting short alphabet string to deduce key"></p>
+<p>We see that &lsquo;abcde&rsquo; is encrypted to become &lsquo;MNOPQ&rsquo;. From this we can deduce that &lsquo;f&rsquo; becomes &lsquo;R&rsquo;, &lsquo;g&rsquo; becomes &lsquo;S&rsquo;, &lsquo;h&rsquo; becomes &lsquo;T&rsquo;, etc.</p>
+<p>We can also hence deduce that the &lsquo;rotation factor&rsquo; is 12, since each character is substituted by the one 12 positions ahead of it in the alphabet.</p>
+<p>With this in mind, there are two ways we can recover the plaintext password: either shift each character in the ciphertext backwards by 12 characters, or shift each character in the ciphertext forwards by 14 characters (resulting in a total of 26 forward shifts, i.e. effectively no shift at all).</p>
+<p>I chose the first method, and used <a href="https://www.dcode.fr/caesar-cipher">this online tool</a> instead of working it out manually to save time.</p>
+<!-- CAESARISEASY -->
+<h3 id="a-namelevel-3a-level-3"><a name="level-3"></a> Level 3</h3>
+<p>The password for krypton4 is encrypted using a substitution cipher, but no longer a simple shift / rot cipher. We can use found1, 2, and 3 to perform frequency analysis to try to reverse engineer the key used for substitution.</p>
+<p>I will be using <a href="https://www.dcode.fr/frequency-analysis">this</a> for frequency analysis and <a href="https://www.dcode.fr/substitution-cipher">this</a> substitution decoder tool to perform guess and check. I will use the former to derive guesses for plain $\leftrightarrow$ ciphertext mappings and then insert the mapping into the substitution decoder tool to see whether the resultant plaintext made sense and thus decide whether the mapping was right or wrong.</p>
+<p>(There is actually a tool on the same site that automatically decrypts the ciphertext but I wanted to try performing the anlaysis manually, only using the substitution and frequency analysis tools to cut out the &lsquo;meaningless&rsquo; tedious work.)</p>
+<p>I compiled found1, 2, and 3 and performed the frequency analysis on the ciphertext using the tool. These are the reults:</p>
+<p><img src="/images/otw_krypton/krypton3-1_freq-analysis-results.png" alt="results of frequency analysis of ciphertext"></p>
+<p>The frequency analysis tool also provides a table showing the frequency of appearance in typical english language texts:</p>
+<p><img src="/images/otw_krypton/krypton3-2_expected-frequencies.png" alt="expected frequencies"></p>
+<p>As a first pass, I decided to just match the letters based on their relative frequency. For example, &lsquo;S&rsquo; appeared the most in the ciphertext, and according to the expected frequencies table, &lsquo;E&rsquo; appears the most in english texts. Thus, I entered the plain &lsquo;E&rsquo; to coded (cipher) &lsquo;S&rsquo; mapping into the decoder tool. &lsquo;Q&rsquo; appeared the second most in the ciphertext, and &lsquo;T&rsquo; appears the second most in typical english texts, and thus I entered the plain &lsquo;T&rsquo; to coded &lsquo;Q&rsquo; mapping into the decoder tool.</p>
+<p>I did the same for the other characters, but the resulting decoded text was unfortunately gibberish.</p>
+<p>I then decided to enrich my data using <a href="https://www.dcode.fr/bigrams">bigram analysis</a>, which calculates the frequencies of adjacent pairs of characters in text such as &lsquo;TH&rsquo;, &lsquo;HE&rsquo;, and &lsquo;ER&rsquo;.</p>
+<p>The two most frequent bigrams in the ciphertext are &lsquo;JD&rsquo; and &lsquo;DS&rsquo; and this perfectly matched the most frequent bigrams in typical english texts: &lsquo;TH&rsquo; and &lsquo;HE&rsquo;. I thus made the following changes to the mappings in the decoder:</p>
+<ul>
+<li>plain &lsquo;T&rsquo; $\leftrightarrow$ coded &lsquo;J&rsquo; (previously &lsquo;Q&rsquo;)</li>
+<li>plain &lsquo;A&rsquo; $\leftrightarrow$ coded &lsquo;Q&rsquo; (previously &lsquo;J&rsquo;)</li>
+<li>plain &lsquo;H&rsquo; $\leftrightarrow$ coded &lsquo;D&rsquo; (previously &lsquo;C&rsquo;)</li>
+<li>plain &lsquo;R&rsquo; $\leftrightarrow$ coded &lsquo;C&rsquo; (previously &lsquo;D&rsquo;)</li>
+</ul>
+<p>I then noticed that bigrams &lsquo;ER&rsquo; and &lsquo;RE&rsquo; occured quite often in plaintext, and &lsquo;SN&rsquo; and &lsquo;NS&rsquo; are amongst the most frequent occuring bigrams in the ciphertext. Since our current guess is that cipher &lsquo;S&rsquo; is plain &lsquo;E&rsquo;, these bigrams matched up perfectly, i.e. cipher &lsquo;SN&rsquo; and &lsquo;NS&rsquo; are likely plain &lsquo;ER&rsquo; and &lsquo;RE&rsquo;. I hence made the following changes:</p>
+<ul>
+<li>plain &lsquo;R&rsquo; $\leftrightarrow$ coded &lsquo;N&rsquo; (previously &lsquo;C&rsquo;)</li>
+<li>plain &lsquo;N&rsquo; $\leftrightarrow$ coded &lsquo;C&rsquo; (previously &lsquo;N&rsquo;)</li>
+</ul>
+<p>Based on current knowledge, plain &lsquo;E&rsquo; is probably coded &lsquo;S&rsquo;. The bigram &lsquo;ES&rsquo; occurs 7th most commonly in plaintexts, and I guessed that the corresponding ciphertext bigram is &lsquo;SU&rsquo;, which occured 4th most frequently in the ciphertext. Therefore, I made the following changes:</p>
+<ul>
+<li>plain &lsquo;S&rsquo; $\leftrightarrow$ coded &lsquo;U&rsquo; (previously &lsquo;G&rsquo;)</li>
+<li>plain &lsquo;O&rsquo; $\leftrightarrow$ coded &lsquo;G&rsquo; (previously &lsquo;U&rsquo;)</li>
+</ul>
+<p>Decrypting with the current mappings, I got:</p>
+<p><img src="/images/otw_krypton/krypton3-3_enhanced-with-bigram-analysis.png" alt="reults of decryption after enrichment with bigram analysis"></p>
+<p>The highlighted text seems to possibly be &lsquo;caesar shift&rsquo;. I changed the relevant mappings in the correspondences and got the following:</p>
+<p><img src="/images/otw_krypton/krypton3-4_first-tweaking.png" alt="results of first round of tweaking"></p>
+<p>The highlighted seems to be &lsquo;caesar cipher&rsquo; and the last line in the screenshot seems to contain &lsquo;substitution&rsquo;. After making the necessary changes, I got:</p>
+<p><img src="/images/otw_krypton/krypton3-5_second-tweaking.png" alt="results of second round of tweaking"></p>
+<p>I figured the highlighted text is meant to read &rsquo;encryption techniques. it is a type of subsitution cipher&hellip;&rsquo;, and hence made the necessary changes.</p>
+<p>I kept repeating this process, guessing words and revising the mappings, until I recovered the full plaintext:</p>
+<p><img src="/images/otw_krypton/krypton3-6_decrypted-found-text.png" alt="decrypted text"></p>
+<p>The found texts are a writeup about the Caesar cipher, Shakespeare, and a snippet from &lsquo;The Gold-Bug&rsquo; from Edgar Allan Poe. The key used for substitution is:</p>
+<blockquote>
+<p>QAZWSXEDCRFVTGBYHNUJMIKOLP</p>
+</blockquote>
+<p>which we can easily use to decode the contents of <code>krypton4</code>.</p>
+<!-- BRUTE -->
+<h3 id="a-namelevel-4a-level-4"><a name="level-4"></a> Level 4</h3>
+<p>This challenge requires us to break a Vigenere cipher. One method is to break the ciphertext up into n blocks, where n is the keysize (in this case 6) and perform frequency analysis on each block. <a href="https://stackoverflow.com/questions/59094006/breaking-vigenere-only-knowing-key-length">This post</a> details how it can be done.</p>
+<p>I tried to write a script to implement this method, but even though I was able to generate the blocks and figure out the top few most likely keys based on simple frequency analysis, I couldn&rsquo;t figure out an effective and efficient way to analyse the correctness of the results:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> itertools
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>KEY_SIZE <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">6</span>
+</span></span><span style="display:flex;"><span>cipher_text <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&lt;omitted&gt;&#39;</span>
+</span></span><span style="display:flex;"><span>MOST_FREQUENT_LETTERS <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;ETAOINSHRD&#39;</span>
+</span></span><span style="display:flex;"><span>N <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">strip_ciphertext</span>():
+</span></span><span style="display:flex;"><span>    temp <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">global</span> cipher_text
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> c <span style="color:#ff6ac1">in</span> cipher_text:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> c <span style="color:#ff6ac1">==</span> <span style="color:#5af78e">&#39; &#39;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">continue</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">else</span>:
+</span></span><span style="display:flex;"><span>            temp <span style="color:#ff6ac1">+=</span> c
+</span></span><span style="display:flex;"><span>    cipher_text <span style="color:#ff6ac1">=</span> temp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">make_blocks</span>(blocks):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> index <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(KEY_SIZE):
+</span></span><span style="display:flex;"><span>        blocks[index] <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    count <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> letter <span style="color:#ff6ac1">in</span> cipher_text:
+</span></span><span style="display:flex;"><span>        blocks[count <span style="color:#ff6ac1">%</span> KEY_SIZE] <span style="color:#ff6ac1">+=</span> letter
+</span></span><span style="display:flex;"><span>        count <span style="color:#ff6ac1">+=</span> <span style="color:#ff9f43">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">calculate_frequencies</span>(text):
+</span></span><span style="display:flex;"><span>    frequencies <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">dict</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> letter <span style="color:#ff6ac1">in</span> text:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> letter <span style="color:#ff6ac1">not</span> <span style="color:#ff6ac1">in</span> frequencies<span style="color:#ff6ac1">.</span>keys():
+</span></span><span style="display:flex;"><span>            frequencies[letter] <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>
+</span></span><span style="display:flex;"><span>        frequencies[letter] <span style="color:#ff6ac1">+=</span> <span style="color:#ff9f43">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff5c57">sorted</span>(frequencies<span style="color:#ff6ac1">.</span>items(), key<span style="color:#ff6ac1">=</span><span style="color:#ff6ac1">lambda</span> item: item[<span style="color:#ff9f43">1</span>], reverse<span style="color:#ff6ac1">=</span><span style="color:#ff6ac1">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">populate_guesses</span>(frequencies):
+</span></span><span style="display:flex;"><span>    guesses <span style="color:#ff6ac1">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> index <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(KEY_SIZE):
+</span></span><span style="display:flex;"><span>        guesses<span style="color:#ff6ac1">.</span>append([])
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">for</span> i <span style="color:#ff6ac1">in</span> <span style="color:#ff5c57">range</span>(N):
+</span></span><span style="display:flex;"><span>            plain <span style="color:#ff6ac1">=</span> MOST_FREQUENT_LETTERS[i]
+</span></span><span style="display:flex;"><span>            most_frequent_in_cipher <span style="color:#ff6ac1">=</span> frequencies[index][<span style="color:#ff9f43">0</span>][<span style="color:#ff9f43">0</span>]
+</span></span><span style="display:flex;"><span>            diff <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">ord</span>(most_frequent_in_cipher) <span style="color:#ff6ac1">-</span> <span style="color:#ff5c57">ord</span>(plain)
+</span></span><span style="display:flex;"><span>            diff <span style="color:#ff6ac1">=</span> diff <span style="color:#ff6ac1">+</span> <span style="color:#ff9f43">26</span> <span style="color:#ff6ac1">if</span> diff <span style="color:#ff6ac1">&lt;</span> <span style="color:#ff9f43">0</span> <span style="color:#ff6ac1">else</span> diff
+</span></span><span style="display:flex;"><span>            guesses[index]<span style="color:#ff6ac1">.</span>append(diff)
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> guesses
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">is_possible</span>(text):
+</span></span><span style="display:flex;"><span>    words <span style="color:#ff6ac1">=</span> [<span style="color:#5af78e">&#39;VIGENERE&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> word <span style="color:#ff6ac1">in</span> words:
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> word <span style="color:#ff6ac1">not</span> <span style="color:#ff6ac1">in</span> text:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">return</span> <span style="color:#ff6ac1">False</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">return</span> <span style="color:#ff6ac1">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">decrypt</span>(guesses):
+</span></span><span style="display:flex;"><span>    keys <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">list</span>(itertools<span style="color:#ff6ac1">.</span>product(<span style="color:#ff6ac1">*</span>guesses))
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">for</span> k <span style="color:#ff6ac1">in</span> keys:
+</span></span><span style="display:flex;"><span>        plaintext <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>        count <span style="color:#ff6ac1">=</span> <span style="color:#ff9f43">0</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">for</span> c <span style="color:#ff6ac1">in</span> cipher_text:
+</span></span><span style="display:flex;"><span>            plain_ord <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">ord</span>(c) <span style="color:#ff6ac1">-</span> k[count <span style="color:#ff6ac1">%</span> KEY_SIZE]
+</span></span><span style="display:flex;"><span>            <span style="color:#ff6ac1">if</span> plain_ord <span style="color:#ff6ac1">&lt;</span> <span style="color:#ff5c57">ord</span>(<span style="color:#5af78e">&#39;A&#39;</span>):
+</span></span><span style="display:flex;"><span>                plain_ord <span style="color:#ff6ac1">+=</span> <span style="color:#ff9f43">26</span>
+</span></span><span style="display:flex;"><span>            plaintext <span style="color:#ff6ac1">+=</span> <span style="color:#ff5c57">chr</span>(plain_ord)
+</span></span><span style="display:flex;"><span>            count <span style="color:#ff6ac1">+=</span> <span style="color:#ff9f43">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">if</span> is_possible(plaintext):
+</span></span><span style="display:flex;"><span>            <span style="color:#ff5c57">print</span>(plaintext)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>blocks <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">dict</span>()
+</span></span><span style="display:flex;"><span>frequencies <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">dict</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>strip_ciphertext()
+</span></span><span style="display:flex;"><span>make_blocks(blocks)
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">for</span> key <span style="color:#ff6ac1">in</span> blocks<span style="color:#ff6ac1">.</span>keys():
+</span></span><span style="display:flex;"><span>    frequencies[key] <span style="color:#ff6ac1">=</span> calculate_frequencies(blocks[key])
+</span></span><span style="display:flex;"><span>guesses <span style="color:#ff6ac1">=</span> populate_guesses(frequencies)
+</span></span><span style="display:flex;"><span>decrypt(guesses)
+</span></span></code></pre></div><p>This script calculates the N most likely characters for each index of the key and uses all possible keys to decrypt the ciphertext.</p>
+<p>After working on the script for 3 hours, I decided to just use <a href="https://www.dcode.fr/vigenere-cipher">an online tool</a> to derive the key, which took me less than 30 seconds. Using this key, the contents of <code>krypton5</code> are easily decrypted.</p>
+<!-- CLEARTEXT -->
+<h3 id="a-namelevel-5a-level-5"><a name="level-5"></a> Level 5</h3>
+<p>This challenge is similar to the previous one in that a Vigenere cipher is involved. The only difference is that the length of the key is unknown. The length of the key can be found using Kasiski analysis, where the distances between the repeating sequences of characters in the text are used to derive the various possible key lengths (which are factors of the distances between the repeating sequences). <a href="https://crypto.interactive-maths.com/kasiski-analysis-breaking-the-code.html">This article</a> explains this concept well and provides a tool for key length analysis and even decryption.</p>
+<p>Using this tool, I deduced that the key length is most likely 9 characters long. I then used the Vigenere decoder tool from the previous level to figure out the key, which led to the decryption of <code>krypton6</code>.</p>
+<!-- RANDOM -->
+<h3 id="a-namelevel-6a-level-6"><a name="level-6"></a> Level 6</h3>
+<p>The hints reference 8 bit LFSRs, and I found <a href="https://medium.com/@czapfel/an-introduction-to-lfsrs-for-cryptography-bf2602640e91">this article</a> explaining this concept. The article, however, did not explain how to break encryption methods which use this.</p>
+<p>From the <code>README</code> for this challenge, I figured that the ciphertext was generated using:</p>
+<blockquote>
+<p>plain XOR (key AND random) = cipher</p>
+</blockquote>
+<p>and thus thought that <code>(key AND random)</code> could be recovered using <code>cipher XOR plain</code>. However, after doing some tests, I realised that the <code>(key AND random)</code> values were different for different values of plain, even though the same plaintext always yielded the same ciphertext. In a way, this indicates that the <code>(key AND random)</code> values are somehow determined by the plaintext.</p>
+<p>My next approach was to brute force <code>krypton7</code> by executing a known plaintext attack. I began by encrypting the single characters &lsquo;A&rsquo;, &lsquo;B&rsquo;, &lsquo;C&rsquo;, &lsquo;D&rsquo;, and &lsquo;E&rsquo; to see if there were any patterns in the resultant ciphertext :</p>
+<p><img src="/images/otw_krypton/krypton6-1_testing-indiv-letter.png" alt="encrypting individual letters"></p>
+<p>I found that &lsquo;A&rsquo;, &lsquo;B&rsquo;, &lsquo;C&rsquo;, &lsquo;D&rsquo;, &lsquo;E&rsquo; encrypts to &lsquo;E&rsquo;, &lsquo;F&rsquo;, &lsquo;G&rsquo;, &lsquo;H&rsquo;, &lsquo;I&rsquo; - which shows that the plaintext character is &lsquo;shifted&rsquo; by 4. Since the first letter of <code>krypton7</code> is &lsquo;P&rsquo;, the first character of the correspnding plaintext should be &lsquo;L&rsquo;, which I verified by encrypting the single character &lsquo;L&rsquo;. I further verified that encryption of the first character of the plaintext is independent of the subsequent characters in the plaintext by encrypting different words that start with &lsquo;L&rsquo; and verifying that the resultant ciphertexts began with &lsquo;P&rsquo;:</p>
+<p><img src="/images/otw_krypton/krypton6-2_testing-independence-of-first-letter.png" alt="testing independence of first character in encryption"></p>
+<p>We can now do something similar to guess that next character of the <code>krypton7</code> plaintext. I encrypted &lsquo;LA&rsquo;, &lsquo;LB&rsquo;, &lsquo;LC&rsquo; and found that the resultant ciphertexts were &lsquo;PI&rsquo;, &lsquo;PJ&rsquo;, and &lsquo;PK&rsquo; respectively - a &lsquo;shift&rsquo; of 8. Since the second character of <code>krypton7</code> is &lsquo;N&rsquo;, I guessed and verified that the second character of the corresponding plaintext is &lsquo;F&rsquo;.</p>
+<p>Instead of repeating this manual process for the other characters of <code>krypton7</code>, I decided to write a bash script to do it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#78787e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">target</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#39;PNUKLYLWRQKGKBE&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">target_length</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">${#</span><span style="color:#ff5c57">target</span><span style="color:#5af78e">}</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">current_known</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#39;&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">current_known_length</span><span style="color:#ff6ac1">=</span>0;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">while</span> <span style="color:#ff6ac1">[</span> <span style="color:#ff5c57">$current_known_length</span> -lt <span style="color:#ff5c57">$target_length</span> <span style="color:#ff6ac1">]</span>;
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">do</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff5c57">starting_length</span><span style="color:#ff6ac1">=</span><span style="color:#ff5c57">$current_known_length</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff5c57">target_substring</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">target</span>:<span style="color:#ff5c57">0</span>:<span style="color:#ff5c57">$current_known_length</span> + 1<span style="color:#5af78e">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">for</span> i in <span style="color:#ff6ac1">$(</span>seq <span style="color:#ff9f43">65</span> 90<span style="color:#ff6ac1">)</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">do</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">letter</span><span style="color:#ff6ac1">=</span><span style="color:#ff6ac1">$(</span><span style="color:#ff5c57">printf</span> <span style="color:#5af78e">&#34;\x</span><span style="color:#ff6ac1">$(</span><span style="color:#ff5c57">printf</span> %x <span style="color:#ff5c57">$i</span><span style="color:#ff6ac1">)</span><span style="color:#5af78e">&#34;</span><span style="color:#ff6ac1">)</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">guess</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">current_known</span><span style="color:#5af78e">}${</span><span style="color:#ff5c57">letter</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">plain_filename</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;plain</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">guess</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">cipher_filename</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;cipher</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">guess</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">echo</span> <span style="color:#ff5c57">$guess</span> &gt; <span style="color:#ff5c57">$plain_filename</span>
+</span></span><span style="display:flex;"><span>		./encrypt6 <span style="color:#5af78e">${</span><span style="color:#ff5c57">plain_filename</span><span style="color:#5af78e">}</span> <span style="color:#5af78e">${</span><span style="color:#ff5c57">cipher_filename</span><span style="color:#5af78e">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">result</span><span style="color:#ff6ac1">=</span><span style="color:#ff6ac1">$(</span>cat <span style="color:#5af78e">${</span><span style="color:#ff5c57">cipher_filename</span><span style="color:#5af78e">}</span><span style="color:#ff6ac1">)</span>
+</span></span><span style="display:flex;"><span>		rm <span style="color:#5af78e">${</span><span style="color:#ff5c57">plain_filename</span><span style="color:#5af78e">}</span>
+</span></span><span style="display:flex;"><span>        rm <span style="color:#5af78e">${</span><span style="color:#ff5c57">cipher_filename</span><span style="color:#5af78e">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff6ac1">if</span> <span style="color:#ff6ac1">[</span> <span style="color:#5af78e">&#34;</span><span style="color:#ff5c57">$result</span><span style="color:#5af78e">&#34;</span> <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;</span><span style="color:#ff5c57">$target_substring</span><span style="color:#5af78e">&#34;</span> <span style="color:#ff6ac1">]</span>; <span style="color:#ff6ac1">then</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff5c57">current_known</span><span style="color:#ff6ac1">=</span><span style="color:#5af78e">&#34;</span><span style="color:#5af78e">${</span><span style="color:#ff5c57">guess</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff6ac1">((</span>current_known_length++<span style="color:#ff6ac1">))</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#ff5c57">break</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff6ac1">fi</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">done</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">if</span> <span style="color:#ff6ac1">[</span> <span style="color:#ff5c57">$starting_length</span> <span style="color:#ff6ac1">=</span> <span style="color:#ff5c57">$current_known_length</span> <span style="color:#ff6ac1">]</span>; <span style="color:#ff6ac1">then</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">echo</span> <span style="color:#5af78e">&#34;Error: no correct guesses&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#ff5c57">break</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff6ac1">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">echo</span> <span style="color:#5af78e">&#34;The unencrypted target string is: </span><span style="color:#5af78e">${</span><span style="color:#ff5c57">current_known</span><span style="color:#5af78e">}</span><span style="color:#5af78e">&#34;</span>
+</span></span></code></pre></div><p>This script automates the process described above: it appends a possible character (&lsquo;A&rsquo; to &lsquo;Z&rsquo;) to the current known plaintext string, encrypts the whole thing, and compares the result to the relevant substring of the <code>krypton7</code> ciphertext. If they match, then that possible character is appended to and considered part of the known plaintext string and the process repeats for the next character in the ciphertext. If the result doesn&rsquo;t match, then the next possible character is considered. This process repeats until all characters in <code>krypton7</code> have been guessed and the plaintext for <code>krypton7</code> is recovered.</p>
+<p>Using this method, we didn&rsquo;t need to figure out how the random numbers were generated during the encryption process nor the key involved. Running this quickly yielded the plaintext of <code>krypton7</code>.</p>
+<!-- LFSRISNOTRANDOM -->
+<p><img src="/images/otw_krypton/krypton7-final.png" alt="accessing krypton7 with found password"></p>
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-7 right-7 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2024 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>
