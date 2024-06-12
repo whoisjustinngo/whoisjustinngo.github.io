@@ -1,0 +1,488 @@
+<!-- This website has been built with 💖 and 🍕 on 🌍 using Salinger Theme for Hugo framework. The theme has been released with MIT licence and can be found at https://github.com/jacksalici/salinger-theme. -->
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  
+  <meta name="title" content="Portfolio of an aspiring cybersecurity professional" />
+   
+  <meta name="description" content="My name is Justin, and this is my blog where I will document things I&#39;ve done, skills I&#39;ve acquired, and things I&#39;ve learnt." />
+   <meta name="keywords" content="coding44ctf44cybersecurity44hackthebox44web44owasp top 10"/>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Justin Ngo" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+  <link rel="shortcut icon" href="https://whoisjustinngo.github.io/logo.svg" />
+  
+
+  
+  
+
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+       
+  <link href="/css/styles.min.709d3c6660552a09b2ac111885a56d7032e0ff83fa5e05a0247666f181b49d74.css" rel="stylesheet" />
+
+  
+  <link
+    rel="preload"
+    as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js" integrity="sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+<script>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            
+            
+                delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                
+                
+                {left: "\begin{equation}", right: "\end{equation}", display: true},
+                {left: "\begin{align}", right: "\end{align}", display: true},
+            ],
+            
+            throwOnError : false
+        });
+    });
+</script>
+
+  
+
+  
+
+  
+  <script
+    src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+    crossorigin="anonymous"
+  ></script>
+  
+
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"
+  ></script>
+
+  
+  <title>
+    HackTheBox: OWASP Top 10 Track ~
+    Whois Justin Ngo?
+  </title>
+
+  <script>
+  changeTheme()
+
+  function changeTheme(){
+    if (localStorage.theme === 'dim' || ((localStorage.theme === 'auto' || !('theme' in localStorage)) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark')
+  } else {
+    document.documentElement.classList.remove('dark')
+  }
+  }
+
+  </script>
+</head>
+<body class="flex flex-col h-screen justify-between" tabindex="0">
+
+<div class="navbar bg-transparent backdrop-filter z-10 fixed top-0">
+  <div class="flex-1">
+    
+  </div>
+  <div class="flex-none">
+  
+    
+
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/" title="Homepage">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><style>svg{fill:#d4d4d4}</style><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+        </a>
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+        <a href = "/posts/" title="Posts">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+        </a>  
+        </label>
+    </div>
+    <div class="dropdown dropdown-end dropdown-hover">
+        <label tabindex="0" class="btn btn-ghost btn-circle">
+            <a href="/about" title="About me">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><style>svg{fill:#d4d4d4}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+        </label>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  
+</script>
+<div class="mb-auto"> 
+   
+    
+<div class=" bg-base-200  mb-7  place-items-start">
+    <div class="feed w-full pt-24 pb-10">
+      <div class="  space-y-3 ">
+        
+        
+
+        <h1 class="  text-4xl  font-bold font-serif">
+             HackTheBox: OWASP Top 10 Track 
+        </h1>
+        
+        
+        
+        
+
+        
+        <div class="text-xs pt-2">
+  
+  
+  
+  <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M596.817-220Q556-220 528-248.183q-28-28.183-28-69T528.183-386q28.183-28 69-28T666-385.817q28 28.183 28 69T665.817-248q-28.183 28-69 28ZM180-80q-24 0-42-18t-18-42v-620q0-24 18-42t42-18h65v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q310-861.6 310-848v28h340v-28q0-13.6 9.2-22.8 9.2-9.2 22.8-9.2 14.025 0 23.513 9.2Q715-861.6 715-848v28h65q24 0 42 18t18 42v620q0 24-18 42t-42 18H180Zm0-60h600v-430H180v430Zm0-490h600v-130H180v130Zm0 0v-130 130Z"/></svg>
+      Published on
+    12 June 2024.
+
+
+      
+  
+
+  <br/>
+
+  
+
+
+  
+</div>
+
+        
+        
+        
+
+      </div>
+    </div>
+</div>
+
+
+
+   
+
+  
+
+  <article class="prose text-justify feed"><h1 id="introduction">Introduction</h1>
+<p>HackTheBox&rsquo;s <a href="https://app.hackthebox.com/tracks/OWASP-Top-10">OWASP Top 10 track</a> gives players the opportunity to &lsquo;[exploit] the most critical security risks to web applications&rsquo;. The <a href="https://owasp.org/www-project-top-ten/">OWASP Top 10</a> contains the likes of &lsquo;broken access control&rsquo;, &lsquo;injection&rsquo;, and &lsquo;insecure design&rsquo;, and each of the challenges in this track replicates 1 or more of these vulnerabilities for players to exploit.</p>
+<p>Web exploitation is currently my favourite area of pen testing. Most of these challenges were pretty straightforward; a few of the challenges really stumped me and I had to look at online walkthroughs for hints. In my opinion this track is a good starting point for web exploitation as many &lsquo;classic&rsquo; vulnerabilities are covered. Furthermore, once the vulnerability is found the method of exploiting it isn&rsquo;t really complex, which makes the experience more enjoyable.</p>
+<p>The purpose of this writeup is to record down my thought process while solving these challenges, and to have a record for myself to refer to in the future. It is not meant to serve as a comprehensive explanation on the concepts and techniques used - there are far better resources already out there.</p>
+<h1 id="stages">Stages</h1>
+<ul>
+<li><a href="#looking-glass">looking glass</a></li>
+<li><a href="#sanitize">sanitize</a></li>
+<li><a href="#baby-auth">baby auth</a></li>
+<li><a href="#baby-nginxatsu">baby nginxatsu</a></li>
+<li><a href="#baby-waffles-order">baby WAFfles order</a></li>
+<li><a href="#baby-todo-or-not-todo">baby todo or not todo</a></li>
+<li><a href="#baby-bonechewercon">baby BoneChewerCon</a></li>
+<li><a href="#full-stack-conf">Full Stack Conf</a></li>
+<li><a href="#baby-website-rick">baby website rick</a></li>
+<li><a href="#baby-breaking-grad">baby breaking grad</a></li>
+</ul>
+<h2 id="a-namelooking-glassalooking-glass"><a name="looking-glass"></a>looking glass</h2>
+<p>The webpage allows a user to execute either ping or traceroute commands for a user-specified IP address. I tried entering &ldquo;helloworld&rdquo; as the IP address and running a ping, but nothing interesting happened.</p>
+<p>I realised that if I entered a &lsquo;valid&rsquo; IP address and append a semicolon and a shell command after it, the shell command will be executed! Entering &lsquo;127.0.0.1; id&rsquo; in the IP address field for ping yields the following:</p>
+<p><img src="/images/htb/owasp-top-10/looking-glass/1_exeucting-shell-commands.png" alt="executing id command on back end server"></p>
+<p>Now that I was able to execute commands on the target server, I tried some reverse shell payloads but none of them seemed to work. In the end I just resorted to executing commands one at a time. I soon found the file containing the flag in the <code>/</code> directory.</p>
+<h2 id="a-namesanitizeasanitize"><a name="sanitize"></a>sanitize</h2>
+<p>The webpage invites us to enter our username and password. Entering &lsquo;admin&rsquo; for both username and password yields a small barely visible line right at the bottom:</p>
+<p><img src="/images/htb/owasp-top-10/sanitize/1_sql-query-hint.png" alt="sql query executed"></p>
+<p>This is (probably) the sql query which is executed on the back end. Knowing this, I performed an sql injection by entering <code>' or 1=1 --</code> as the username (and anything for the password). Entering that particular username means that the final SQL query ran on the backend is <code>select \* from users where username = '' or 1=1 --' AND password = 'a';</code>. The bit behind <code>--</code> is ignored, and since <code>1=1</code> is true, the disjunction evaluates as true, logging us in and giving us the flag.</p>
+<h2 id="a-namebaby-authababy-auth"><a name="baby-auth"></a>baby auth</h2>
+<p>The page allows us to either log in or create an account. Creating an account with test:test and logging in with it shows a message telling us we are not an admin.</p>
+<p>Using Burpsuite&rsquo;s proxy feature and refreshing the page while logged in as test, we see that there is a session cookie set. However, the cookie is just the string &lsquo;{username:test}&rsquo; base-64 and URL encoded:</p>
+<p><img src="/images/htb/owasp-top-10/baby-auth/1_session-cookie.png" alt="session cookie decoded"></p>
+<p>This means that we are able to forge the session cookie for any username we want!</p>
+<p>In the inspector panel, I simply replaced &rsquo;test&rsquo; with &lsquo;admin&rsquo;, clicked on &lsquo;apply changes&rsquo; to update the session cookie of the request, and forwarded the request to the server, giving the flag.</p>
+<h2 id="a-namebaby-nginxatsuababy-nginxatsu"><a name="baby-nginxatsu"></a>baby nginxatsu</h2>
+<p>The application allows users to create an account. Once logged in, the user is shown the account homepage, where they are able to tweak different parameters and create nginx config files, in addition to viewing existing config files they have created.</p>
+<p>I tried creating an account, logging in, and creating 2 nginx files. My config files were number 51 and 52. Opening any of the generated config files, we see the following hint in the <code>server</code> section:</p>
+<blockquote>
+<p>We sure hope so that we don&rsquo;t spill any secrets within the open directory on /storage</p>
+</blockquote>
+<p>I also noticed that when viewing a created config, the URL of the page is <code>http://&lt;challenge machine IP and port&gt;/config/config_number</code>. This gave me the idea to perform a path traversal attack to access the <code>/storage</code> directory on the webserver, since the hint said that it was open.</p>
+<p>I navigated to <code>http://&lt;challenge machine IP and port&gt;/../../../../storage/</code>, and saw the following:</p>
+<p><img src="/images/htb/owasp-top-10/nginxatsu/1_path-traversal-to-storage-directory.png" alt="contents of storage directory"></p>
+<p>These seem to all be the nginx config files generated by the web application for all users. Scrolling all the way down, we see a file called &lsquo;v1_db_backup_1604123342.tar.gz&rsquo;. I used <code>wget</code> to download the file to my local machine, then used <code>tar -xvzf &lt;filename&gt;</code> to unzip it. This yielded a file called &lsquo;database.sqlite&rsquo;, which was what it&rsquo;s name suggested - an sqlite database.</p>
+<p>Using <code>sqlite3 &lt;database filename&gt;</code>, I opened the database and used<code>.tables</code> to display the tables in the database:</p>
+<p><img src="/images/htb/owasp-top-10/nginxatsu/2_db-tables.png" alt="tables in db"></p>
+<p>The <code>users</code> table seemed the most useful, so I used <code>PRAGMA table_info(users);</code> to get the names of the columns in the table:</p>
+<p><img src="/images/htb/owasp-top-10/nginxatsu/3_col-names-users-table.png" alt="column name for users table"></p>
+<p>For a start, I just wanted to look at the user&rsquo;s email and password, since those are what we need to login. Thus, I used <code>select email,password from users;</code> to retrieve these:</p>
+<p><img src="/images/htb/owasp-top-10/nginxatsu/4_user-credentials.png" alt="user credentials obtained"></p>
+<p>The first user seemed the most interesting since they had &lsquo;adm&rsquo; in their email (which probably stood for &lsquo;admin&rsquo;). Their stored password is &rsquo;e7816e9a10590b1e33b87ec2fa65e6cd&rsquo;, but this was just a hash of the user&rsquo;s actual password. This hash was cracked in a few milliseconds using an <a href="https://hashes.com/en/decrypt/hash">online tool</a>:</p>
+<p><img src="/images/htb/owasp-top-10/nginxatsu/5_cracking-pw-hash.png" alt="cracking the admin&rsquo;s password"></p>
+<p>I then logged in with the credentials <a href="mailto:nginxatsu-adm-01@makelarid.es">nginxatsu-adm-01@makelarid.es</a>:adminadmin1 (to log out just clear all cookies and refresh the page). The flag is then right there!</p>
+<h2 id="a-namebaby-waffles-orderababy-waffles-order"><a name="baby-waffles-order"></a>baby WAFfles order</h2>
+<p>The webpage allows us to order either &lsquo;WAFfles&rsquo; or &lsquo;ice scream&rsquo; to a specified table. The header of the webpage says &lsquo;xxe&rsquo;. I&rsquo;ve encountered xxe injections (which stands for xml external entity injections) before.</p>
+<p>I began by intercepting an outgoing order request from this webpage using burpsuite&rsquo;s proxy:</p>
+<p><img src="/images/htb/owasp-top-10/baby-waffles-order/1_outgoing-order-request.png" alt="outgoing order request"></p>
+<p>The body of the outgoing request seems to be JSON data, not XML. I found <a href="https://www.netspi.com/blog/technical-blog/web-application-pentesting/playing-content-type-xxe-json-endpoints/">this article</a> demonstrating how to change the JSON data and request headers to conduct the XXE. Specifically, we have to:</p>
+<ul>
+<li>change the <code>content-type</code> header from &lsquo;application/json&rsquo; to &lsquo;application/xml&rsquo;</li>
+<li>change the request body to have xml syntax</li>
+</ul>
+<p>Once this is done, the request should work as before:</p>
+<p><img src="/images/htb/owasp-top-10/baby-waffles-order/2_changing-json-to-xml.png" alt="changing json to xml"></p>
+<p>Notice that whatever we enter in the &lsquo;food&rsquo; field is echoed in the response. This determines how we should structure the XXE injection.</p>
+<p>We can try executing an XXE injection:</p>
+<p><img src="/images/htb/owasp-top-10/baby-waffles-order/3_xxe-poc.png" alt="testing out xxe"></p>
+<p>We were able to use an XXE injection to retrieve the <code>/etc/passwd</code> file on the system!</p>
+<p>I was starting to wonder how I was supposed to use this to find the flag but I just tried <code>/flag</code> and it turns out that that was where the flag was.</p>
+<h2 id="a-namebaby-todo-or-not-todoababy-todo-or-not-todo"><a name="baby-todo-or-not-todo"></a>baby todo or not todo</h2>
+<p>This web application is a todo list - we can add todos, mark existing todos as completed and/or delete them.</p>
+<p>Looking at the source code, we see the following javascript which is used to generate the list of tasks for a specified user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#78787e">// don&#39;t use getstatus(&#39;all&#39;) until we get the verify_integrity() patched
+</span></span></span><span style="display:flex;"><span><span style="color:#78787e"></span><span style="color:#ff6ac1">const</span> update <span style="color:#ff6ac1">=</span> () =&gt; getTasks(<span style="color:#5af78e">&#34;user7eC7C5b4&#34;</span>);
+</span></span><span style="display:flex;"><span>update();
+</span></span><span style="display:flex;"><span>setInterval(update, <span style="color:#ff9f43">3000</span>);
+</span></span></code></pre></div><p>The last line indicates that <code>update()</code> is called every 3000ms = 3 seconds.</p>
+<p>(When I opened another session of this app in a different browser tab, I started encountering occasional error messages saying the server refused to process my entries. This seemed to occur randomly. Sometimes it would work well and other times it won&rsquo;t.)</p>
+<p>I managed to intercept an outgoing request after adding a todo:</p>
+<p><img src="/images/htb/owasp-top-10/baby-todo-or-not-todo/1_intercepted-request-add-todo.png" alt="intercepted request when adding todo"></p>
+<p>Decoding the session cookie yields the following:</p>
+<p><img src="/images/htb/owasp-top-10/baby-todo-or-not-todo/2-decoding_sesion_cookie.png" alt="decoded session cookie"></p>
+<p>We see that a portion of the session cookie is just {&ldquo;authentication&rdquo;:&quot;<user-id>&quot;}. The rest of the decoded text are unprintable characters, and converting them to hex also doesn&rsquo;t yield anything interesting.</p>
+<p>We also note that the request is made to the <code>/api/add</code> endpoint. The value in the &lsquo;secret&rsquo; field of the request body seems to be a hex string, but decoding it doesn&rsquo;t yield anything useful.</p>
+<p>After forwarding the request to add the todo, another request is intercepted, which seems to be for updating the list of existing todos for the current user:</p>
+<p><img src="/images/htb/owasp-top-10/baby-todo-or-not-todo/3_intercepted-update-list.png" alt="intercepted request for updating list of todos"></p>
+<p>We note that the request is made to <code>/api/list/&lt;user id&gt;/?secret=&lt;user secret&gt;</code>.</p>
+<p>I did more testing, and realised that the endpoints for marking a todo as complete and deleting a todo are <code>/api/complete/&lt;todo number&gt;/?secret=&lt;user secret&gt;</code> and <code>/api/delete/&lt;todo number&gt;/?secret=&lt;user secret&gt;</code> respectively.</p>
+<p>After trying to solve this for a few hours, I gave up and consulted <a href="https://medium.com/@isaac.potts03/baby-todo-or-not-todo-owasp-top-10-hackthebox-98a3171e76e3">a walkthrough</a>. It turns out that the solution lies in the endpoint to list all todos for a particular user. If we were to fuzz the <code>&lt;user id&gt;</code> value of that endpoint, we will discover an exposed endpoint: <code>/api/list/all/?secret=&lt;user secret&gt;</code> which we are able to access using our current user&rsquo;s secret. Making a get request to that endpoint lists the todos of all users, including the administrators:</p>
+<p><img src="/images/htb/owasp-top-10/baby-todo-or-not-todo/4_viewing-all-todos.png" alt="viewing all todos stored on server including the admin&rsquo;s"></p>
+<p>The flag is one of the admin&rsquo;s todos. This challenge showcases broken authentication, as we were able to access any user&rsquo;s todos even though we didn&rsquo;t have their secret.</p>
+<h2 id="a-namebaby-bonechewerconababy-bonechewercon"><a name="baby-bonechewercon"></a>baby BoneChewerCon</h2>
+<p>The website allows us to enter an email address to register. I entered some gibberish and hit register, and I was brought to what seemed like a debugging page. Scrolling down, I found the flag.</p>
+<p>Reading the official walkthrough, I understood that this challenge was created with the intention that players become aware of the security risks associated with improper configurations in web applications. In this case, the web application portal for registration was under maintenance but instead of presenting visitors with a benign error message when they visited the site, the site was improperly configured to display the debugging portal which the devs are using for maintenance.</p>
+<h2 id="a-namefull-stack-confafull-stack-conf"><a name="full-stack-conf"></a>Full Stack Conf</h2>
+<p>The web application allows us to enter an email to sign up to the mailing list. It also hints that we can &lsquo;pop an alert to get the flag&rsquo;. This is possibly referencing one of the classic ways to test XSS (cross site scripting). To pop an alert, we enter: <code>&lt;script&gt;alert(0);&lt;/script&gt;</code> and hit sign-up - the flag immediately shows up.</p>
+<h2 id="a-namebaby-website-rickababy-website-rick"><a name="baby-website-rick"></a>baby website rick</h2>
+<p>The header of this site reads &lsquo;insecure deserialisation&rsquo;. I&rsquo;ve encountered insecure deserialisation in previous CTFs. There isn&rsquo;t anything significant on the page apart from some text saying:</p>
+<blockquote>
+<p>Don&rsquo;t play around with this serum morty!! &lt;<strong>main</strong>.anti_pickle_serum object at 0x7fd43356a8d0&gt;</p>
+</blockquote>
+<p>The source code didn&rsquo;t disclose how this string was generated - probably some back end code on the server. The reference to &lsquo;pickle&rsquo; in the text and the reference to &lsquo;pickle rick&rsquo; in the overall theme of the website reminds me of the <a href="https://docs.python.org/3/library/pickle.html">python &lsquo;pickle&rsquo; module</a>, used for serialising and deserialising python objects.</p>
+<p>Intercepting an outgoing request from the website using Burpsuite&rsquo;s proxy shows the following:</p>
+<p><img src="/images/htb/owasp-top-10/baby-website-rick/1_inspecting-request.png" alt="plan_b cookie in webpage"></p>
+<p>We see that there is a <code>plan_b</code> cookie set. It turns out that the cookie is base64 encoded. Decoding it yields the following:</p>
+<p><img src="/images/htb/owasp-top-10/baby-website-rick/2_decoding-planb-secret.png" alt="unencoded value of plan_b cookie"></p>
+<p>Seems like some text here matches the text displayed on the webpage. If we are able to change the contents of this cookie, we can base64 encode it and send it to the server as the <code>plan_b</code> cookie, which might help us get the flag.</p>
+<p>I did further testing with pickle and found that <code>plan_b</code> probably contained an object from the <code>anti_pickle_serum</code> class. I ran the following script to verify:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> pickle<span style="color:#ff6ac1">,</span> base64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plan_b <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;KGRwMApTJ3NlcnVtJwpwMQpjY29weV9yZWcKX3JlY29uc3RydWN0b3IKcDIKKGNfX21haW5fXwphbnRpX3BpY2tsZV9zZXJ1bQpwMwpjX19idWlsdGluX18Kb2JqZWN0CnA0Ck50cDUKUnA2CnMu&#34;</span> <span style="color:#78787e"># plan_b cookie value</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">class</span> <span style="color:#f3f99d">anti_pickle_serum</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(pickle<span style="color:#ff6ac1">.</span>loads(base64<span style="color:#ff6ac1">.</span>b64decode(plan_b)))
+</span></span></code></pre></div><p>and got the following output:</p>
+<blockquote>
+<p>{&lsquo;serum&rsquo;: &lt;<strong>main</strong>.anti_pickle_serum object at 0x10ac45fd0&gt;}</p>
+</blockquote>
+<p>Seems like the serialised object in the <code>plan_b</code> cookie is a dictionary object containing 1 key-value pair. As per <a href="https://redfoxsec.com/blog/insecure-deserialization-in-python/">this article</a>, I implemented a reverse shell connection in the built-in <code>__reduce__</code> function of the <code>anti_pickle_serum</code> object.</p>
+<p>However, when I printed out the pickled object to take a look, the output looked nothing like the unencoded value of the original <code>plan_b</code> cookie. It was full of unprintable characters.</p>
+<p>It was only after consulting <a href="https://ir0nstone.gitbook.io/hackthebox/challenges/web/baby-website-rick">this walkthrough</a> did I find out that I needed to specify the <a href="https://docs.python.org/3/library/pickle.html#data-stream-format">data-stream format</a> (protocol) when executing <code>pickle.dumps</code> and use python 2 to pickle my objects.</p>
+<p>Changing <code>pickle.dumps(object_to_pickle)</code> to <code>pickle.dumps(object_to_pickle, protocol=0)</code> yielded an output more similar to the one from decoding the <code>plan_b</code> cookie. Unfortunately, even though I was able to get an output which resembled the original serialised cookie, the aforementioned reverse shell doesn&rsquo;t work.</p>
+<p>I returned to the walkthrough mentioned above. Thinking that I had followed all correct steps detailed in the walkthrough, I decided to copy and paste the exact code that the author used and test it out on my local device. Strangely, even though the exact code was the same, the output on my device was different from that which the author got (with both python2 and 3)!!</p>
+<p>I then came across <a href="https://medium.com/@isaac.potts03/baby-website-rick-owasp-top-10-track-hack-the-box-98a7bb22879a">this walkthrough</a> which mentioned how they observed <a href="https://0x00sec.org/t/pickle-insecure-deserialization-hackthebox-baby-website-rick/27130">another walkthrough</a> use the <code>pickletools</code> library to optimise the serialisation process, and this was what made the solution ultimately work. However, upon closer inspection, generating the final payload didn&rsquo;t involve using <code>pickletools</code> at all - it was merely used by the author of the latter article as a debugging tool to reverse engineer the original pickled object.</p>
+<p>However, I did notice that they used <code>subprocess.checkoutput</code> instead of <code>os.system</code> to execute commands on the target server. I made the requisite changes to my script, which now looked like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> base64 <span style="color:#ff6ac1">import</span> b64encode
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> subprocess
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> pickle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">class</span> <span style="color:#f3f99d">anti_pickle_serum</span>(<span style="color:#ff5c57">object</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#ff6ac1">def</span> <span style="color:#57c7ff">__reduce__</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff6ac1">return</span> subprocess<span style="color:#ff6ac1">.</span>check_output, ([<span style="color:#5af78e">&#39;whoami&#39;</span>],)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>object_to_serialise <span style="color:#ff6ac1">=</span> {<span style="color:#5af78e">&#39;serum&#39;</span>:anti_pickle_serum()}
+</span></span><span style="display:flex;"><span>serialised <span style="color:#ff6ac1">=</span> pickle<span style="color:#ff6ac1">.</span>dumps(object_to_serialise, protocol<span style="color:#ff6ac1">=</span><span style="color:#ff9f43">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(b64encode(serialised))
+</span></span></code></pre></div><p>I ran the script using python 2.7.18, and set the output string as the value of the <code>plan_b</code> cookie. It then finally worked:</p>
+<p><img src="/images/htb/owasp-top-10/baby-website-rick/3_whoami-running-on-server.png" alt="executing whoami on target server"></p>
+<p>I successfully ran <code>whoami</code> on the target server, and the output was &rsquo;nobody&rsquo;. Now that I was able to generate commands on the server, I ran <code>ls</code> on the server. While doing this I found out that I was <em>not</em> supposed to URL encode the characters in the generated base64 string, if not there would be an internal server error.</p>
+<p>Using <code>ls</code>, I was able to discover the file containing the flag, and read the file using <code>['cat', 'filename']</code>.</p>
+<p>What made this level challenging was not the concept covered, but the troubleshooting and configuration of the tools. I spent hours just testing, configuring, and reconfiguring the tools and script to find out what was going on. Till date I still do not know why the code from that walkthrough produced different output on my device.</p>
+<p>On the brightside, I now know what to look out for when troubleshooting python pickle serialisation.</p>
+<h2 id="a-namebaby-breaking-gradababy-breaking-grad"><a name="baby-breaking-grad"></a>baby breaking grad</h2>
+<p>The web app lets us select one of two students and ask the server whether they passed.</p>
+<p>Intercepting a request when asking whether a student passed, we see the following:</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/1_request-to-figure-if-user-passed.png" alt="intercepted request to decide if student passed"></p>
+<p>Let&rsquo;s take a look at the source code, beginning with the routing for post requests made to <code>api/calculate</code> in <code>routes/index.js</code>. There is first a check if there is a <code>name</code> specified in the request body, and an error message is thrown if there isn&rsquo;t. There is then a check for a specified <code>formula</code> in the request. If there is then the <code>formula</code> specified in the request is stored in a local <code>formula</code> variable, else a default is stored. Next, there is a check for whether student with <code>name</code> <code>isDumb</code>, and whether it is <em>not</em> the case that the student with <code>name</code> <code>hasPassed</code>. Functions <code>isDumb</code> and <code>hasPassed</code> are in <code>StudentHelper.js</code>, and we will look at them later. If any of these conditions are true, then <code>name</code> has not passed. Else, <code>name</code> has passed.</p>
+<p>Let&rsquo;s look at <code>StudentHelper.js</code> next. <code>isDumb</code> takes a single argument, <code>name</code>, and returns true if <code>name</code> includes the strings &lsquo;Baker&rsquo; and &lsquo;Purvis&rsquo;. This means that the two students we are able to select on the homepage will always not pass. If we intercept the request and change the value of <code>name</code> we might be able to get a passing result.</p>
+<p>Let&rsquo;s look at <code>hasPassed</code>. It takes in 2 arguments. The first expects an object with at least 3 properties: <code>exam</code>, <code>paper</code>, <code>assignment</code>. Looking back at <code>routes/index.js</code>, we see that this is the <code>student</code> object, i.e. the request body. The second argument is <code>formula</code>. Recall that this is either user supplied or default.</p>
+<p><code>hasPassed</code> only contains 3 lines of code. The first line prepares <code>ast</code> using <code>formula</code>, the second calculates <code>weight</code> using <code>ast</code>, <code>exam</code>, <code>paper</code>, and <code>assignment</code>, and the third line just returns whether <code>weight</code> is &gt;= 10.5. The first line uses the NodeJS package <code>esprima</code> to process <code>formula</code> and prepare <code>ast</code>, whereas the second line uses the <code>static-eval</code> package to evaluate <code>weight</code>.</p>
+<p>Let&rsquo;s try getting a &lsquo;passed&rsquo; from the server, first using the default formula i.e. not specifying <code>formula</code> in the request body. We are able to get <code>passed</code> using the following:</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/2_getting-pass-using-default-formula.png" alt="getting &lsquo;passed&rsquo; using default formula"></p>
+<p>Then, using a specified formula:</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/3_getting-passed-using-specified-formula.png" alt="getting &lsquo;passed&rsquo; using specified formula"></p>
+<p>Now we need to think about how to exploit the system to read the contents of <code>flag</code>. Looking at <code>package.json</code>, we see that the version of <code>static-eval</code> used is 2.0.2. Doing a quick google search reveals that there are no known CVEs for this version, but I found a <a href="https://vulners.com/github/GHSA-8V27-2FG9-7H62">withdrawn CVE</a> which was withdrawn for being deemed not a security vulnerability. Similarly, there are no known vulnerabilities in any version of esprima. Nevertheless, <code>hasPassed</code> is still the most likely point to inject code.</p>
+<p>After failing to make any progress for a few hours, I looked at <a href="https://braincoke.fr/write-up/hack-the-box/baby-breaking-grad/">a walkthrough</a> to get a clue. The author directed me to the past <a href="https://github.com/browserify/static-eval/commits/master/">GitHub commits for <code>static-eval</code></a> (post version 2.0.2). Digging through the commit history leads to the discovery of <a href="https://github.com/browserify/static-eval/pull/27">this issue</a> which was discovered after version 2.0.2 launched but patched before 2.0.3 released. There is also <a href="https://github.com/browserify/static-eval/pull/27/commits/6b7b9609d770948ec9e8a8dedeee5e55891459a3">a commit</a> with some test cases to verify that the issue has been fixed.</p>
+<p>I used the code in the test script to build an exploit for <code>static-eval</code> 2.0.2. The first task was to figure out how to properly format the payload in the request. I wrote the following python script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#ff6ac1">from</span> html <span style="color:#ff6ac1">import</span> escape
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://127.0.0.1:1337/api/calculate&#34;</span>
+</span></span><span style="display:flex;"><span>injection <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;(function myTag(y){return &#34;&#34;[!y?&#34;__proto__&#34;:&#34;constructor&#34;][y]})(&#34;constructor&#34;)(&#34;console.log(process.env)&#34;)()&#39;</span> <span style="color:#78787e"># from github commit</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;name&#34;</span> : <span style="color:#5af78e">&#34;johndoe&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;exam&#34;</span>: <span style="color:#ff9f43">4</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;paper&#34;</span>: <span style="color:#ff9f43">4</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;assignment&#34;</span>: injection,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;formula&#34;</span>: <span style="color:#5af78e">&#34;assignment&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>r <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>post(url, json<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(r<span style="color:#ff6ac1">.</span>text)
+</span></span></code></pre></div><p>I ran the code and didn&rsquo;t get any error messages, just a message saying that the student didn&rsquo;t pass. So far so good. Moving forward, I wanted to be able to see what the result of <code>static-eval</code> was for easier debugging so I modified <code>hasPassed</code> in <code>StudentHelper.js</code> to <code>return weight</code>, and lines 28-30 of <code>routes/index.js</code> to:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#ff6ac1">return</span> res.send({
+</span></span><span style="display:flex;"><span>  pass<span style="color:#ff6ac1">:</span> StudentHelper.hasPassed(student, formula),
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>I then restarted my container. After running the script again, I realised that the injection didn&rsquo;t actually execute, it was just returned as a string with all the apostrophes escaped by backslashes.</p>
+<p>I realised that this was the case because the injection string is meant to be assigned to <code>formula</code> - with the script above, evaluating the <code>formula</code> meant replacing the variable <code>assignment</code> in the <code>formula</code> with the value of <code>assignment</code>. The fix was just to change <code>&quot;formula&quot;:assignment</code> to <code>&quot;formula&quot;:injection</code>.</p>
+<p>Running the script, I get some output on the console (the terminal which I ran <code>./build_docker.sh</code> on):</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/4_output-of-process-env.png" alt="successfully injecting code on server"></p>
+<p>We have successfully ran some commands on the server. From here, I tinkered around with <code>injection</code> to figure out how to execute shell commands on the server. I previously mentioned <a href="https://vulners.com/github/GHSA-8V27-2FG9-7H62">an article</a> detailing how a CVE for <code>static-eval</code> 2.0.2 was withdrawn. The article provided a POC for the &lsquo;vulnerability&rsquo;, and I combined the POC with the current value of <code>injection</code> to create an injection string which executed shell commands: changing <code>injection</code> to <code>'(function myTag(y){return &quot;&quot;[!y?&quot;__proto__&quot;:&quot;constructor&quot;][y]})(&quot;constructor&quot;)(&quot;console.log(process.mainModule.constructor._load(\'child_process\').execSync(\'ls\').toString())&quot;)()'</code> allowed me to execute <code>ls</code> on the server:</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/5_executing-ls-on-server.png" alt="executing ls on server"></p>
+<p><code>flaghKtZB</code> is the flag file for testing included in the downloaded source code.</p>
+<p>Now that we know how to execute arbitrary commands on the server, we need to find a way to exfiltrate data from the server because we won&rsquo;t have access to the console on the live server. I tried to pipe the output of commands to a listener on my local machine using <code>nc</code> but <code>nc</code> isn&rsquo;t installed. I tried several bash / python reverse shell payloads but none of them seemed to work. Most of the commands executed just gave an error.</p>
+<p>I went back to consult <a href="https://braincoke.fr/write-up/hack-the-box/baby-breaking-grad/">this walkthrough</a> and discovered that there was a simpler solution than popping a reverse shell - which was to simply exfiltrate the data using error messages. By using <code>throw new Error(&lt;command to execute&gt;)</code> instead of <code>console.log</code>, the output of the command will be part of the http response which we are able to retrieve.</p>
+<p>For example, running this script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e2e4e5;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff6ac1">import</span> requests
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>command <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;ls&#39;</span>
+</span></span><span style="display:flex;"><span>injection <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#39;(function myTag(y){return &#34;&#34;[!y?&#34;__proto__&#34;:&#34;constructor&#34;][y]})(&#34;constructor&#34;)(&#34;throw new Error(process.mainModule.constructor._load(</span><span style="color:#5af78e">\&#39;</span><span style="color:#5af78e">child_process</span><span style="color:#5af78e">\&#39;</span><span style="color:#5af78e">).execSync(</span><span style="color:#5af78e">\&#39;</span><span style="color:#5af78e">&#39;</span> <span style="color:#ff6ac1">+</span> command <span style="color:#ff6ac1">+</span> <span style="color:#5af78e">&#39;</span><span style="color:#5af78e">\&#39;</span><span style="color:#5af78e">).toString())&#34;)()&#39;</span>
+</span></span><span style="display:flex;"><span>url <span style="color:#ff6ac1">=</span> <span style="color:#5af78e">&#34;http://127.0.0.1:1337/api/calculate&#34;</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#ff6ac1">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;name&#34;</span> : <span style="color:#5af78e">&#34;johndoe&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#5af78e">&#34;formula&#34;</span>: injection
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>r <span style="color:#ff6ac1">=</span> requests<span style="color:#ff6ac1">.</span>post(url, json<span style="color:#ff6ac1">=</span>payload)
+</span></span><span style="display:flex;"><span><span style="color:#ff5c57">print</span>(r<span style="color:#ff6ac1">.</span>text)
+</span></span></code></pre></div><p>gives the following response:</p>
+<p><img src="/images/htb/owasp-top-10/baby-breaking-grad/6_ls-output-in-error.png" alt="output of ls in error message"></p>
+<p>Though it is messy, we can clearly see the name of the file containing the flag, and retrieving the flag becomes trivial from that point on.</p>
+<p>We can finally try this on the live server, and retrieve the real flag for this challenge.</p>
+</article>
+
+
+    </div>
+
+    
+    <div>
+        <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+        class="hidden fixed z-90 bottom-7 right-7 btn btn-ghost btn-circle"><i class="fa-solid fa-caret-up fa-2xl" style="color: #d4d4d4;"></i>
+        </button>
+    </div>
+    
+
+    
+    <script>
+        var toTopButton = document.getElementById("to-top-button");
+
+        
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                toTopButton.classList.remove("hidden");
+            } else {
+                toTopButton.classList.add("hidden");
+            }
+        }
+
+        
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+
+<footer class="mt-20 p-2 bg-base-200 text-base-content">
+     <div class="max-w-2xl justify-between m-auto flex text-xs space-y-1">
+        
+          <div class="flex-1 my-auto">
+            <p class="block my-2">
+               
+               
+               
+               
+                  
+               &copy; 2024 - Justin Ngo. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="link">Some rights reserved.</a>   
+           </p>
+           
+           <p class="block mb-2">
+                 
+                Made with <svg class="icon w-4 h-4" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M645.889-470q-6.689 0-12.9-2T622-479q-87-78-148.5-148.757T412-760q0-51.758 35.22-86.879Q482.439-882 534.341-882 564-882 593.5-865.5T646-821q23-28 52.5-44.5t59.159-16.5q51.902 0 87.122 35.121Q880-811.758 880-760q0 61.486-61.5 132.243T670.055-479q-5.055 5-11.266 7t-12.9 2Zm.111-71q66-60 120-119t54-100q0-27.423-17.356-44.712Q785.288-822 757.758-822 741-822 724.5-814q-16.5 8-33.5 30l-45 55-45-55q-17-22-33.5-30t-33.258-8q-27.53 0-44.886 17.288Q472-787.423 472-760q0 41 54 100t120 119Zm-84 417 248-78q-6-8-15.194-20.5Q785.613-235 774-235H536q-2 0-18-1.5t-31-8.5l-66-20q-12-4-18-16t-2-24q4-12 15.278-18T440-324l93 31q-2 0 14.5-1t47.333-1H604q0-12.419-4.5-23.71Q595-330 584-335l-245-93h-84v214l307 90Zm-13 57-294-84q-2 27-22.5 42T195-94h-95q-24.75 0-42.375-17.625T40-154v-274q0-24.75 17.625-42.375T100-488h238q5.333 0 10.667 1Q354-486 359-484l245 92q27 10 45.5 32.5T668-295h114q42 0 70 30t28 81q0 11-5 19.5T859-152L583-67q-8.171 2-17.086 2Q557-65 549-67Zm97-615ZM100-154h94v-274h-94v274Z"/></svg> and <a class="link" href="https://github.com/jacksalici/salinger-theme">Salinger Theme</a>.
+                
+           </p>
+
+          </div>
+
+          
+
+
+           
+           
+     </div>
+ 
+   
+  </footer>
+
+
+
+
+
+
+</body>
+
+    <script>
+
+      
+
+      try {
+          twemoji.parse(document.body, {
+            folder: "svg",
+            ext: ".svg",
+          });
+      } catch(e) {
+        if (e instanceof ReferenceError) {
+            console.log("Tweemoji not initialized")
+            console.log(e)
+        }
+      }
+    </script>
+</html>

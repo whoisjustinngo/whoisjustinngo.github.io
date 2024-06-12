@@ -6,8 +6,15 @@
     <description>Recent content in Cybersecurity on Whois Justin Ngo?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 May 2024 14:41:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2024 00:20:00 +0800</lastBuildDate>
     <atom:link href="https://whoisjustinngo.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HackTheBox: OWASP Top 10 Track</title>
+      <link>https://whoisjustinngo.github.io/posts/hackthebox/htb-owasp-top-10-track/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/posts/hackthebox/htb-owasp-top-10-track/</guid>
+      <description>Introduction HackTheBox&amp;rsquo;s OWASP Top 10 track gives players the opportunity to &amp;lsquo;[exploit] the most critical security risks to web applications&amp;rsquo;. The OWASP Top 10 contains the likes of &amp;lsquo;broken access control&amp;rsquo;, &amp;lsquo;injection&amp;rsquo;, and &amp;lsquo;insecure design&amp;rsquo;, and each of the challenges in this track replicates 1 or more of these vulnerabilities for players to exploit.&#xA;Web exploitation is currently my favourite area of pen testing. Most of these challenges were pretty straightforward; a few of the challenges really stumped me and I had to look at online walkthroughs for hints.</description>
+    </item>
     <item>
       <title>OverTheWire: Krypton</title>
       <link>https://whoisjustinngo.github.io/posts/over-the-wire-krypton/</link>

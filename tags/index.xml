@@ -6,13 +6,48 @@
     <description>Recent content in Tags on Whois Justin Ngo?</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 May 2024 14:41:47 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jun 2024 00:20:00 +0800</lastBuildDate>
     <atom:link href="https://whoisjustinngo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding</title>
       <link>https://whoisjustinngo.github.io/tags/coding/</link>
-      <pubDate>Tue, 28 May 2024 14:41:47 +0800</pubDate>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
       <guid>https://whoisjustinngo.github.io/tags/coding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ctf</title>
+      <link>https://whoisjustinngo.github.io/tags/ctf/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cybersecurity</title>
+      <link>https://whoisjustinngo.github.io/tags/cybersecurity/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/tags/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hackthebox</title>
+      <link>https://whoisjustinngo.github.io/tags/hackthebox/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/tags/hackthebox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Owasp Top 10</title>
+      <link>https://whoisjustinngo.github.io/tags/owasp-top-10/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/tags/owasp-top-10/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>https://whoisjustinngo.github.io/tags/web/</link>
+      <pubDate>Wed, 12 Jun 2024 00:20:00 +0800</pubDate>
+      <guid>https://whoisjustinngo.github.io/tags/web/</guid>
       <description></description>
     </item>
     <item>
@@ -23,31 +58,10 @@
       <description></description>
     </item>
     <item>
-      <title>Ctf</title>
-      <link>https://whoisjustinngo.github.io/tags/ctf/</link>
-      <pubDate>Tue, 28 May 2024 14:41:47 +0800</pubDate>
-      <guid>https://whoisjustinngo.github.io/tags/ctf/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cybersecurity</title>
-      <link>https://whoisjustinngo.github.io/tags/cybersecurity/</link>
-      <pubDate>Tue, 28 May 2024 14:41:47 +0800</pubDate>
-      <guid>https://whoisjustinngo.github.io/tags/cybersecurity/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>OverTheWire</title>
       <link>https://whoisjustinngo.github.io/tags/overthewire/</link>
       <pubDate>Tue, 28 May 2024 14:41:47 +0800</pubDate>
       <guid>https://whoisjustinngo.github.io/tags/overthewire/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web</title>
-      <link>https://whoisjustinngo.github.io/tags/web/</link>
-      <pubDate>Fri, 12 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://whoisjustinngo.github.io/tags/web/</guid>
       <description></description>
     </item>
   </channel>
